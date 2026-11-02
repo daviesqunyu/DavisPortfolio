@@ -42,6 +42,12 @@
             --gradient-primary: linear-gradient(135deg, #00d4aa 0%, #6c5ce7 100%);
             --gradient-secondary: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
             --gradient-card: linear-gradient(145deg, #1a1a25 0%, #0f0f1a 100%);
+            --gradient-about: radial-gradient(ellipse at 50% 0%, rgba(0, 212, 170, 0.15) 0%, transparent 50%),
+                              radial-gradient(ellipse at 50% 100%, rgba(108, 92, 231, 0.12) 0%, transparent 50%);
+            --gradient-skills: radial-gradient(ellipse at 30% 20%, rgba(0, 212, 170, 0.1) 0%, transparent 50%),
+                              radial-gradient(ellipse at 70% 80%, rgba(108, 92, 231, 0.08) 0%, transparent 50%);
+            --gradient-projects: radial-gradient(ellipse at 20% 80%, rgba(0, 212, 170, 0.1) 0%, transparent 50%),
+                                  radial-gradient(ellipse at 80% 20%, rgba(108, 92, 231, 0.08) 0%, transparent 50%);
 
             /* Shadow System */
             --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.4);
@@ -375,7 +381,7 @@
     </header>
 
     <!-- About Section -->
-    <section id="about" class="section" style="background: var(--color-bg-secondary);">
+    <section id="about" class="section" style="background: var(--color-bg-secondary); background-attachment: fixed;">
         <div class="container">
             <div class="row gy-5 gy-md-0">
                 <div class="col-lg-6 col-xl-5">
@@ -449,7 +455,7 @@
     </section>
 
     <!-- Why Hire Me Section -->
-    <section id="why-choose" class="section" style="background: var(--color-bg-secondary);">
+    <section id="why-choose" class="section" style="background: var(--color-bg-secondary); background-attachment: fixed;">
         <div class="container">
             <div class="text-center mb-8 fade-in-up" data-aos="fade-up">
                 <span class="fw-bold fs-3 mb-3" style="color: var(--color-accent);">Why Hire Me?</span>
@@ -483,7 +489,7 @@
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="section" style="background: var(--color-bg);">
+    <section id="skills" class="section" style="background: var(--color-bg); background-attachment: fixed;">
         <div class="container">
             <div class="text-center mb-8 fade-in-up" data-aos="fade-up">
                 <span class="fw-bold fs-3 mb-3" style="color: var(--color-accent);">Skills</span>
@@ -616,7 +622,7 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="section" style="background: var(--color-bg-secondary);">
+    <section id="projects" class="section" style="background: var(--color-bg-secondary); background-attachment: fixed;">
         <div class="container">
             <div class="text-center mb-8 fade-in-up" data-aos="fade-up">
                 <span class="fw-bold fs-3 mb-3" style="color: var(--color-accent);">Projects</span>
