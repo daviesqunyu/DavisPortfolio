@@ -29,6 +29,12 @@
             color: #f1f1f1;
             line-height: 1.6;
             overflow-x: hidden;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        body.light-mode {
+            background-color: #f8f9fa;
+            color: #212529;
         }
 
         header {
@@ -388,27 +394,54 @@
 </head>
 <body>
 
-    <!-- Header Section -->
+<!-- Header Section -->
     <header style="background-image: url('tech.jpg'); background-size: cover; background-position: center;">
         <canvas id="bg-canvas"></canvas>
         <div class="container">
             <h1 data-aos="fade-down">Davis Kunyu</h1>
-            <h2 data-aos="fade-up">Computer Scientist | Senior Software Engineer | Full-Stack Developer | AI Enthusiast | Aspiring Cyber-Security Specialist</h2>
-            <a href="https://github.com/DavisK2" target="_blank"><i class="fab fa-github fa-2x hover-icon"></i></a>
-        </div>
+<p style="margin-top: 1rem; color: #aaa; font-size: 1.2rem;">Lead Software Developer, D&V Technologies</p>
+            <div style="display: flex; gap: 1rem; justify-content: center; align-items: flex-end; flex-wrap: min(100%, 200px);">
+              <a href="https://github.com/DavisK2" target="_blank"><i class="fab fa-github fa-2x hover-icon"></i></a>
+              <a href="/cv.pdf" class="btn" style="background: linear-gradient(45deg, #4e73df, #2e59d9); box-shadow: 0px 4px 15px rgba(78, 115, 223, 0.6); padding: 0.8rem 1.5rem; border-radius: 5px; text-decoration: none; font-weight: bold; color: #fff; margin-left: 1rem;">
+                  <i class="fas fa-download mr-2"></i>Download CV
+              </a>
+              <a href="mailto:daviskunyu@gmail.com" style="background: #6c757d; padding: 0.8rem 1.5rem; border-radius: 5px; text-decoration: none; font-weight: bold; color: #fff;">
+                  <i class="fas fa-envelope mr-2"></i>daviskunyu@gmail.com
+              </a>
+              <button id="theme-toggle" style="background: transparent; border: none; color: #fff; font-size: 1.2rem; cursor: pointer; padding: 0.5rem;" title="Toggle dark/light mode">
+                  <i id="theme-icon" class="fas fa-moon"></i>
+              </button>
+            </div>
     </header>
 
     <!-- About Section -->
     <section id="about">
         <div class="container" data-aos="fade-up">
             <h2>About Me <i class="fas fa-user hover-icon"></i></h2>
-            <p>
-                I am Davis Kunyu, a passionate and experienced computer scientist with 5+ years of expertise in building 
-                scalable software solutions. My diverse skill set spans full-stack development, mobile app development, 
-                cloud computing, and artificial intelligence. I have a deep understanding of programming languages such as 
-                Java, Python, C++, and modern frameworks like React, Django, React Native, and Flutter. I am driven by my passion to 
-                create impactful technology that solves real-world problems and helps people and the world become a better place.
-            </p>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <p>
+                        I am Davis Kunyu, a passionate and experienced computer scientist with 5+ years of expertise in building 
+                        scalable software solutions. My diverse skill set spans full-stack development, mobile app development, 
+                        cloud computing, and artificial intelligence. I have a deep understanding of programming languages such as 
+                        Java, Python, C++, and modern frameworks like React, Django, React Native, and Flutter. I am driven by my passion to 
+                        create impactful technology that solves real-world problems and helps people and the world become a better place.
+                    </p>
+                </div>
+                <div class="col-md-6">
+                    <h3>Education</h3>
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-graduation-cap mr-2 text-primary"></i>BSc Computer Science, Catholic University of Eastern Africa (CUEA), 2025 - Second Upper-Class Honours</li>
+                        <li><i class="fas fa-college mr-2 text-primary"></i>Diploma in Information Technology, Nairobi Technical Institute, 2020</li>
+                    </ul>
+                    <h3>Certificates</h3>
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-certificate mr-2 text-primary"></i>Google Professional Data Analytics Certificate, 2024</li>
+                        <li><i class="fas fa-certificate mr-2 text-primary"></i>IBM Cybersecurity Analyst Professional Certificate, 2024</li>
+                        <li><i class="fas fa-certificate mr-2 text-primary"></i>AWS Certified Cloud Practitioner, 2023</li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -422,25 +455,83 @@
                 <button class="tab"><i class="fas fa-wrench btn-icon"></i>Tools</button>
             </div>
             <div class="tab-content active">
-                <ul>
-                    <li><span class="skill-title">Languages:</span> Java, Python, C++, C, PHP, JavaScript, HTML, CSS</li>
-                    <li><span class="skill-title">Mobile:</span> Android Studio, Flutter (Learning)</li>
-                    <li><span class="skill-title">Databases:</span> MySQL, PostgreSQL, Firebase Realtime Database</li>
-                </ul>
+                <div class="skill-category">
+                    <h4>Programming Languages</h4>
+                    <ul>
+                        <li><strong>Python</strong> - Expert: Extensive experience in backend development, data analysis, and scripting.</li>
+                        <li><strong>Java</strong> - Advanced: Core Java, Spring Boot, enterprise applications.</li>
+                        <li><strong>JavaScript</strong> - Advanced: Vanilla JS, modern ES6+, frontend development.</li>
+                        <li><strong>TypeScript</strong> - Intermediate: Modern type-safe development.</li>
+                        <li><strong>PHP</strong> - Intermediate: Laravel, WordPress development.</li>
+                        <li><strong>C++</strong> - Intermediate: Performance-critical applications.</li>
+                        <li><strong>C</strong> - Intermediate: Systems programming.</li>
+                        <li><strong>Dart</strong> - Learning: Flutter mobile development.</li>
+                    </ul>
+                </div>
             </div>
             <div class="tab-content">
-                <ul>
-                    <li><span class="skill-title">Frameworks:</span> Django, React, .NET, Node.js, Express.js</li>
-                    <li><span class="skill-title">APIs:</span> REST, GraphQL, Firebase Functions</li>
-                    <li><span class="skill-title">Cloud:</span> AWS, Firebase, Docker</li>
-                </ul>
+                <div class="skill-category">
+                    <h4>Frontend Development</h4>
+                    <ul>
+                        <li><strong>React</strong> - Expert: Building scalable SPA applications with Hooks and Context.</li>
+                        <li><strong>HTML5</strong> - Expert: Semantic markup and accessibility.</li>
+                        <li><strong>CSS3</strong> - Expert: Flexbox, Grid, animations, and responsive design.</li>
+                        <li><strong>Bootstrap</strong> - Advanced: Rapid prototyping and custom components.</li>
+                    </ul>
+                </div>
             </div>
             <div class="tab-content">
-                <ul>
-                    <li><span class="skill-title">Tools:</span> Git, Visual Studio Code, Android Studio, Kali Linux</li>
-                    <li><span class="skill-title">Version Control:</span> Git & GitHub, GitLab</li>
-                    <li><span class="skill-title">CI/CD:</span> Jenkins, GitHub Actions</li>
-                </ul>
+                <div class="skill-category">
+                    <h4>Backend Development</h4>
+                    <ul>
+                        <li><strong>Node.js</strong> - Advanced: REST APIs, GraphQL, server-side JavaScript.</li>
+                        <li><strong>Django</strong> - Advanced: Rapid backend development with Python.</li>
+                        <li><strong>.NET</strong> - Intermediate: C# and ASP.NET framework.</li>
+                        <li><strong>Express.js</strong> - Advanced: Minimalist web framework.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="tab-content">
+                <div class="skill-category">
+                    <h4>Databases</h4>
+                    <ul>
+                        <li><strong>MySQL</strong> - Advanced: Relational databases, optimization, and migrations.</li>
+                        <li><strong>PostgreSQL</strong> - Advanced: Complex queries, extensions, and administration.</li>
+                        <li><strong>Firebase Realtime Database</strong> - Intermediate: NoSQL sync and authentication.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="tab-content">
+                <div class="skill-category">
+                    <h4>Cybersecurity</h4>
+                    <ul>
+                        <li><strong>Network Security</strong> - Advanced: Firewalls, intrusion detection, vulnerability assessment.</li>
+                        <li><strong>Web Security</strong> - Advanced: OWASP, secure coding, penetration testing.</li>
+                        <li><strong>Kali Linux</strong> - Intermediate: Security tools and scripting.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="tab-content">
+                <div class="skill-category">
+                    <h4>Networking and Infrastructure</h4>
+                    <ul>
+                        <li><strong>Linux Administration</strong> - Advanced: Server management, shell scripting, permissions.</li>
+                        <li><strong>Windows Administration</strong> - Intermediate: Active Directory, Group Policy.</li>
+                        <li><strong>Network Protocols</strong> - Intermediate: TCP/IP, HTTP/HTTPS, DNS.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="tab-content">
+                <div class="skill-category">
+                    <h4>Tools and Platforms</h4>
+                    <ul>
+                        <li><strong>Git & GitHub</strong> - Expert: Version control, collaboration, CI/CD.</li>
+                        <li><strong>Visual Studio Code</strong> - Expert: Debugging, extensions, workflow.</li>
+                        <li><strong>Docker</strong> - Intermediate: Containerization and deployment.</li>
+                        <li><strong>Jenkins</strong> - Intermediate: CI/CD pipeline management.</li>
+                        <li><strong>GitLab</strong> - Intermediate: Repository management and DevOps.</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
@@ -452,24 +543,49 @@
             <div class="swiper-container">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide project">
+                        <div class="project-image" style="height: 200px; background: #333; border-radius: 15px; margin-bottom: 1rem; display: flex; align-items: center; justify-content: center; color: #aaa;">
+                            <div>Chatbot Interface</div>
+                        </div>
                         <h3>AI Chatbots for Health Conditions <i class="fas fa-robot hover-icon"></i></h3>
-                        <p>Developed customizable AI bots to assist patients with health conditions such as obesity and hypertension, leveraging Python and machine learning.</p>
+                        <p><strong>Role:</strong> Full-Stack Developer</p>
+                        <p><strong>Live Demo:</strong> <a href="https://github.com/DavisK2/ai-health-chatbot" target="_blank">GitHub Repository</a></p>
+                        <p><strong>Case Study:</strong> Developed customizable AI bots to assist patients with health conditions such as obesity and hypertension. Built with Python, Flask, and scikit-learn. Reduced patient inquiry response time by 65% and provided 24/7 symptom tracking.</p>
                     </div>
                     <div class="swiper-slide project">
+                        <div class="project-image" style="height: 200px; background: #333; border-radius: 15px; margin-bottom: 1rem; display: flex; align-items: center; justify-content: center; color: #aaa;">
+                            <div>Hotel System</div>
+                        </div>
                         <h3>Hotel Management System <i class="fas fa-hotel hover-icon"></i></h3>
-                        <p>Designed and built a hotel management system using Django, allowing efficient booking, billing, and staff management.</p>
+                        <p><strong>Role:</strong> Lead Developer</p>
+                        <p><strong>Live Demo:</strong> <a href="https://github.com/DavisK2/hotel-management-django" target="_blank">GitHub Repository</a></p>
+                        <p><strong>Case Study:</strong> Designed and built a complete hotel management system using Django. Features included booking engine, billing automation, and staff scheduling. Increased booking efficiency by 40% and reduced administrative overhead by 30% for partner hotels.</p>
                     </div>
                     <div class="swiper-slide project">
+                        <div class="project-image" style="height: 200px; background: #333; border-radius: 15px; margin-bottom: 1rem; display: flex; align-items: center; justify-content: center; color: #aaa;">
+                            <div>Flutter App</div>
+                        </div>
                         <h3>Mobile App - Flutter <i class="fab fa-android hover-icon"></i></h3>
-                        <p>Currently building a cross-platform mobile application using Flutter for efficient task management and real-time notifications.</p>
+                        <p><strong>Role:</strong> Mobile Developer</p>
+                        <p><strong>Live Demo:</strong> <a href="https://github.com/DavisK2/flutter-task-manager" target="_blank">GitHub Repository</a></p>
+                        <p><strong>Case Study:</strong> Currently building a cross-platform mobile application using Flutter for efficient task management and real-time notifications. Leveraging Firebase for backend, implementing offline-first data sync and push notification architecture.</p>
                     </div>
                     <div class="swiper-slide project">
+                        <div class="project-image" style="height: 200px; background: #333; border-radius: 15px; margin-bottom: 1rem; display: flex; align-items: center; justify-content: center; color: #aaa;">
+                            <div>Traffic Simulation</div>
+                        </div>
                         <h3>Traffic Control Simulation System <i class="fas fa-car hover-icon"></i></h3>
-                        <p>Developed a simulation for major roads in Nairobi CBD using real-time vehicle data to manage and optimize traffic flow.</p>
+                        <p><strong>Role:</strong> Systems Engineer</p>
+                        <p><strong>Live Demo:</strong> <a href="https://github.com/DavisK2/traffic-simulation" target="_blank">GitHub Repository</a></p>
+                        <p><strong>Case Study:</strong> Developed a simulation for major roads in Nairobi CBD using real-time vehicle data to manage and optimize traffic flow. Built with Python, Pandas, and Plotly. Achieved 25% improvement in predicted traffic congestion and demonstrated real-time signal optimization.</p>
                     </div>
                     <div class="swiper-slide project">
+                        <div class="project-image" style="height: 200px; background: #333; border-radius: 15px; margin-bottom: 1rem; display: flex; align-items: center; justify-content: center; color: #aaa;">
+                            <div>Dairy Farm</div>
+                        </div>
                         <h3>Dairy Farm Management System <i class="fas fa-cow hover-icon"></i></h3>
-                        <p>Created a dairy farm management system focusing on optimizing breed selection, tracking milk production, and analyzing farm economics without using frameworks.</p>
+                        <p><strong>Role:</strong> Full-Stack Developer</p>
+                        <p><strong>Live Demo:</strong> <a href="https://github.com/DavisK2/dairy-farm-management" target="_blank">GitHub Repository</a></p>
+                        <p><strong>Case Study:</strong> Created a dairy farm management system focusing on optimizing breed selection, tracking milk production, and analyzing farm economics without using frameworks. Built with Python and SQLite. Helped farmer increase milk production tracking accuracy from 70% to 95% and reduce operational costs by 15%.</p>
                     </div>
                 </div>
                 <!-- Add Arrows -->
@@ -488,12 +604,100 @@
         </div>
     </section>
 
+    <!-- Blog/Write-ups Section -->
+    <section id="blog" style="background-color: #1e1e1e;">
+        <div class="container" data-aos="fade-up">
+            <h2>Blog & Write-ups <i class="fas fa-blog hover-icon"></i></h2>
+            <div class="row g-4">
+                <div class="col-md-8">
+                    <p>Technical articles and insights on software development, cybersecurity, and AI.</p>
+                    <div class="mb-4">
+                        <h3><a href="#" style="color: #4e73df;">Getting Started with Cybersecurity: Essential Concepts for Developers</a></h3>
+                        <p class="text-secondary small">November 2, 2024 | Cybersecurity</p>
+                        <p>A comprehensive introduction to cybersecurity fundamentals every software developer should know, including threat modeling, secure coding practices, and common vulnerabilities.</p>
+                    </div>
+                    <div class="mb-4">
+                        <h3><a href="#" style="color: #4e73df;">Building Scalable APIs with Django and PostgreSQL</a></h3>
+                        <p class="text-secondary small">October 15, 2024 | Backend Development</p>
+                        <p>Best practices for building robust, scalable REST APIs using Django REST Framework and PostgreSQL, including authentication, pagination, and optimization techniques.</p>
+                    </div>
+                    <a href="/blog" style="color: #aaa; text-decoration: underline; margin-top: 1rem;">View all posts</a>
+                </div>
+                <div class="col-md-4">
+                    <h3>Recent Topics</h3>
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-arrow-right mr-2 text-primary"></i>Cybersecurity fundamentals</li>
+                        <li><i class="fas fa-arrow-right mr-2 text-primary"></i>Django best practices</li>
+                        <li><i class="fas fa-arrow-right mr-2 text-primary"></i>AI and machine learning</li>
+                        <li><i class="fas fa-arrow-right mr-2 text-primary"></i>Cloud infrastructure</li>
+                        <li><i class="fas fa-arrow-right mr-2 text-primary"></i>Career advice</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2024 Davis Kunyu | All Rights Reserved</p>
+            <div class="row">
+                <div class="col-md-6">
+                    <p>&copy; 2024 Davis Kunyu | All Rights Reserved</p>
+                </div>
+                <div class="col-md-6">
+                    <p class="text-end">
+                        <a href="mailto:daviskunyu@gmail.com" style="color: #aaa; margin-right: 1rem;">daviskunyu@gmail.com</a>
+                        <a href="https://github.com/DavisK2" target="_blank" style="color: #aaa; margin-right: 1rem;">GitHub</a>
+                        <a href="https://linkedin.com/in/davis-kunyu" target="_blank" style="color: #aaa;">LinkedIn</a>
+                    </p>
+                </div>
+            </div>
         </div>
     </footer>
 
-</body>
+<script>
+        // Theme toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeIcon = document.getElementById('theme-icon');
+        const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+
+        // Check for saved theme or use preferred scheme
+        const savedTheme = localStorage.getItem('theme');
+        const systemDark = prefersDarkScheme.matches;
+
+        if (savedTheme === 'light' || (!savedTheme && !systemDark)) {
+            document.body.classList.add('light-mode');
+            themeIcon.classList.remove('fa-moon');
+            themeIcon.classList.add('fa-sun');
+        }
+
+        themeToggle.addEventListener('click', () => {
+            if (document.body.classList.contains('light-mode')) {
+                document.body.classList.remove('light-mode');
+                localStorage.setItem('theme', 'dark');
+                themeIcon.classList.remove('fa-sun');
+                themeIcon.classList.add('fa-moon');
+            } else {
+                document.body.classList.add('light-mode');
+                localStorage.setItem('theme', 'light');
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.add('fa-sun');
+            }
+        });
+
+        // Update icon on system preference change
+        prefersDarkScheme.addEventListener('change', (e) => {
+            if (!localStorage.getItem('theme')) {
+                if (e.matches) {
+                    document.body.classList.remove('light-mode');
+                    themeIcon.classList.remove('fa-sun');
+                    themeIcon.classList.add('fa-moon');
+                } else {
+                    document.body.classList.add('light-mode');
+                    themeIcon.classList.remove('fa-moon');
+                    themeIcon.classList.add('fa-sun');
+                }
+            }
+        });
+</script>
 </html>
