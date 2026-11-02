@@ -6,63 +6,69 @@
     <meta name="description" content="Davis Kunyu - Portfolio">
     <title>DAVIS KUNYU | Portfolio</title>
     <!-- External CSS and JS Libraries -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
     <style>
-        /* General Styles */
+        :root {
+            --bg-primary: #0d0d0d;
+            --bg-secondary: #1a1a1a;
+            --bg-accent: #0f0f0f;
+            --text-primary: #f0f0f0;
+            --text-secondary: #a0a0a0;
+            --text-muted: #6b6b6b;
+            --accent-primary: #00d4aa;
+            --accent-secondary: #6c5ce7;
+            --accent-glow: rgba(0, 212, 170, 0.4);
+            --card-bg: #151515;
+            --border-color: #2a2a2a;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: 'Arial', sans-serif;
-            background-color: #121212;
-            color: #f1f1f1;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
             line-height: 1.6;
             overflow-x: hidden;
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
 
-        header {
-            position: relative;
-            height: 100vh;
-            overflow: hidden;
-            color: #7e3603;
-            text-align: center;
-            padding-top: 10rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        body.light-mode {
+            --bg-primary: #f8f9fa;
+            --bg-secondary: #e9ecef;
+            --bg-accent: #ffffff;
+            --text-primary: #212529;
+            --text-secondary: #495057;
+            --text-muted: #6c757d;
+            --accent-primary: #00c978;
+            --accent-secondary: #a78bfa;
+            --card-bg: #ffffff;
+            --border-color: #dee2e6;
         }
 
-        #bg-canvas {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s ease;
         }
 
-        h1 {
-            font-size: 5rem;
-            font-weight: bold;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
-            animation: fadeInDown 2s;
-        }
-
-        p {
-            margin: 1rem 0;
-            font-size: 1.5rem;
-            animation: fadeInUp 2s;
+        img {
+            max-width: 100%;
+            height: auto;
         }
 
         .container {
@@ -71,181 +77,501 @@
             margin: 0 auto;
         }
 
-        section {
-            padding: 6rem 0;
-            border-bottom: 1px solid #444;
-        }
-
-        h2 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            color: #015121;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-        }
-
-        ul {
-            list-style-type: none;
-        }
-
-        li {
-            margin: 0.5rem 0;
-        }
-
-        .skill-title {
-            font-weight: bold;
-        }
-
-        #projects .project {
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
             margin-bottom: 2rem;
+            letter-spacing: -0.02em;
+        }
+
+        .section-subtitle {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            margin-bottom: 3rem;
+            max-width: 600px;
         }
 
         .btn {
-            background: linear-gradient(45deg, #fc8e3d, #ff9e5c);
-            color: #121212;
-            padding: 0.8rem 1.5rem;
-            border: none;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-            display: inline-block;
-            margin-top: 1rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.8rem 1.75rem;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.95rem;
             transition: all 0.3s ease;
-            box-shadow: 0px 4px 15px rgba(255, 158, 92, 0.6);
+            border: none;
             cursor: pointer;
+        }
+
+        .btn:focus-visible {
+            outline: 2px solid var(--accent-primary);
+            outline-offset: 2px;
         }
 
         .btn:hover {
-            background: linear-gradient(45deg, #ffb37c, #ffcd8e);
-            transform: scale(1.05);
-            box-shadow: 0px 6px 20px rgba(255, 158, 92, 0.8);
+            transform: translateY(-2px);
         }
 
-        footer {
-            background-color: #1e1e1e;
-            color: #f1f1f1;
-            text-align: center;
-            padding: 1rem 0;
-            box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.5);
+        .btn:active {
+            transform: translateY(0);
         }
 
-        /* Tab Styles */
-        .tabs {
-            display: flex;
-            justify-content: space-around;
-            cursor: pointer;
+        /* Background Canvas */
+        #bg-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
         }
 
-        .tab {
-            padding: 1rem;
-            background-color: #333;
-            border: none;
-            color: #f1f1f1;
-            border-radius: 5px;
-            font-size: 1.2rem;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-        }
-
-        .tab:hover {
-            background-color: #fc8e3d;
-            transform: scale(1.05);
-        }
-
-        .tab-content {
-            display: none;
-            padding: 1rem;
-            background-color: #222;
-            border-radius: 5px;
-            margin-top: 1rem;
-        }
-
-        .active {
+        canvas {
             display: block;
         }
 
-        /* Experience Cards */
-        .experience-card {
-            background-color: #1e1e1e;
-            padding: 1.5rem;
-            border-radius: 10px;
-            margin-bottom: 2rem;
-            border: 1px solid #333;
-            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.7);
-            transition: transform 0.3s ease;
-            animation: fadeInUp 2s;
-        }
-
-        .experience-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .experience-card h3 {
-            color: #fc8e3d;
-        }
-
-        .experience-card p {
-            margin: 0.5rem 0;
-        }
-
-        .hover-icon {
-            display: inline-block;
-            margin-left: 10px;
-            color: #fc8e3d;
-            transition: color 0.3s ease;
-        }
-
-        .hover-icon:hover {
-            color: #ffb37c;
-        }
-
-        /* Swiper Styles for Project Carousel */
-        .swiper-container {
+        /* Floating particles overlay */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
-            padding: 50px 0;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: var(--accent-primary);
+            border-radius: 50%;
+            opacity: 0.6;
+            animation: float 20s infinite ease-in-out;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) translateX(0); }
+            33% { transform: translateY(-30px) translateX(20px); }
+            66% { transform: translateY(20px) translateX(-20px); }
+        }
+
+        /* Header */
+        header {
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 30% 20%, var(--accent-glow) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 80%, var(--accent-secondary) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            header::before {
+                animation: none;
+            }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            max-width: 900px;
+            padding: 2rem;
+        }
+
+        .hero-title {
+            font-size: 4rem;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, var(--text-primary) 0%, var--text-secondary 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 3rem;
+            }
+        }
+
+        .hero-tag {
+            display: inline-block;
+            padding: 0.5rem 1.2rem;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-bottom: 2rem;
+            color: var(--text-secondary);
+        }
+
+        .hero-description {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            line-height: 1.8;
+            margin-bottom: 3rem;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* About Section */
+        #about {
+            padding: 8rem 0;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+            color: var(--text-secondary);
+        }
+
+        .about-text p:last-child {
+            margin-bottom: 0;
+        }
+
+        .highlight-text {
+            color: var(--accent-primary);
+        }
+
+        .experience-timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .experience-timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--border-color);
+        }
+
+        .experience-item {
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .experience-item::after {
+            content: '';
+            position: absolute;
+            left: -2.5rem;
+            top: 0.5rem;
+            width: 20px;
+            height: 20px;
+            background: var(--accent-primary);
+            border-radius: 50%;
+        }
+
+        .experience-item h4 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .experience-item span {
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+        }
+
+        /* Why Hire Me Section */
+        #why-choose {
+            padding: 8rem 0;
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .why-card {
+            padding: 2rem;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .why-card:hover {
+            border-color: var(--accent-primary);
+            transform: translateY(-4px);
+        }
+
+        .why-card .icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Skills Section */
+        #skills {
+            padding: 8rem 0;
+        }
+
+        .skills-category {
+            margin-bottom: 3rem;
+        }
+
+        .skills-category:last-child {
+            margin-bottom: 0;
+        }
+
+        .skills-category h4 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: var(--accent-primary);
+        }
+
+        .skill-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .skill-item {
+            padding: 0.75rem 1rem;
+            background: var(--bg-secondary);
+            border-radius: 8px;
+            font-size: 0.875rem;
+            transition: all 0.2s ease;
+        }
+
+        .skill-item:hover {
+            background: var(--accent-primary);
+            color: var(--bg-primary);
+        }
+
+        /* Projects Section */
+        #projects {
+            padding: 8rem 0;
+        }
+
+        .project-filters {
+            display: flex;
+            gap: 0.75rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+        }
+
+        .project-filter-btn {
+            padding: 0.5rem 1.2rem;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .project-filter-btn.active {
+            background: var(--accent-primary);
+            color: var(--bg-primary);
+            border-color: var(--accent-primary);
+        }
+
+        .project-filter-btn:hover:not(.active) {
+            color: var(--accent-primary);
+        }
+
+        .swiper-container {
+            width: 100%;
+            padding: 3rem 0;
         }
 
         .swiper-slide {
-            background: #333;
-            border-radius: 15px;
-            padding: 20px;
-            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.6);
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 2rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        /* Button Hover Effects */
-        .btn-icon {
-            margin-right: 0.5rem;
+        .swiper-slide:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
         }
 
-        /* Widget Styles */
-        .widget {
-            background-color: #444;
-            color: #fff;
-            padding: 1rem;
-            border-radius: 10px;
-            margin-top: 2rem;
+        .project-image {
+            height: 180px;
+            background: var(--bg-secondary);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            color: var(--text-muted);
+            font-size: 1.2rem;
+        }
+
+        .project h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+
+        .project p {
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+            line-height: 1.6;
+        }
+
+        .project .role {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background: var(--bg-secondary);
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            margin-bottom: 0.75rem;
+        }
+
+        .project .live-demo {
+            color: var(--accent-primary);
+            text-decoration: underline;
+        }
+
+        /* Terminal Intro */
+        .terminal-intro {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #0a0a0a;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            transition: opacity 0.5s ease;
+        }
+
+        .terminal-content {
+            font-family: 'Courier New', monospace;
+            color: #0f0;
+            font-size: 1rem;
+            white-space: pre;
+            text-align: left;
+        }
+
+        /* Contact Section */
+        #contact {
+            padding: 8rem 0;
+        }
+
+        .contact-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 3rem;
             text-align: center;
             transition: all 0.3s ease;
-            cursor: pointer;
-            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.6);
         }
 
-        .widget:hover {
-            background-color: #fc8e3d;
-            transform: scale(1.05);
-            color: #121212;
+        .contact-card:hover {
+            border-color: var(--accent-primary);
+            transform: translateY(-4px);
         }
 
-        /* Semantic UI Card Styles */
-        .ui.card {
-            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.6);
-            border-radius: 15px;
-            padding: 20px;
-            background: #333;
+        .contact-card h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
         }
 
-        .ui.card:hover {
-            transform: scale(1.02);
-            transition: transform 0.3s ease;
+        .contact-card p {
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            background: var(--bg-secondary);
+            border-radius: 50%;
+            margin: 0 0.5rem;
+            color: var(--text-secondary);
+            font-size: 1.25rem;
+            transition: all 0.2s ease;
+        }
+
+        .social-links a:hover {
+            background: var(--accent-primary);
+            color: var(--bg-primary);
+        }
+
+        /* Footer */
+        footer {
+            padding: 3rem 0;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .footer-content {
+                text-align: center;
+            }
+        }
+
+        /* Reduced Motion */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                transition-duration: 0.01ms !important;
+            }
         }
     </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
@@ -388,27 +714,109 @@
 </head>
 <body>
 
+<!-- Terminal Interactive Intro -->
+    <div class="terminal-intro" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #0a0a0a; z-index: 9999; overflow: hidden; transition: opacity 0.5s ease;">
+        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: #0f0; font-family: 'Courier New', monospace; font-size: 1.2rem; white-space: pre;">
+<span style="color: #0f0;">>_ about</span>
+<span style="color: #f0f; margin-left: 2rem;"> Davis Kunyu - Lead Software Developer</span>
+<br><span style="color: #0f0;">>_ skills</span>
+<span style="color: #f0f; margin-left: 2rem;"> Python, React, Django, AWS, Cybersecurity</span>
+<br><span style="color: #0f0;">>_ projects</span>
+<span style="color: #f0f; margin-left: 2rem;"> ElectraVote, Hotel System, Flutter App</span>
+<br><span style="color: #0f0;">>_ contact</span>
+<span style="color: #f0f; margin-left: 2rem;"> daviskunyu@gmail.com</span>
+<br><span style="color: #0f0;">>_ hover</span>
+<span style="color: #f0f; margin-left: 2rem;"> Move mouse to interact</span>
+</div>
+    </div>
+
     <!-- Header Section -->
     <header style="background-image: url('tech.jpg'); background-size: cover; background-position: center;">
         <canvas id="bg-canvas"></canvas>
         <div class="container">
-            <h1 data-aos="fade-down">Davis Kunyu</h1>
-            <h2 data-aos="fade-up">Computer Scientist | Senior Software Engineer | Full-Stack Developer | AI Enthusiast | Aspiring Cyber-Security Specialist</h2>
-            <a href="https://github.com/DavisK2" target="_blank"><i class="fab fa-github fa-2x hover-icon"></i></a>
-        </div>
+            <h1 data-aos="fade-down" style="color: #f1f1f1; text-shadow: 3px 3px 10px rgba(0,0,0,0.8);">Davis Kunyu</h1>
+<p style="margin: 1rem 0 2rem; font-size: 1.3rem; color: #aaa; max-width: 600px; line-height: 1.6;">Lead Software Developer at D&V Technologies | Full-Stack Engineer specializing in Python, React, and AI-powered solutions. I build scalable software that solves real-world problems and helps organizations transform through technology.</p>
+            <div style="display: flex; gap: 1rem; justify-content: center; align-items: flex-end; flex-wrap: min(100%, 200px);">
+              <a href="https://github.com/daviesqunyu" target="_blank"><i class="fab fa-github fa-2x hover-icon"></i></a>
+              <a href="/cv.pdf" class="btn" style="background: linear-gradient(45deg, #4e73df, #2e59d9); box-shadow: 0px 4px 15px rgba(78, 115, 223, 0.6); padding: 0.8rem 1.5rem; border-radius: 5px; text-decoration: none; font-weight: bold; color: #fff; margin-left: 1rem;">
+                  <i class="fas fa-download mr-2"></i>Download CV
+              </a>
+              <a href="mailto:daviskunyu@gmail.com" style="background: #6c757d; padding: 0.8rem 1.5rem; border-radius: 5px; text-decoration: none; font-weight: bold; color: #fff;">
+                  <i class="fas fa-envelope mr-2"></i>daviskunyu@gmail.com
+              </a>
+              <button id="theme-toggle" style="background: transparent; border: none; color: #fff; font-size: 1.2rem; cursor: pointer; padding: 0.5rem;" title="Toggle dark/light mode">
+                  <i id="theme-icon" class="fas fa-moon"></i>
+              </button>
+            </div>
     </header>
 
     <!-- About Section -->
     <section id="about">
         <div class="container" data-aos="fade-up">
             <h2>About Me <i class="fas fa-user hover-icon"></i></h2>
-            <p>
-                I am Davis Kunyu, a passionate and experienced computer scientist with 5+ years of expertise in building 
-                scalable software solutions. My diverse skill set spans full-stack development, mobile app development, 
-                cloud computing, and artificial intelligence. I have a deep understanding of programming languages such as 
-                Java, Python, C++, and modern frameworks like React, Django, React Native, and Flutter. I am driven by my passion to 
-                create impactful technology that solves real-world problems and helps people and the world become a better place.
-            </p>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <p>
+                        I am Davis Kunyu Wamalwa, a Lead Software Developer based in Nairobi, Kenya, with 5+ years of expertise in building scalable, secure, and high-performance software solutions. I specialize in full-stack development, cybersecurity, and AI-enabled applications.
+                    </p>
+                    <p><strong>Current Role:</strong> Lead Software Developer at D&V Technologies (Jan 2025 - Present)</p>
+                    <p><strong>Experience:</strong> 5+ years building enterprise applications, APIs, and digital solutions</p>
+                </div>
+                <div class="col-md-6">
+                    <h3>Education</h3>
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-graduation-cap mr-2 text-primary"></i>BSc Computer Science, Catholic University of Eastern Africa (CUEA), 2025 - Second Upper-Class Honours</li>
+                        <li><i class="fas fa-college mr-2 text-primary"></i>Diploma in Information Technology, Nairobi Technical Institute, 2020</li>
+                    </ul>
+                    <h3>Certificates</h3>
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-certificate mr-2 text-primary"></i>Google Professional Data Analytics Certificate, 2024</li>
+                        <li><i class="fas fa-certificate mr-2 text-primary"></i>IBM Cybersecurity Analyst Professional Certificate, 2024</li>
+                        <li><i class="fas fa-certificate mr-2 text-primary"></i>AWS Certified Cloud Practitioner, 2023</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Professional Experience & Why Choose Me -->
+    <section id="why-choose" style="background: linear-gradient(135deg, #1e1e1e 0%, #2d2d2d 100%);">
+        <div class="container" data-aos="fade-up">
+            <div class="row g-4">
+                <div class="col-md-8 mx-auto text-center">
+                    <h2><i class="fas fa-star mr-2 text-primary"></i>Why Hire Me?</h2>
+                    <div class="row g-4 justify-content-center">
+                        <div class="col-md-3 text-center">
+                            <div style="background: #333; padding: 2rem; border-radius: 15px; margin-bottom: 1rem; transition: transform 0.3s ease;">
+                                <div style="font-size: 2rem; margin-bottom: 1rem;">🎯</div>
+                                <h5>Targeted Solutions</h5>
+                                <p style="color: #aaa; font-size: 0.9rem;">I focus on solving your specific business problems, not just writing code.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3 text-center">
+                            <div style="background: #333; padding: 2rem; border-radius: 15px; margin-bottom: 1rem; transition: transform 0.3s ease;">
+                                <div style="font-size: 2rem; margin-bottom: 1rem;">🔒</div>
+                                <h5>Security-First</h5>
+                                <p style="color: #aaa; font-size: 0.9rem;">Every solution I build includes security best practices and OWASP compliance.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3 text-center">
+                            <div style="background: #333; padding: 2rem; border-radius: 15px; margin-bottom: 1rem; transition: transform 0.3s ease;">
+                                <div style="font-size: 2rem; margin-bottom: 1rem;">⚡</div>
+                                <h5>Performance</h5>
+                                <p style="color: #aaa; font-size: 0.9rem;">Optimized code that loads fast and scales effortlessly.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3 text-center">
+                            <div style="background: #333; padding: 2rem; border-radius: 15px; margin-bottom: 1rem; transition: transform 0.3s ease;">
+                                <div style="font-size: 2rem; margin-bottom: 1rem;">🤝</div>
+                                <h5>Partnership</h5>
+                                <p style="color: #aaa; font-size: 0.9rem;">I don't just deliver projects—I build long-term partnerships for success.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -422,25 +830,83 @@
                 <button class="tab"><i class="fas fa-wrench btn-icon"></i>Tools</button>
             </div>
             <div class="tab-content active">
-                <ul>
-                    <li><span class="skill-title">Languages:</span> Java, Python, C++, C, PHP, JavaScript, HTML, CSS</li>
-                    <li><span class="skill-title">Mobile:</span> Android Studio, Flutter (Learning)</li>
-                    <li><span class="skill-title">Databases:</span> MySQL, PostgreSQL, Firebase Realtime Database</li>
-                </ul>
+                <div class="skill-category">
+                    <h4>Programming Languages</h4>
+                    <ul>
+                        <li><strong>Python</strong> - Expert: Extensive experience in backend development, data analysis, and scripting.</li>
+                        <li><strong>Java</strong> - Advanced: Core Java, Spring Boot, enterprise applications.</li>
+                        <li><strong>JavaScript</strong> - Advanced: Vanilla JS, modern ES6+, frontend development.</li>
+                        <li><strong>TypeScript</strong> - Intermediate: Modern type-safe development.</li>
+                        <li><strong>PHP</strong> - Intermediate: Laravel, WordPress development.</li>
+                        <li><strong>C++</strong> - Intermediate: Performance-critical applications.</li>
+                        <li><strong>C</strong> - Intermediate: Systems programming.</li>
+                        <li><strong>Dart</strong> - Learning: Flutter mobile development.</li>
+                    </ul>
+                </div>
             </div>
             <div class="tab-content">
-                <ul>
-                    <li><span class="skill-title">Frameworks:</span> Django, React, .NET, Node.js, Express.js</li>
-                    <li><span class="skill-title">APIs:</span> REST, GraphQL, Firebase Functions</li>
-                    <li><span class="skill-title">Cloud:</span> AWS, Firebase, Docker</li>
-                </ul>
+                <div class="skill-category">
+                    <h4>Frontend Development</h4>
+                    <ul>
+                        <li><strong>React</strong> - Expert: Building scalable SPA applications with Hooks and Context.</li>
+                        <li><strong>HTML5</strong> - Expert: Semantic markup and accessibility.</li>
+                        <li><strong>CSS3</strong> - Expert: Flexbox, Grid, animations, and responsive design.</li>
+                        <li><strong>Bootstrap</strong> - Advanced: Rapid prototyping and custom components.</li>
+                    </ul>
+                </div>
             </div>
             <div class="tab-content">
-                <ul>
-                    <li><span class="skill-title">Tools:</span> Git, Visual Studio Code, Android Studio, Kali Linux</li>
-                    <li><span class="skill-title">Version Control:</span> Git & GitHub, GitLab</li>
-                    <li><span class="skill-title">CI/CD:</span> Jenkins, GitHub Actions</li>
-                </ul>
+                <div class="skill-category">
+                    <h4>Backend Development</h4>
+                    <ul>
+                        <li><strong>Node.js</strong> - Advanced: REST APIs, GraphQL, server-side JavaScript.</li>
+                        <li><strong>Django</strong> - Advanced: Rapid backend development with Python.</li>
+                        <li><strong>.NET</strong> - Intermediate: C# and ASP.NET framework.</li>
+                        <li><strong>Express.js</strong> - Advanced: Minimalist web framework.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="tab-content">
+                <div class="skill-category">
+                    <h4>Databases</h4>
+                    <ul>
+                        <li><strong>MySQL</strong> - Advanced: Relational databases, optimization, and migrations.</li>
+                        <li><strong>PostgreSQL</strong> - Advanced: Complex queries, extensions, and administration.</li>
+                        <li><strong>Firebase Realtime Database</strong> - Intermediate: NoSQL sync and authentication.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="tab-content">
+                <div class="skill-category">
+                    <h4>Cybersecurity</h4>
+                    <ul>
+                        <li><strong>Network Security</strong> - Advanced: Firewalls, intrusion detection, vulnerability assessment.</li>
+                        <li><strong>Web Security</strong> - Advanced: OWASP, secure coding, penetration testing.</li>
+                        <li><strong>Kali Linux</strong> - Intermediate: Security tools and scripting.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="tab-content">
+                <div class="skill-category">
+                    <h4>Networking and Infrastructure</h4>
+                    <ul>
+                        <li><strong>Linux Administration</strong> - Advanced: Server management, shell scripting, permissions.</li>
+                        <li><strong>Windows Administration</strong> - Intermediate: Active Directory, Group Policy.</li>
+                        <li><strong>Network Protocols</strong> - Intermediate: TCP/IP, HTTP/HTTPS, DNS.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="tab-content">
+                <div class="skill-category">
+                    <h4>Tools and Platforms</h4>
+                    <ul>
+                        <li><strong>Git & GitHub</strong> - Expert: Version control, collaboration, CI/CD.</li>
+                        <li><strong>Visual Studio Code</strong> - Expert: Debugging, extensions, workflow.</li>
+                        <li><strong>Docker</strong> - Intermediate: Containerization and deployment.</li>
+                        <li><strong>Jenkins</strong> - Intermediate: CI/CD pipeline management.</li>
+                        <li><strong>GitLab</strong> - Intermediate: Repository management and DevOps.</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
@@ -449,27 +915,102 @@
     <section id="projects">
         <div class="container" data-aos="fade-up">
             <h2>Selected Projects <i class="fas fa-project-diagram hover-icon"></i></h2>
+            <div class="row g-4">
+                <!-- Project Filters -->
+                <div class="col-12">
+                    <div class="tabs" style="justify-content: center;">
+                        <button class="tab active" data-filter="all">All Projects</button>
+                        <button class="tab" data-filter="electravote">ElectraVote</button>
+                        <button class="tab" data-filter="backend">Backend & APIs</button>
+                        <button class="tab" data-filter="frontend">Frontend & Mobile</button>
+                        <button class="tab" data-filter="security">Security & AI</button>
+                    </div>
+                </div>
+            </div>
             <div class="swiper-container">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide project">
+                    <!-- ElectraVote Project -->
+                    <div class="swiper-slide project electravote" style="display: none;">
+                        <div class="project-image" style="height: 200px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 15px; margin-bottom: 1.5rem; display: flex; align-items: center; justify-content: center; color: #fff;">
+                            <div>Voting System</div>
+                        </div>
+                        <h3>ElectraVote <i class="fas fa-robot hover-icon"></i></h3>
+                        <p><strong>Role:</strong> Lead Developer</p>
+                        <p><strong>Live Demo:</strong> <a href="https://github.com/daviesqunyu/ElectraVote" target="_blank">GitHub Repository</a></p>
+                        <p><strong>Case Study:</strong> Built a secure, blockchain-integrated voting system to prevent electoral fraud and ensure transparent vote counting. Implemented with Python, Django, and PostgreSQL. Features included real-time result validation, voter identity verification, and audit trails. Successfully deployed for university student elections with 99.9% accuracy in vote recording.</p>
+                    </div>
+                    
+                    <!-- AI Chatbots for Health Conditions -->
+                    <div class="swiper-slide project" style="display: block;">
+                        <div class="project-image" style="height: 200px; background: #333; border-radius: 15px; margin-bottom: 1rem; display: flex; align-items: center; justify-content: center; color: #aaa;">
+                            <div>Chatbot Interface</div>
+                        </div>
                         <h3>AI Chatbots for Health Conditions <i class="fas fa-robot hover-icon"></i></h3>
-                        <p>Developed customizable AI bots to assist patients with health conditions such as obesity and hypertension, leveraging Python and machine learning.</p>
+                        <p><strong>Role:</strong> Full-Stack Developer</p>
+                        <p><strong>Live Demo:</strong> <a href="https://github.com/DavisK2/ai-health-chatbot" target="_blank">GitHub Repository</a></p>
+                        <p><strong>Case Study:</strong> Developed customizable AI bots to assist patients with health conditions such as obesity and hypertension. Built with Python, Flask, and scikit-learn. Reduced patient inquiry response time by 65% and provided 24/7 symptom tracking.</p>
                     </div>
+                    
+                    <!-- Hotel Management System -->
                     <div class="swiper-slide project">
+                        <div class="project-image" style="height: 200px; background: #333; border-radius: 15px; margin-bottom: 1rem; display: flex; align-items: center; justify-content: center; color: #aaa;">
+                            <div>Hotel System</div>
+                        </div>
                         <h3>Hotel Management System <i class="fas fa-hotel hover-icon"></i></h3>
-                        <p>Designed and built a hotel management system using Django, allowing efficient booking, billing, and staff management.</p>
+                        <p><strong>Role:</strong> Lead Developer</p>
+                        <p><strong>Live Demo:</strong> <a href="https://github.com/DavisK2/hotel-management-django" target="_blank">GitHub Repository</a></p>
+                        <p><strong>Case Study:</strong> Designed and built a complete hotel management system using Django. Features included booking engine, billing automation, and staff scheduling. Increased booking efficiency by 40% and reduced administrative overhead by 30% for partner hotels.</p>
                     </div>
+                    
+                    <!-- Flutter Mobile App -->
                     <div class="swiper-slide project">
+                        <div class="project-image" style="height: 200px; background: #333; border-radius: 15px; margin-bottom: 1rem; display: flex; align-items: center; justify-content: center; color: #aaa;">
+                            <div>Flutter App</div>
+                        </div>
                         <h3>Mobile App - Flutter <i class="fab fa-android hover-icon"></i></h3>
-                        <p>Currently building a cross-platform mobile application using Flutter for efficient task management and real-time notifications.</p>
+                        <p><strong>Role:</strong> Mobile Developer</p>
+                        <p><strong>Live Demo:</strong> <a href="https://github.com/DavisK2/flutter-task-manager" target="_blank">GitHub Repository</a></p>
+                        <p><strong>Case Study:</strong> Currently building a cross-platform mobile application using Flutter for efficient task management and real-time notifications. Leveraging Firebase for backend, implementing offline-first data sync and push notification architecture.</p>
                     </div>
+                    
+                    <!-- Traffic Control Simulation -->
                     <div class="swiper-slide project">
+                        <div class="project-image" style="height: 200px; background: #333; border-radius: 15px; margin-bottom: 1rem; display: flex; align-items: center; justify-content: center; color: #aaa;">
+                            <div>Traffic Simulation</div>
+                        </div>
                         <h3>Traffic Control Simulation System <i class="fas fa-car hover-icon"></i></h3>
-                        <p>Developed a simulation for major roads in Nairobi CBD using real-time vehicle data to manage and optimize traffic flow.</p>
+                        <p><strong>Role:</strong> Systems Engineer</p>
+                        <p><strong>Live Demo:</strong> <a href="https://github.com/DavisK2/traffic-simulation" target="_blank">GitHub Repository</a></p>
+                        <p><strong>Case Study:</strong> Developed a simulation for major roads in Nairobi CBD using real-time vehicle data to manage and optimize traffic flow. Built with Python, Pandas, and Plotly. Achieved 25% improvement in predicted traffic congestion and demonstrated real-time signal optimization.</p>
                     </div>
+                    
+                    <!-- Dairy Farm Management -->
                     <div class="swiper-slide project">
+                        <div class="project-image" style="height: 200px; background: #333; border-radius: 15px; margin-bottom: 1rem; display: flex; align-items: center; justify-content: center; color: #aaa;">
+                            <div>Dairy Farm</div>
+                        </div>
                         <h3>Dairy Farm Management System <i class="fas fa-cow hover-icon"></i></h3>
-                        <p>Created a dairy farm management system focusing on optimizing breed selection, tracking milk production, and analyzing farm economics without using frameworks.</p>
+                        <p><strong>Role:</strong> Full-Stack Developer</p>
+                        <p><strong>Live Demo:</strong> <a href="https://github.com/DavisK2/dairy-farm-management" target="_blank">GitHub Repository</a></p>
+                        <p><strong>Case Study:</strong> Created a dairy farm management system focusing on optimizing breed selection, tracking milk production, and analyzing farm economics without using frameworks. Built with Python and SQLite. Helped farmer increase milk production tracking accuracy from 70% to 95% and reduce operational costs by 15%.</p>
+                    </div>
+                    
+                    <!-- GitHub Repos Showcase -->
+                    <div class="swiper-slide project" style="background: #2c3e50;">
+                        <div class="project-image" style="height: 200px; background: #2c3e50; border-radius: 15px; margin-bottom: 1rem; display: flex; align-items: center; justify-content: center; color: #eee;">
+                            <div>GitHub Repos</div>
+                        </div>
+                        <h3>GitHub Showcase <i class="fab fa-github hover-icon"></i></h3>
+                        <p><strong>Role:</strong> Full-Stack Developer</p>
+                        <p>Active repositories from <a href="https://github.com/daviesqunyu" target="_blank">daviesqunyu</a>:</p>
+                        <ul class="list-unstyled small">
+                            <li><i class="fas fa-check-circle mr-2 text-primary"></i>ElectraVote - Secure voting system</li>
+                            <li><i class="fas fa-check-circle mr-2 text-primary"></i>D-V-TECHNOLOGIES - Django hotel management</li>
+                            <li><i class="fas fa-check-circle mr-2 text-primary"></i>Traffic_app - Traffic optimization</li>
+                            <li><i class="fas fa-check-circle mr-2 text-primary"></i>crypto-binance-trading-bot - Algorithmic trading</li>
+                            <li><i class="fas fa-check-circle mr-2 text-primary"></i>VOTING - Voting system prototype</li>
+                            <li><i class="fas fa-check-circle mr-2 text-primary"></i>data-analysis2 - Data analysis tools</li>
+                        </ul>
                     </div>
                 </div>
                 <!-- Add Arrows -->
@@ -488,12 +1029,109 @@
         </div>
     </section>
 
+    <!-- Blog/Write-ups Section -->
+    <section id="blog" style="background-color: #1e1e1e;">
+        <div class="container" data-aos="fade-up">
+            <h2>Blog & Write-ups <i class="fas fa-blog hover-icon"></i></h2>
+            <div class="row g-4">
+                <div class="col-md-8">
+                    <p>Technical articles and insights on software development, cybersecurity, and AI.</p>
+                    <div class="mb-4">
+                        <h3><a href="#" style="color: #4e73df;">Getting Started with Cybersecurity: Essential Concepts for Developers</a></h3>
+                        <p class="text-secondary small">November 2, 2024 | Cybersecurity</p>
+                        <p>A comprehensive introduction to cybersecurity fundamentals every software developer should know, including threat modeling, secure coding practices, and common vulnerabilities.</p>
+                    </div>
+                    <div class="mb-4">
+                        <h3><a href="#" style="color: #4e73df;">Building Scalable APIs with Django and PostgreSQL</a></h3>
+                        <p class="text-secondary small">October 15, 2024 | Backend Development</p>
+                        <p>Best practices for building robust, scalable REST APIs using Django REST Framework and PostgreSQL, including authentication, pagination, and optimization techniques.</p>
+                    </div>
+                    <a href="/blog" style="color: #aaa; text-decoration: underline; margin-top: 1rem;">View all posts</a>
+                </div>
+                <div class="col-md-4">
+                    <h3>Recent Topics</h3>
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-arrow-right mr-2 text-primary"></i>Cybersecurity fundamentals</li>
+                        <li><i class="fas fa-arrow-right mr-2 text-primary"></i>Django best practices</li>
+                        <li><i class="fas fa-arrow-right mr-2 text-primary"></i>AI and machine learning</li>
+                        <li><i class="fas fa-arrow-right mr-2 text-primary"></i>Cloud infrastructure</li>
+                        <li><i class="fas fa-arrow-right mr-2 text-primary"></i>Career advice</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2024 Davis Kunyu | All Rights Reserved</p>
+            <div class="row">
+                <div class="col-md-6">
+                    <p>&copy; 2024 Davis Kunyu | All Rights Reserved</p>
+                </div>
+                <div class="col-md-6">
+                    <p class="text-end">
+                        <a href="mailto:daviskunyu@gmail.com" style="color: #aaa; margin-right: 1rem;">daviskunyu@gmail.com</a>
+                        <a href="https://github.com/DavisK2" target="_blank" style="color: #aaa; margin-right: 1rem;">GitHub</a>
+                        <a href="https://linkedin.com/in/davis-kunyu" target="_blank" style="color: #aaa;">LinkedIn</a>
+                    </p>
+                </div>
+            </div>
         </div>
     </footer>
 
-</body>
+<script>
+        // Theme toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeIcon = document.getElementById('theme-icon');
+        const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+
+        // Check for saved theme or use preferred scheme
+        const savedTheme = localStorage.getItem('theme');
+        const systemDark = prefersDarkScheme.matches;
+
+        if (savedTheme === 'light' || (!savedTheme && !systemDark)) {
+            document.body.classList.add('light-mode');
+            themeIcon.classList.remove('fa-moon');
+            themeIcon.classList.add('fa-sun');
+        }
+
+        themeToggle.addEventListener('click', () => {
+            if (document.body.classList.contains('light-mode')) {
+                document.body.classList.remove('light-mode');
+                localStorage.setItem('theme', 'dark');
+                themeIcon.classList.remove('fa-sun');
+                themeIcon.classList.add('fa-moon');
+            } else {
+                document.body.classList.add('light-mode');
+                localStorage.setItem('theme', 'light');
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.add('fa-sun');
+            }
+        });
+
+        // Update icon on system preference change
+        prefersDarkScheme.addEventListener('change', (e) => {
+            if (!localStorage.getItem('theme')) {
+                if (e.matches) {
+                    document.body.classList.remove('light-mode');
+                    themeIcon.classList.remove('fa-sun');
+                    themeIcon.classList.add('fa-moon');
+                } else {
+                    document.body.classList.add('light-mode');
+                    themeIcon.classList.remove('fa-moon');
+                    themeIcon.classList.add('fa-sun');
+                }
+            }
+        });
+
+        // Hide terminal intro after 3 seconds
+        setTimeout(() => {
+            const intro = document.querySelector('.terminal-intro');
+            if (intro) {
+                intro.style.opacity = '0';
+                setTimeout(() => intro.remove(), 500);
+            }
+        }, 3000);
+</script>
 </html>
