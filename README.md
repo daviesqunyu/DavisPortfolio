@@ -8,34 +8,29 @@ A modern, responsive personal portfolio website showcasing Davis Kunyu's skills,
 
 ## 🛠️ Built With
 
-- **HTML, CSS, and JavaScript** — one static page, no framework
-- **Flight chart UI** — boarding door, pass, route rail, and live instruments
-- **On-device copilot** — answers about Davis without sending prompts to a server
-- **GitHub radar** — newest public repositories from `@daviesqunyu`
+- **HTML, CSS, and JavaScript** — a field book of separate pages
+- **Opening** — a cloth book on a desk; the cover turns, then the chapters begin
+- **Chapters** — contents, about, work, projects, craft, marks, and a letter
+- **Photographs** — desk, Nairobi dusk, library, lobby, traffic, studio, and paper
 - **Google Fonts** — Fraunces, Outfit, and IBM Plex Mono
 
 ## 📁 Project Structure
 
 ```
 DavisPortfolio/
-├── index.html          # Main portfolio HTML file
-├── CNAME               # Custom domain configuration
-├── sitemap.xml         # SEO sitemap
-├── robots.txt          # Search engine directives
-├── favicon.svg         # Site favicon
-├── bg.jpg              # Background image
-├── gb.jpg              # Glassmorphism accent
-├── tech.jpg            # Hero section background
-├── public/
-│   └── cv.pdf          # Downloadable CV
-│   └── projects/
-│       ├── electravote.svg   # Project artwork
-│       ├── health-chatbots.svg
-│       ├── hotel-system.svg
-│       ├── flutter-tasks.svg
-│       ├── traffic-simulation.svg
-│       └── dairy-farm.svg    # Project SVGs
-└── README.md           # This file
+├── index.html          # Opening book
+├── book.css            # Shared chapter styles
+├── contents/           # Table of contents
+├── about/              # Nairobi portrait chapter
+├── work/               # Ledger of roles
+├── projects/           # Photo plates
+├── craft/              # Tool cards
+├── marks/              # Study seals
+├── write/              # Contact letter
+├── images/             # Photographs
+├── favicon.svg
+├── sitemap.xml
+└── CNAME
 ```
 
 ## 🚀 Local Development
