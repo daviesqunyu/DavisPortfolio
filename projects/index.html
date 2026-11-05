@@ -107,6 +107,23 @@
     function label(name) {
       return name.replace(/[-_]+/g, " ");
     }
+    function siteOf(repo) {
+      var home = (repo.homepage || "").trim();
+      if (home.indexOf("https://") !== 0 && home.indexOf("http://") !== 0) return "";
+      return home;
+    }
+    function hostOf(url) {
+      try { return new URL(url).host.replace(/^www\./, ""); } catch (e) { return url; }
+    }
+    function domainLink(url) {
+      var domain = document.createElement("a");
+      domain.className = "domain";
+      domain.href = url;
+      domain.target = "_blank";
+      domain.rel = "noopener";
+      domain.textContent = hostOf(url);
+      return domain;
+    }
     var gallery = document.getElementById("repo-gallery");
     var note = document.getElementById("repo-note");
     fetch("https://api.github.com/users/daviesqunyu/repos?sort=updated&per_page=100").then(function (r) { return r.json(); }).then(function (repos) {
@@ -115,30 +132,34 @@
       if (!kept.length) return;
       gallery.textContent = "";
       kept.forEach(function (repo) {
+        var home = siteOf(repo);
+        var plate = document.createElement("article");
+        plate.className = "plate";
         var link = document.createElement("a");
-        link.className = "plate";
+        link.className = "plate-shot";
         link.href = repo.html_url;
         var img = document.createElement("img");
         img.src = photoFor(repo.name);
         img.alt = "";
+        link.appendChild(img);
         var cap = document.createElement("span");
         cap.className = "cap";
         var small = document.createElement("small");
-        var live = repo.homepage && repo.homepage.indexOf("http") === 0;
         small.textContent = repo.language || "GitHub";
         var strong = document.createElement("strong");
         strong.textContent = label(repo.name);
         var mark = document.createElement("em");
-        mark.className = live ? "live" : "repo";
-        mark.textContent = live ? "Live" : "Repo";
+        mark.className = home ? "live" : "repo";
+        mark.textContent = home ? "Live" : "Repo";
         cap.appendChild(mark);
         cap.appendChild(small);
         cap.appendChild(strong);
-        link.appendChild(img);
-        link.appendChild(cap);
-        gallery.appendChild(link);
+        if (home) cap.appendChild(domainLink(home));
+        plate.appendChild(link);
+        plate.appendChild(cap);
+        gallery.appendChild(plate);
       });
-      if (note) note.textContent = kept.length + " public repositories, imported from GitHub. Each plate opens the repository.";
+      if (note) note.textContent = kept.length + " public repositories, imported from GitHub. A live address sits under the picture when the repository has one.";
     });
   })();
 </script>

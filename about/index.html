@@ -128,8 +128,18 @@
       }
       if (list) {
         list.textContent = "";
-        kept.slice(0, 5).forEach(function (repo) {
+        var shown = kept.slice().sort(function (a, b) {
+          function has(repo) {
+            var home = (repo.homepage || "").trim();
+            return home.indexOf("https://") === 0 || home.indexOf("http://") === 0;
+          }
+          return (has(b) ? 1 : 0) - (has(a) ? 1 : 0);
+        });
+        shown.slice(0, 7).forEach(function (repo) {
+          var home = (repo.homepage || "").trim();
+          if (home.indexOf("https://") !== 0 && home.indexOf("http://") !== 0) home = "";
           var item = document.createElement("li");
+          if (home) item.setAttribute("data-preview", home);
           var link = document.createElement("a");
           link.href = repo.html_url;
           var name = document.createElement("strong");
@@ -139,8 +149,49 @@
           link.appendChild(name);
           link.appendChild(lang);
           item.appendChild(link);
+          if (home) {
+            var domain = document.createElement("a");
+            domain.className = "domain";
+            domain.href = home;
+            domain.target = "_blank";
+            domain.rel = "noopener";
+            try { domain.textContent = new URL(home).host.replace(/^www\./, ""); } catch (e) { domain.textContent = home; }
+            item.appendChild(domain);
+          }
           list.appendChild(item);
         });
+        var peek = document.createElement("div");
+        peek.className = "peek";
+        peek.hidden = true;
+        var peekHost = document.createElement("p");
+        var frameWrap = document.createElement("div");
+        frameWrap.className = "peek-frame";
+        var frame = document.createElement("iframe");
+        frame.title = "Project preview";
+        frameWrap.appendChild(frame);
+        peek.appendChild(peekHost);
+        peek.appendChild(frameWrap);
+        document.body.appendChild(peek);
+        function place(e) {
+          var x = e.clientX + 18;
+          var y = e.clientY + 18;
+          if (x + 360 > window.innerWidth) x = Math.max(8, e.clientX - 358);
+          if (y + 250 > window.innerHeight) y = Math.max(8, e.clientY - 258);
+          peek.style.left = x + "px";
+          peek.style.top = y + "px";
+        }
+        list.addEventListener("mousemove", function (e) {
+          var row = e.target.closest("[data-preview]");
+          if (!row) { peek.hidden = true; return; }
+          var url = row.getAttribute("data-preview");
+          if (frame.getAttribute("src") !== url) {
+            frame.setAttribute("src", url);
+            try { peekHost.textContent = new URL(url).host.replace(/^www\./, ""); } catch (err) { peekHost.textContent = url; }
+          }
+          peek.hidden = false;
+          place(e);
+        });
+        list.addEventListener("mouseleave", function () { peek.hidden = true; });
       }
       var counts = {};
       kept.forEach(function (repo) {
