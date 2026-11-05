@@ -29,28 +29,35 @@
 
   <div class="person">
     <main class="nrb">
-      <article class="copy">
+      <article class="copy story">
         <p class="kicker">Chapter 01 · NRB</p>
         <h1>Davis<br /><em>Kunyu</em></h1>
-        <p class="lede">Davis Kunyu is Lead Software Developer at D&amp;V Technologies in Nairobi. The work is the kind a company actually runs: payment bots, a hotel system, traffic tools, and the company site.</p>
-        <p class="lede">School was Friends' School Kamusinga, then a diploma in IT at Nairobi Technical Training Institute, then a BSc in Computer Science at CUEA in 2025, Second Class Upper, 62.39. In 2024 he interned at Posta, PCK GPO, on networks, Wi-Fi, servers, and backups. Beside the degree are certificates in Google Data Analytics, IBM Cybersecurity, and AWS Cloud Practitioner.</p>
+        <p class="now"><span class="pulse" aria-hidden="true"></span><span id="about-now">Nairobi · Lead Software Developer</span></p>
+        <p class="lede">Davis Kunyu is Lead Software Developer at D&amp;V Technologies in Nairobi, from January 2025. He builds the software a company actually runs: payment bots, a hotel system, traffic tools, and the company site at <a href="https://dvtechnologies.xyz">dvtechnologies.xyz</a>.</p>
+        <p class="lede">From May to August 2024 he was an ICT intern at Posta, PCK GPO. That season was networks, Wi-Fi, servers, backups, and ICT support on the floor.</p>
+        <p class="lede">School ran through Friends' School Kamusinga, a diploma in Information Technology at Nairobi Technical Training Institute in 2020, and a BSc in Computer Science at the Catholic University of Eastern Africa in 2025, Second Class Honours, Upper Division, 62.39. The certificates with that degree are Google Data Analytics, IBM Cybersecurity Analyst, and AWS Cloud Practitioner.</p>
+        <p class="bio-line" id="gh-bio">On GitHub the line is “Sharp, smart, active.”</p>
         <div class="facts">
-          <a class="fact" href="/work/"><strong>NRB</strong> Based in Nairobi, building at D&amp;V</a>
+          <a class="fact" href="/work/"><strong>Now</strong> Lead Software Developer, D&amp;V Technologies</a>
+          <a class="fact" href="https://dvtechnologies.xyz"><strong>NRB</strong> Nairobi, building in public since 2023</a>
           <a class="fact" href="/work/#seals"><strong>2025</strong> BSc Computer Science, CUEA, Second Upper, 62.39</a>
           <a class="fact" href="/work/#seals"><strong>2020</strong> Diploma in IT, Nairobi Technical Training Institute</a>
-          <a class="fact" href="/work/#seals"><strong>2017</strong> Friends' School Kamusinga, KCSE</a>
         </div>
         <div class="links">
-          <a href="/projects/">Projects</a>
           <a href="/work/">Work</a>
+          <a href="/projects/">Projects</a>
           <a href="https://github.com/daviesqunyu">GitHub</a>
+          <a href="https://www.linkedin.com/in/davis-kunyu">LinkedIn</a>
           <a href="mailto:daviskunyu@gmail.com">Email</a>
+          <a href="tel:+254759075816">Call</a>
+          <a href="https://wa.me/254759075816">WhatsApp</a>
         </div>
       </article>
       <aside class="copy">
         <p class="kicker">GitHub · updates itself</p>
         <h2><a href="https://github.com/daviesqunyu">daviesqunyu</a></h2>
         <p id="gh-meta">Reading the public profile…</p>
+        <p class="live-note" id="gh-latest">The newest public push will show here.</p>
         <ul class="gh-list" id="gh-repos">
           <li><a href="https://github.com/daviesqunyu/DAVIS-HOTEL"><strong>Davis Hotel</strong><span>Repo</span></a></li>
           <li><a href="https://github.com/daviesqunyu/Traffic_app"><strong>Traffic app</strong><span>Repo</span></a></li>
@@ -61,44 +68,96 @@
       </aside>
       <aside class="copy" id="tools">
         <p class="kicker">The tools</p>
-        <h2>What I use</h2>
-        <div class="chips">
-          <a href="/projects/">TypeScript</a>
+        <h2>What the repos use</h2>
+        <p class="live-note" id="tool-note">Counting languages on the public GitHub account…</p>
+        <div class="chips" id="tool-chips">
           <a href="/projects/">JavaScript</a>
+          <a href="/projects/">TypeScript</a>
           <a href="/projects/">Python</a>
-          <a href="https://github.com/daviesqunyu/D-V-TECHNOLOGIES.XYZ">React / Next</a>
-          <a href="https://github.com/daviesqunyu/dtdpaymentsbot">Payments bot</a>
-          <a href="/work/#seals">AWS</a>
-          <a href="https://github.com/daviesqunyu/data-analysis2">Data</a>
-          <a href="/work/#seals">Security</a>
+          <a href="/projects/">HTML</a>
+        </div>
+        <p class="kicker seal-label">Certificates</p>
+        <div class="chips">
+          <a href="/work/#seals">Google Data Analytics</a>
+          <a href="/work/#seals">IBM Cybersecurity</a>
+          <a href="/work/#seals">AWS Cloud Practitioner</a>
         </div>
       </aside>
     </main>
   </div>
   <script>
     var skip = { DavisPortfolio: 1, daviesqunyu: 1, "netflix.co.uk": 1, vday: 1 };
+    var latest = "";
+    function ago(iso) {
+      var s = Math.max(0, (Date.now() - new Date(iso).getTime()) / 1000);
+      if (s < 60) return "just now";
+      if (s < 3600) return Math.floor(s / 60) + " min ago";
+      if (s < 86400) return Math.floor(s / 3600) + " hr ago";
+      var d = Math.floor(s / 86400);
+      if (d < 30) return d + " days ago";
+      var m = Math.floor(d / 30);
+      if (m < 12) return m + " mo ago";
+      return Math.floor(m / 12) + " yr ago";
+    }
+    function tick() {
+      var line = document.getElementById("about-now");
+      if (!line) return;
+      var clock = new Intl.DateTimeFormat("en-GB", { timeZone: "Africa/Nairobi", hour: "2-digit", minute: "2-digit", second: "2-digit", hour12: false }).format(new Date());
+      line.textContent = "Nairobi " + clock + " · Lead Software Developer" + (latest ? " · " + latest : "");
+    }
+    tick();
+    setInterval(tick, 1000);
     fetch("https://api.github.com/users/daviesqunyu").then(function (r) { return r.json(); }).then(function (user) {
       var meta = document.getElementById("gh-meta");
-      if (!meta || !user.public_repos) return;
-      meta.textContent = user.public_repos + " public repositories · " + user.followers + " followers · " + (user.company || "D&V Technologies") + " · on GitHub since 2023";
+      var bio = document.getElementById("gh-bio");
+      if (!user || !user.public_repos) return;
+      if (meta) meta.textContent = user.public_repos + " public repositories · " + user.followers + " followers · " + user.following + " following · " + (user.company || "D&V Technologies") + " · " + (user.location || "Nairobi");
+      if (bio && user.bio) bio.textContent = "On GitHub the line is “" + user.bio + ".”";
     });
-    fetch("https://api.github.com/users/daviesqunyu/repos?sort=updated&per_page=12").then(function (r) { return r.json(); }).then(function (repos) {
+    fetch("https://api.github.com/users/daviesqunyu/repos?sort=updated&per_page=100").then(function (r) { return r.json(); }).then(function (repos) {
       var list = document.getElementById("gh-repos");
-      if (!list || !repos.forEach) return;
-      list.textContent = "";
-      repos.filter(function (repo) { return !skip[repo.name]; }).slice(0, 5).forEach(function (repo) {
-        var item = document.createElement("li");
-        var link = document.createElement("a");
-        link.href = repo.html_url;
-        var name = document.createElement("strong");
-        name.textContent = repo.name;
-        var lang = document.createElement("span");
-        lang.textContent = repo.language || "repo";
-        link.appendChild(name);
-        link.appendChild(lang);
-        item.appendChild(link);
-        list.appendChild(item);
+      var chips = document.getElementById("tool-chips");
+      var note = document.getElementById("tool-note");
+      var fresh = document.getElementById("gh-latest");
+      if (!repos || !repos.filter) return;
+      var kept = repos.filter(function (repo) { return !repo.fork && !skip[repo.name]; });
+      if (kept[0]) {
+        latest = kept[0].name.replace(/[-_]+/g, " ") + ", " + ago(kept[0].pushed_at);
+        if (fresh) fresh.textContent = "Newest public push: " + kept[0].name + " · " + ago(kept[0].pushed_at);
+        tick();
+      }
+      if (list) {
+        list.textContent = "";
+        kept.slice(0, 5).forEach(function (repo) {
+          var item = document.createElement("li");
+          var link = document.createElement("a");
+          link.href = repo.html_url;
+          var name = document.createElement("strong");
+          name.textContent = repo.name.replace(/[-_]+/g, " ");
+          var lang = document.createElement("span");
+          lang.textContent = (repo.language || "repo") + " · " + ago(repo.pushed_at);
+          link.appendChild(name);
+          link.appendChild(lang);
+          item.appendChild(link);
+          list.appendChild(item);
+        });
+      }
+      var counts = {};
+      kept.forEach(function (repo) {
+        if (!repo.language) return;
+        counts[repo.language] = (counts[repo.language] || 0) + 1;
       });
+      var langs = Object.keys(counts).sort(function (a, b) { return counts[b] - counts[a]; });
+      if (chips && langs.length) {
+        chips.textContent = "";
+        langs.forEach(function (lang) {
+          var link = document.createElement("a");
+          link.href = "/projects/";
+          link.textContent = lang + " · " + counts[lang];
+          chips.appendChild(link);
+        });
+      }
+      if (note) note.textContent = langs.length + " languages across " + kept.length + " public repositories, counted live.";
     });
   </script>
 <footer class="foot">
