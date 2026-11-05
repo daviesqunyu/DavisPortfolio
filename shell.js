@@ -1,7 +1,7 @@
 (function () {
   var path = location.pathname.replace(/\/index\.html$/, "/");
   if (path.length > 1 && !path.endsWith("/")) path += "/";
-  var links = document.querySelectorAll(".top nav a, .foot nav a");
+  var links = document.querySelectorAll(".top nav a, .foot a");
   for (var i = 0; i < links.length; i++) {
     if (links[i].getAttribute("href") === path) links[i].classList.add("on");
   }
@@ -12,6 +12,36 @@
       var open = nav.classList.toggle("open");
       button.setAttribute("aria-expanded", open ? "true" : "false");
       button.textContent = open ? "Close" : "Menu";
+    });
+  }
+  var clock = document.getElementById("nbo-clock");
+  function tick() {
+    if (!clock) return;
+    var time = new Intl.DateTimeFormat("en-GB", {
+      timeZone: "Africa/Nairobi",
+      hour: "2-digit",
+      minute: "2-digit",
+      second: "2-digit",
+      hourCycle: "h23"
+    }).format(new Date());
+    clock.textContent = "NBO " + time;
+    clock.setAttribute("datetime", new Date().toISOString());
+  }
+  tick();
+  window.setInterval(tick, 1000);
+  var copies = document.querySelectorAll("[data-copy]");
+  for (var c = 0; c < copies.length; c++) {
+    copies[c].addEventListener("click", function () {
+      var el = this;
+      var value = el.getAttribute("data-copy");
+      var done = function () {
+        var previous = el.textContent;
+        el.textContent = "Copied";
+        window.setTimeout(function () { el.textContent = previous; }, 1400);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(value).then(done);
+      }
     });
   }
   var book = document.getElementById("book");

@@ -18,21 +18,40 @@ body {
 .top {
   position: sticky; top: 0; z-index: 30;
   display: flex; align-items: center; gap: 16px;
-  height: 64px; padding: 0 18px;
+  min-height: 64px; height: auto; flex-wrap: wrap; padding: 10px 18px;
   background: rgba(20, 16, 13, 0.96); color: var(--cream);
   border-bottom: 3px solid var(--gold);
 }
 .brand { color: var(--cream); text-decoration: none; display: flex; align-items: baseline; gap: 10px; font-family: var(--serif); font-size: 1.35rem; }
 .brand b { font-family: var(--mono); font-size: 12px; letter-spacing: 0.16em; color: var(--gold); }
+.clock { margin-left: 8px; font-family: var(--mono); font-size: 12px; letter-spacing: 0.14em; color: var(--gold); }
 .menu {
-  display: none; margin-left: auto; border: 1px solid var(--gold); background: transparent; color: var(--cream);
+  display: none; margin-left: 8px; border: 1px solid var(--gold); background: transparent; color: var(--cream);
   border-radius: 999px; padding: 6px 12px; letter-spacing: 0.12em; text-transform: uppercase; font-family: var(--mono); font-size: 11px;
 }
 .top nav { display: flex; flex-wrap: wrap; gap: 4px; margin-left: auto; }
 .top nav a, .foot a {
   color: var(--cream); text-decoration: none; border-radius: 999px;
   padding: 7px 10px; font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;
+  display: inline-flex; align-items: center; gap: 6px;
 }
+.top svg, .icon-row svg { width: 15px; height: 15px; display: block; }
+.icon-row { display: flex; gap: 6px; margin-left: 12px; }
+.icon-row a {
+  width: 34px; height: 34px; display: grid; place-items: center; border-radius: 50%;
+  border: 1px solid rgba(198,161,91,.55); color: var(--cream); padding: 0;
+}
+.icon-row a:hover, .icon-row a.on { background: var(--gold); color: #1a140f; }
+.copy {
+  border: 0; background: var(--oxblood); color: #f6efe4; border-radius: 999px;
+  padding: 8px 14px; margin-left: 8px; font-family: var(--mono); letter-spacing: 0.08em; text-transform: uppercase; font-size: 12px;
+}
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+.chips a { text-decoration: none; border: 1px solid rgba(26,20,15,.2); border-radius: 999px; padding: 8px 12px; font-family: var(--mono); font-size: 12px; letter-spacing: 0.06em; }
+.seal-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+.seal-row a { background: #f7f1e6; color: var(--ink); text-decoration: none; border-radius: 999px; padding: 8px 12px; font-family: var(--mono); font-size: 12px; }
+.cap em { font-style: normal; font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: #e7c27a; }
+.cap em.live { color: #b7f0c8; }
 .top nav a:hover, .top nav a.on, .foot a:hover, .foot a.on { background: var(--gold); color: #1a140f; }
 .foot {
   display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; align-items: center;
