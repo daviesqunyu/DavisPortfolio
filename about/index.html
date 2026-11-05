@@ -171,7 +171,11 @@
         var frameWrap = document.createElement("div");
         frameWrap.className = "peek-frame";
         var frame = document.createElement("iframe");
-        frame.title = "Project preview";
+        frame.title = "Home page preview";
+        frame.setAttribute("loading", "eager");
+        frame.addEventListener("load", function () {
+          if (frame.getAttribute("src")) frameWrap.classList.add("ready");
+        });
         frameWrap.appendChild(frame);
         peek.appendChild(peekHost);
         peek.appendChild(frameWrap);
@@ -179,8 +183,8 @@
         function place(e) {
           var x = e.clientX + 18;
           var y = e.clientY + 18;
-          if (x + 360 > window.innerWidth) x = Math.max(8, e.clientX - 358);
-          if (y + 250 > window.innerHeight) y = Math.max(8, e.clientY - 258);
+          if (x + 480 > window.innerWidth) x = Math.max(8, e.clientX - 476);
+          if (y + 340 > window.innerHeight) y = Math.max(8, e.clientY - 348);
           peek.style.left = x + "px";
           peek.style.top = y + "px";
         }
@@ -189,6 +193,7 @@
           if (!row) { peek.hidden = true; return; }
           var url = row.getAttribute("data-preview");
           if (frame.getAttribute("src") !== url) {
+            frameWrap.classList.remove("ready");
             frame.setAttribute("src", url);
             try { peekHost.textContent = new URL(url).host.replace(/^www\./, ""); } catch (err) { peekHost.textContent = url; }
           }
