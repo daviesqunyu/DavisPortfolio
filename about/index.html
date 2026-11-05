@@ -19,6 +19,8 @@
         <a href="/projects/">Projects</a>
         <a href="/craft/">Craft</a>
         <a href="/marks/">Marks</a>
+        <a href="/listen/">Listen</a>
+        <a href="/frames/">Frames</a>
         <a href="/write/">Write</a>
       </nav>
     </header>
@@ -26,15 +28,46 @@
       <article class="copy">
         <p class="kicker">Chapter 01 · NRB</p>
         <h1>Davis<br /><em>Kunyu</em></h1>
-        <p class="lede">Lead software developer at D&amp;V Technologies in Nairobi. I build software that has to work for real people: payments, hotels, traffic, and the small tools a company actually uses.</p>
+        <p class="lede">Lead software developer at D&amp;V Technologies in Nairobi. I build software that has to work for real people: payments, hotels, traffic, and the small tools a company actually uses. On GitHub the line is short: sharp, smart, active.</p>
         <div class="facts">
           <p><strong>NRB</strong> Based in Nairobi</p>
-          <p><strong>2025</strong> BSc Computer Science, CUEA, Second Class Upper</p>
+          <p><strong>2025</strong> BSc Computer Science, CUEA, Second Upper, 62.39</p>
           <p><strong>2020</strong> Diploma in IT, Nairobi Technical Training Institute</p>
-          <p><strong>D&amp;V</strong> Also startup manager at D&amp;V Global Technologies</p>
+          <p><strong>2017</strong> Friends' School Kamusinga, KCSE</p>
         </div>
       </article>
+      <aside class="copy">
+        <p class="kicker">GitHub · updates itself</p>
+        <h2>daviesqunyu</h2>
+        <p id="gh-meta">Reading the public profile…</p>
+        <ul class="gh-list" id="gh-repos"></ul>
+      </aside>
     </main>
   </div>
+  <script>
+    var skip = { DavisPortfolio: 1, daviesqunyu: 1, "netflix.co.uk": 1 };
+    fetch("https://api.github.com/users/daviesqunyu").then(function (r) { return r.json(); }).then(function (user) {
+      var meta = document.getElementById("gh-meta");
+      if (!meta || !user.public_repos) return;
+      meta.textContent = user.public_repos + " public repositories · " + user.followers + " followers · " + (user.company || "D&V Technologies") + " · on GitHub since 2023";
+    });
+    fetch("https://api.github.com/users/daviesqunyu/repos?sort=updated&per_page=12").then(function (r) { return r.json(); }).then(function (repos) {
+      var list = document.getElementById("gh-repos");
+      if (!list || !repos.forEach) return;
+      repos.filter(function (repo) { return !skip[repo.name]; }).slice(0, 5).forEach(function (repo) {
+        var item = document.createElement("li");
+        var link = document.createElement("a");
+        link.href = repo.html_url;
+        var name = document.createElement("strong");
+        name.textContent = repo.name;
+        var lang = document.createElement("span");
+        lang.textContent = repo.language || "repo";
+        link.appendChild(name);
+        link.appendChild(lang);
+        item.appendChild(link);
+        list.appendChild(item);
+      });
+    });
+  </script>
 </body>
 </html>

@@ -114,15 +114,68 @@ h1, h2 { font-family: var(--serif); font-weight: 560; letter-spacing: -0.03em; m
 .person .ribbon a.on { color: #e7c27a; }
 .nrb {
   min-height: calc(100vh - 52px);
-  display: grid;
-  align-items: end;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 16px;
+  padding: 24px 0 40px;
 }
 .nrb .copy {
   width: min(680px, calc(100% - 36px));
-  margin: 36px 5vw 48px;
+  margin: 0 5vw;
   background: rgba(247, 241, 230, 0.94);
   box-shadow: 0 24px 70px rgba(0, 0, 0, 0.35);
 }
+.nrb h2 { font-size: 2.4rem; margin-top: 6px; }
+.gh-list { list-style: none; padding: 0; margin: 14px 0 0; }
+.gh-list a {
+  display: flex; justify-content: space-between; gap: 12px;
+  text-decoration: none; padding: 10px 0;
+  border-bottom: 1px solid rgba(26,20,15,.12);
+}
+.gh-list span { font-family: var(--mono); font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--oxblood); }
+
+.record {
+  min-height: 100vh; color: #f6efe4;
+  background:
+    radial-gradient(circle at 80% 20%, rgba(198,161,91,.18), transparent 28%),
+    #100d0c url("/images/desk-night.jpg") center/cover fixed;
+}
+.record .ribbon { background: rgba(10,8,7,.78); color: #f6efe4; }
+.record .ribbon a.on { color: #e7c27a; }
+.sleeve {
+  width: min(920px, calc(100% - 28px));
+  margin: 28px auto 70px;
+}
+.sleeve h1 { font-size: clamp(3rem, 7vw, 5.2rem); }
+.sleeve h1 em { font-style: italic; color: #e7c27a; }
+.player {
+  margin-top: 18px; background: #181410; border-radius: 12px; overflow: hidden;
+}
+.player iframe { width: 100%; height: 352px; border: 0; display: block; }
+.shelf { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 14px; }
+.shelf iframe { width: 100%; height: 152px; border: 0; border-radius: 12px; }
+.lately { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+.lately span {
+  border: 1px solid rgba(246,239,228,.35); border-radius: 999px;
+  padding: 6px 10px; font-family: var(--mono); font-size: 12px; letter-spacing: 0.06em;
+}
+
+.frames { min-height: 100vh; background: #120e12; color: #f6efe4; }
+.frames .ribbon { background: #120e12; }
+.frames .ribbon a.on { color: #e7c27a; }
+.reel {
+  width: min(880px, calc(100% - 28px));
+  margin: 36px auto 70px;
+  display: grid; grid-template-columns: 220px 1fr; gap: 36px; align-items: center;
+}
+.highlight {
+  width: 196px; height: 196px; border-radius: 50%; padding: 5px;
+  background: conic-gradient(from 200deg, #f7ce68, #e97b3c, #c13b73, #7b4b9a, #f7ce68);
+}
+.highlight img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; border: 4px solid #120e12; }
+.reel h1 { font-size: clamp(3rem, 6vw, 5rem); margin-bottom: 8px; }
+.reel h1 em { font-style: italic; color: #e7b2a4; }
 .split { display: grid; grid-template-columns: 0.9fr 1.1fr; min-height: calc(100vh - 52px); }
 .split img { width: 100%; height: 100%; object-fit: cover; min-height: 420px; }
 .copy { padding: 64px 48px; }
@@ -231,7 +284,10 @@ h1, h2 { font-family: var(--serif); font-weight: 560; letter-spacing: -0.03em; m
   .plate img { height: 240px; }
   .copy { padding: 32px 20px 56px; }
   .slip { transform: none; }
-  .nrb .copy { margin: 18px auto 28px; padding: 32px 20px 40px; }
+  .nrb .copy { margin: 0 auto; padding: 32px 20px 40px; }
+  .shelf, .reel { grid-template-columns: 1fr; }
+  .record { background-attachment: scroll; }
+  .highlight { margin: 0 auto; }
   .person, .ledger { background-attachment: scroll; }
   .bench { background-attachment: scroll; }
 }
