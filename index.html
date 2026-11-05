@@ -1,955 +1,1236 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="day">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Davis Kunyu - Lead Software Developer Portfolio">
-    <title>Davis Kunyu | Lead Software Developer</title>
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <!-- Font Awesome 6.5.2 -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <!-- animate.css -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-    <!-- three.js CSS (for styling) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.css">
-    <!-- Bootstrap 5.3.3 -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css">
-    <!-- AOS Animation -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
-    <!-- Swiper -->
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-    <!-- hover.css -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css">
-    <!-- Custom styles -->
-    <style>
-        :root {
-            /* Color System */
-            --color-bg: #0a0a0f;
-            --color-bg-secondary: #1a1a24;
-            --color-bg-accent: #0f0f1a;
-            --color-primary: #e8e8f0;
-            --color-secondary: #7b8794;
-            --color-muted: #5a6b7d;
-            --color-accent: #00d4aa;
-            --color-accent-secondary: #6c5ce7;
-            --color-card: #12121c;
-            --color-border: #2a2d3a;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Davis Kunyu | Lead Software Developer</title>
+  <meta name="description" content="Davis Kunyu Wamalwa — Lead Software Developer in Nairobi. I design and ship web, systems, and AI products at D&V Technologies.">
+  <meta name="author" content="Davis Kunyu Wamalwa">
+  <meta name="theme-color" content="#efe6d6">
+  <link rel="canonical" href="https://davis.dvtechnologies.xyz/">
+  <meta property="og:title" content="Davis Kunyu | Lead Software Developer">
+  <meta property="og:description" content="Flight DK-2026 from Nairobi. Web, systems, and AI — built to be used.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://davis.dvtechnologies.xyz/">
+  <meta property="og:image" content="https://avatars.githubusercontent.com/u/124179581?v=4">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,520;0,9..144,680;1,9..144,520;1,9..144,640&family=IBM+Plex+Mono:wght@400;500&family=Outfit:wght@320;420;520;640&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Davis Kunyu Wamalwa",
+    "jobTitle": "Lead Software Developer",
+    "email": "daviskunyu@gmail.com",
+    "url": "https://davis.dvtechnologies.xyz/",
+    "image": "https://avatars.githubusercontent.com/u/124179581?v=4",
+    "address": { "@type": "PostalAddress", "addressLocality": "Nairobi", "addressCountry": "KE" },
+    "worksFor": { "@type": "Organization", "name": "D&V Technologies" },
+    "sameAs": [
+      "https://github.com/daviesqunyu",
+      "https://linkedin.com/in/davis-kunyu"
+    ]
+  }
+  </script>
+  <style>
+    :root {
+      --bg: #efe6d6;
+      --bg-deep: #e5d9c4;
+      --ink: #16130f;
+      --muted: #5c5348;
+      --faint: #8a7f70;
+      --line: rgba(22, 19, 15, 0.16);
+      --accent: #9d2430;
+      --card: #f7f1e6;
+      --shadow: 0 24px 60px rgba(48, 28, 12, 0.12);
+      --pill: #16130f;
+      --pill-ink: #f6efe3;
+      --grid: rgba(22, 19, 15, 0.055);
+      --path: rgba(157, 36, 48, 0.35);
+      --serif: "Fraunces", "Iowan Old Style", Georgia, serif;
+      --sans: "Outfit", "Avenir Next", "Segoe UI", sans-serif;
+      --mono: "IBM Plex Mono", ui-monospace, monospace;
+    }
+    [data-theme="night"] {
+      --bg: #10140f;
+      --bg-deep: #0c100c;
+      --ink: #f4ecdf;
+      --muted: #c9bba6;
+      --faint: #8f8678;
+      --line: rgba(244, 236, 223, 0.16);
+      --accent: #ff5d4a;
+      --card: #1b221c;
+      --shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+      --pill: #f4ecdf;
+      --pill-ink: #16130f;
+      --grid: rgba(244, 236, 223, 0.045);
+      --path: rgba(255, 93, 74, 0.45);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-weight: 420;
+      line-height: 1.55;
+      overflow-x: hidden;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; }
+    button, input { font: inherit; color: inherit; }
+    button { cursor: pointer; }
+    :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+    ::selection { background: var(--accent); color: #fff; }
+    .skip {
+      position: absolute; left: 12px; top: -40px; background: var(--ink); color: var(--bg);
+      padding: 8px 12px; z-index: 80; border-radius: 8px;
+    }
+    .skip:focus { top: 12px; }
 
-            /* Gradient System */
-            --gradient-primary: linear-gradient(135deg, #00d4aa 0%, #6c5ce7 100%);
-            --gradient-secondary: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-            --gradient-card: linear-gradient(145deg, #1a1a25 0%, #0f0f1a 100%);
-            --gradient-hero: linear-gradient(180deg, #0f0f1f 0%, #0a0a15 100%);
+    .chart, .sky {
+      position: fixed; inset: 0; pointer-events: none; z-index: 0;
+    }
+    .chart {
+      background-image:
+        linear-gradient(var(--grid) 1px, transparent 1px),
+        linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+      background-size: 88px 88px;
+      mask-image: radial-gradient(ellipse at 65% 40%, #000 10%, transparent 72%);
+    }
+    .sky {
+      width: 100%; height: 100%;
+      mask-image: linear-gradient(90deg, transparent 0 92px, #000 150px);
+    }
+    .route[hidden] { display: none !important; }
+    .plane {
+      offset-rotate: auto;
+      animation: cruise 36s linear infinite;
+    }
+    .plane.b { animation-duration: 48s; animation-delay: -12s; }
+    .plane.c { animation-duration: 42s; animation-delay: -20s; }
+    @keyframes cruise { to { offset-distance: 100%; } }
 
-            /* Shadow System */
-            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.4);
-            --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.5);
-            --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.6);
-            --shadow-inset: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+    .wrap {
+      width: min(1080px, calc(100% - 140px));
+      margin-left: auto;
+      margin-right: 4vw;
+      position: relative;
+      z-index: 1;
+    }
+    section { padding: 7.5rem 0 2rem; }
+    .lab {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.8rem;
+    }
+    h1, h2, h3 { font-family: var(--serif); font-weight: 560; letter-spacing: -0.035em; margin: 0; }
+    h2 { font-size: clamp(3.1rem, 6.4vw, 5.4rem); line-height: 0.92; }
+    h2 em, h1 em { font-style: italic; font-weight: 520; color: var(--accent); }
+    .lede { color: var(--muted); font-size: 1.05rem; max-width: 46ch; }
 
-            /* Radius System */
-            --radius-sm: 8px;
-            --radius-md: 16px;
-            --radius-lg: 24px;
-            --radius-full: 9999px;
-        }
+    .rail {
+      position: fixed; z-index: 25; left: 18px; top: 0; bottom: 0; width: 64px;
+      display: flex; flex-direction: column; justify-content: center; gap: 18px;
+    }
+    .rail-line {
+      position: absolute; left: 31px; top: 10%; bottom: 10%; width: 2px; background: var(--accent);
+    }
+    .jet {
+      position: absolute; left: 22px; width: 20px; height: 20px; z-index: 2;
+      transition: top 0.15s linear;
+    }
+    .rail a {
+      position: relative; z-index: 1; text-decoration: none; width: 64px;
+      display: grid; justify-items: center; gap: 2px;
+    }
+    .rail em {
+      font-family: var(--mono); font-style: normal; font-size: 0.68rem; letter-spacing: 0.08em;
+      background: var(--bg); padding: 0 4px;
+    }
+    .rail span {
+      font-size: 0.58rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--faint);
+    }
+    .rail a.on em { color: var(--accent); }
+    .dot {
+      width: 9px; height: 9px; border-radius: 50%; border: 2px solid var(--accent); background: var(--bg);
+    }
+    .rail a.on .dot { background: var(--accent); }
 
-        /* Font System - OIS Fonts (Inter + JetBrains Mono) */
-        --font-primary: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-        --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+    .player, .hud, .ask, .toast {
+      position: fixed; z-index: 30;
+    }
+    .player {
+      top: 16px; right: 16px; display: flex; align-items: center; gap: 8px;
+      background: var(--pill); color: var(--pill-ink); border-radius: 999px; padding: 6px 8px 6px 14px;
+      box-shadow: var(--shadow);
+    }
+    .player small { display: block; font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.14em; opacity: 0.7; }
+    .player b { font-size: 0.82rem; font-weight: 520; }
+    .eq { display: flex; align-items: flex-end; gap: 2px; height: 14px; }
+    .eq i {
+      display: block; width: 2px; height: 4px; background: currentColor; border-radius: 2px;
+    }
+    .playing .eq i { animation: eq 0.8s ease-in-out infinite; }
+    .playing .eq i:nth-child(2) { animation-delay: 0.15s; }
+    .playing .eq i:nth-child(3) { animation-delay: 0.28s; }
+    .playing .eq i:nth-child(4) { animation-delay: 0.05s; }
+    @keyframes eq {
+      0%, 100% { height: 3px; }
+      50% { height: 14px; }
+    }
+    .icon-btn {
+      width: 34px; height: 34px; border-radius: 50%; border: 0; background: transparent; color: inherit;
+      display: grid; place-items: center;
+    }
+    .icon-btn:hover { background: color-mix(in srgb, currentColor 12%, transparent); }
+    .hud {
+      right: 16px; bottom: 16px; background: var(--card); color: var(--ink);
+      border: 1px solid var(--ink); border-radius: 14px; padding: 10px 12px; min-width: 190px;
+      font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.04em; box-shadow: var(--shadow);
+    }
+    .hud b { color: var(--accent); font-weight: 500; }
+    .player .ask {
+      position: static;
+      border: 0; border-radius: 999px; padding: 8px 12px; margin-left: 2px;
+      background: var(--accent); color: #fff; font-weight: 560; letter-spacing: 0.02em;
+    }
+    .toast {
+      left: 50%; bottom: 24px; transform: translateX(-50%) translateY(20px);
+      background: var(--ink); color: var(--bg); padding: 10px 14px; border-radius: 999px;
+      opacity: 0; pointer-events: none; transition: 0.3s ease; font-size: 0.9rem;
+    }
+    .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    .hero { padding-top: 8.5rem; display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 3rem; align-items: center; }
+    .kicker { font-family: var(--mono); font-size: 0.75rem; letter-spacing: 0.16em; color: var(--muted); }
+    h1 { font-size: clamp(4.4rem, 8vw, 7.4rem); line-height: 0.84; margin: 0.35rem 0 1rem; }
+    .where { margin: 0.2rem 0 1.4rem; color: var(--muted); letter-spacing: 0.08em; text-transform: uppercase; font-size: 0.78rem; }
+    .actions { display: flex; flex-wrap: wrap; gap: 10px; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px; text-decoration: none;
+      border-radius: 999px; padding: 0.85rem 1.15rem; border: 1px solid var(--ink); background: transparent;
+      font-weight: 520;
+    }
+    .btn.solid { background: var(--ink); color: var(--bg); }
+    .btn:hover { transform: translateY(-1px); }
 
-        html {
-            scroll-behavior: smooth;
-        }
+    .pass {
+      background: var(--card); border: 1.5px solid var(--ink); border-radius: 22px;
+      box-shadow: var(--shadow); transform: rotate(-2.4deg); overflow: hidden;
+    }
+    .pass header, .pass .stub, .pass .body { padding: 1.1rem 1.25rem; }
+    .pass header, .pass .body { display: flex; justify-content: space-between; gap: 12px; }
+    .pass header span, .field small, .stub small {
+      font-family: var(--mono); font-size: 0.66rem; letter-spacing: 0.14em; color: var(--faint);
+    }
+    .pass header strong { font-family: var(--mono); letter-spacing: 0.12em; }
+    .pass .body { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 18px; }
+    .field b { display: block; font-family: var(--serif); font-size: 1.35rem; font-weight: 560; line-height: 1.1; }
+    .field .big { font-size: 2rem; letter-spacing: 0.04em; }
+    .stub {
+      border-top: 1px dashed color-mix(in srgb, var(--ink) 45%, transparent);
+      display: flex; justify-content: space-between; align-items: flex-end; position: relative;
+    }
+    .stub::before, .stub::after {
+      content: ""; position: absolute; top: -11px; width: 22px; height: 22px; border-radius: 50%;
+      background: var(--bg); border: 1.5px solid var(--ink);
+    }
+    .stub::before { left: -12px; }
+    .stub::after { right: -12px; }
+    .barcode {
+      width: 128px; height: 42px;
+      background: repeating-linear-gradient(90deg,
+        var(--ink) 0 1px, transparent 1px 3px,
+        var(--ink) 3px 6px, transparent 6px 8px,
+        var(--ink) 8px 9px, transparent 9px 12px,
+        var(--ink) 12px 16px, transparent 16px 18px);
+    }
 
-        body {
-            font-family: var(--font-primary);
-            background-color: var(--color-bg);
-            color: var(--color-primary);
-            line-height: 1.7;
-            overflow-x: hidden;
-            font-size: 16px;
-        }
+    .about-grid { display: grid; grid-template-columns: 280px 1fr; gap: 3rem; align-items: start; }
+    .polaroid {
+      background: #fff; color: #16130f; padding: 12px 12px 36px; transform: rotate(-3deg);
+      box-shadow: var(--shadow); width: min(100%, 280px);
+    }
+    [data-theme="night"] .polaroid { background: #f7f1e6; }
+    .polaroid svg, .polaroid img { width: 100%; aspect-ratio: 1; object-fit: cover; background: #1b1a17; display: block; }
+    .polaroid figcaption {
+      font-family: var(--serif); font-style: italic; text-align: center; margin-top: 10px;
+    }
+    .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 1.6rem 0; }
+    .stats div { border-top: 1px solid var(--line); padding-top: 8px; }
+    .stats strong { display: block; font-family: var(--serif); font-size: 1.8rem; line-height: 1; }
+    .stats span { color: var(--faint); font-size: 0.78rem; }
+    .skills { margin-top: 0.5rem; }
+    .skill {
+      display: grid; grid-template-columns: 140px 1fr auto; gap: 12px; align-items: baseline;
+      padding: 0.72rem 0; border-bottom: 1px dotted var(--line);
+    }
+    .skill b { font-family: var(--serif); font-size: 1.45rem; font-weight: 560; }
+    .skill span:first-of-type { border-bottom: 1px dotted var(--line); transform: translateY(-6px); }
+    .skill span:last-of-type { color: var(--muted); text-align: right; }
 
-        /* Reduced Motion */
-        @media (prefers-reduced-motion: reduce) {
-            html {
-                scroll-behavior: auto;
-            }
-            *, *::before, *::after {
-                animation-duration: 0.01ms !important;
-                transition-duration: 0.01ms !important;
-            }
-        }
+    .stops { display: grid; gap: 14px; margin-top: 1.6rem; }
+    .stop {
+      background: var(--card); border: 1.5px solid var(--ink); border-radius: 22px; padding: 1.3rem 1.4rem 1.4rem;
+      box-shadow: var(--shadow);
+    }
+    .stop .lab { margin-bottom: 0.35rem; }
+    .stop h3 { font-size: 2rem; }
+    .stop .org { color: var(--muted); margin: 0.15rem 0 0.7rem; }
+    .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 0.9rem; }
+    .chips span, .filters button {
+      border: 1px solid var(--line); border-radius: 999px; padding: 0.28rem 0.7rem; font-size: 0.82rem;
+      background: transparent;
+    }
 
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-            height: 8px;
-        }
+    .filters { display: flex; flex-wrap: wrap; gap: 8px; margin: 1.2rem 0 0.4rem; }
+    .filters button.on { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+    .route {
+      display: grid;
+      grid-template-columns: 52px 1.3fr 0.7fr 1.3fr 24px;
+      gap: 12px; align-items: center;
+      padding: 1.15rem 0; border-top: 1px solid var(--line);
+      text-decoration: none;
+    }
+    .route:last-of-type { border-bottom: 1px solid var(--line); }
+    .route .num { font-family: var(--mono); color: var(--faint); }
+    .route strong { display: block; font-family: var(--serif); font-size: clamp(1.7rem, 3vw, 2.5rem); font-weight: 560; line-height: 1; }
+    .route .kind { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--faint); }
+    .route p { margin: 0; color: var(--muted); font-size: 0.95rem; }
+    .route .go { font-size: 1.3rem; }
+    .route:hover strong { color: var(--accent); }
+    .more {
+      margin-top: 1rem; background: none; border: 0; color: var(--accent);
+      font-family: var(--mono); letter-spacing: 0.12em; text-transform: uppercase; font-size: 0.75rem;
+    }
+    .preview {
+      position: fixed; z-index: 28; width: 240px; pointer-events: none;
+      background: var(--card); border: 1.5px solid var(--ink); border-radius: 16px; overflow: hidden;
+      box-shadow: var(--shadow); opacity: 0; transform: translateY(8px); transition: opacity 0.2s ease;
+    }
+    .preview.show { opacity: 1; }
+    .preview .art { height: 132px; background: #1b1714; }
+    .preview .art svg { width: 100%; height: 100%; }
+    .preview div.txt { padding: 10px 12px 12px; }
+    .preview b { font-family: var(--serif); }
+    .preview span { display: block; color: var(--muted); font-size: 0.82rem; }
 
-        ::-webkit-scrollbar-track {
-            background: var(--color-bg-secondary);
-        }
+    .radar-head { display: flex; justify-content: space-between; gap: 12px; align-items: end; margin-top: 3rem; }
+    .repo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 1rem; }
+    .repo {
+      display: block; text-decoration: none; background: var(--card); border: 1px solid var(--line);
+      border-radius: 16px; padding: 1rem; min-height: 132px;
+    }
+    .repo:hover { border-color: var(--accent); }
+    .repo b { display: block; margin-bottom: 0.35rem; }
+    .repo p { margin: 0; color: var(--muted); font-size: 0.88rem; }
+    .repo small { font-family: var(--mono); color: var(--accent); }
 
-        ::-webkit-scrollbar-thumb {
-            background: var(--color-border);
-            border-radius: 4px;
-        }
+    .stamps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 1.5rem; }
+    .stamp {
+      aspect-ratio: 1; border: 3px solid var(--accent); border-radius: 50%;
+      display: grid; place-items: center; text-align: center; padding: 18%;
+      text-transform: uppercase;
+    }
+    .stamp b { font-family: var(--serif); font-size: 1.7rem; letter-spacing: 0.04em; display: block; line-height: 1; }
+    .stamp span { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.12em; color: var(--accent); }
+    .stamp:nth-child(2) { transform: rotate(6deg); }
+    .stamp:nth-child(3) { transform: rotate(-4deg); }
+    .stamp:nth-child(4) { transform: rotate(-7deg); }
+    .stamp:nth-child(5) { transform: rotate(3deg); }
+    .edu { margin-top: 1.5rem; color: var(--muted); }
 
-        ::-webkit-scrollbar-thumb:hover {
-            background: var(--color-accent);
-        }
+    .arrive { text-align: center; padding-bottom: 6rem; }
+    .arrive h2 { margin-bottom: 1rem; }
+    .mail {
+      border: 0; background: none; font-family: var(--serif); font-size: clamp(1.4rem, 3vw, 2.2rem);
+      color: var(--accent); text-decoration: underline; text-underline-offset: 6px;
+    }
+    .socials { display: flex; justify-content: center; gap: 18px; margin-top: 1.4rem; flex-wrap: wrap; }
+    .socials a { text-decoration: none; border-bottom: 1px solid var(--line); padding-bottom: 2px; }
+    .socials a:hover { color: var(--accent); }
+    footer.colophon {
+      position: relative; z-index: 1; display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap;
+      width: min(1080px, calc(100% - 140px)); margin: 0 4vw 5rem auto; color: var(--faint); font-size: 0.85rem;
+    }
 
-        /* Focus States */
-        a:focus-visible, button:focus-visible, input:focus-visible {
-            outline: 2px solid var(--color-accent);
-            outline-offset: 3px;
-        }
+    .panel, .palette {
+      position: fixed; z-index: 40; background: var(--card); color: var(--ink);
+      border: 1.5px solid var(--ink); box-shadow: var(--shadow);
+    }
+    .panel {
+      right: 16px; bottom: 92px; width: min(380px, calc(100vw - 32px));
+      border-radius: 20px; display: none; flex-direction: column; max-height: min(520px, 70vh);
+    }
+    .panel.open { display: flex; }
+    .panel header, .panel form { padding: 12px 14px; display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+    .panel header p { margin: 0; color: var(--muted); font-size: 0.82rem; }
+    .log { flex: 1; min-height: 160px; overflow: auto; padding: 0 14px 8px; display: flex; flex-direction: column; gap: 8px; }
+    .bubble { padding: 10px 12px; border-radius: 14px; max-width: 92%; white-space: pre-wrap; }
+    .bubble.user { margin-left: auto; background: var(--ink); color: var(--bg); }
+    .bubble.bot { background: color-mix(in srgb, var(--accent) 12%, var(--card)); border: 1px solid var(--line); }
+    .suggests { display: flex; flex-wrap: wrap; gap: 6px; padding: 0 14px 8px; }
+    .suggests button, .panel form button, .palette button.row {
+      border: 1px solid var(--line); background: transparent; border-radius: 999px; padding: 6px 10px; font-size: 0.82rem;
+    }
+    .panel form { border-top: 1px solid var(--line); }
+    .panel input {
+      flex: 1; border: 0; background: transparent; padding: 8px 0; outline: none;
+    }
+    .panel form button { background: var(--ink); color: var(--bg); }
 
-        /* Transition Utilities */
-        .transition-all { transition: all 0.3s ease; }
-        .transition-color { transition: color 0.3s ease, background 0.3s ease; }
-        .transition-shadow { transition: box-shadow 0.3s ease; }
+    .palette {
+      left: 50%; top: 16vh; transform: translateX(-50%);
+      width: min(560px, calc(100% - 28px)); border-radius: 18px; display: none; overflow: hidden;
+    }
+    .palette.open { display: block; }
+    .palette input {
+      width: 100%; border: 0; border-bottom: 1px solid var(--line); background: transparent;
+      padding: 16px 16px; font-size: 1rem; outline: none;
+    }
+    .palette .list { max-height: 320px; overflow: auto; padding: 6px; }
+    .palette button.row {
+      width: 100%; text-align: left; border: 0; border-radius: 10px; padding: 10px 12px; display: flex; justify-content: space-between;
+    }
+    .palette button.row.on, .palette button.row:hover { background: color-mix(in srgb, var(--accent) 14%, transparent); }
+    .scrim { position: fixed; inset: 0; background: rgba(12, 10, 8, 0.35); z-index: 35; display: none; }
+    .scrim.show { display: block; }
 
-        /* Button Base */
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 0.875rem 1.75rem;
-            border-radius: var(--radius-md);
-            font-family: var(--font-primary);
-            font-size: 0.9375rem;
-            font-weight: 500;
-            border: none;
-            cursor: pointer;
-            position: relative;
-            overflow: hidden;
-            transition: transform 0.2s ease, box-shadow 0.3s ease;
-        }
+    #door {
+      position: fixed; inset: 0; z-index: 60; background: #100e0c; color: #e7d7b8;
+      display: grid; place-items: center; text-align: center; transition: opacity 0.55s ease, visibility 0.55s;
+    }
+    #door.hide { opacity: 0; visibility: hidden; pointer-events: none; }
+    #door p { font-family: var(--mono); letter-spacing: 0.22em; font-size: 0.72rem; }
+    .hatch {
+      width: min(240px, 70vw); margin: 1.2rem auto; background: none; border: 0; color: inherit; padding: 0;
+    }
+    .hatch svg { width: 100%; height: auto; filter: drop-shadow(0 20px 40px rgba(226, 168, 90, 0.18)); }
+    #door .hint { letter-spacing: 0.18em; }
 
-        .btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-            transition: left 0.5s ease;
-        }
-
-        .btn:hover::before {
-            left: 100%;
-        }
-
-        .btn:focus-visible {
-            outline: 2px solid var(--color-accent);
-            outline-offset: 3px;
-        }
-
-        .btn:active {
-            transform: scale(0.98);
-        }
-
-        .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-md);
-        }
-
-        /* Card Base */
-        .card {
-            background: var(--color-card);
-            border: 1px solid var(--color-border);
-            border-radius: var(--radius-md);
-            padding: 2rem;
-            transition: all 0.3s ease;
-        }
-
-        .card:hover {
-            border-color: rgba(0, 212, 170, 0.3);
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-md);
-        }
-
-        /* Section Base */
-        .section {
-            padding: 6rem 0;
-        }
-
-        .section__title {
-            font-size: 2.5rem;
-            font-weight: 700;
-            letter-spacing: -0.03em;
-            margin-bottom: 1.5rem;
-            position: relative;
-            display: inline-block;
-        }
-
-        .section__title::after {
-            content: '';
-            position: absolute;
-            bottom: -8px;
-            left: 0;
-            width: 40px;
-            height: 3px;
-            background: var(--color-accent);
-            border-radius: 2px;
-        }
-
-        .section__subtitle {
-            font-size: 1.0625rem;
-            color: var(--color-secondary);
-            max-width: 650px;
-            margin-bottom: 4rem;
-        }
-
-        /* Utility Classes */
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .container--narrow {
-            max-width: 900px;
-        }
-
-        .grid-2 { grid-template-columns: repeat(2, 1fr); gap: 2rem; }
-        .grid-3 { grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
-        .grid-4 { grid-template-columns: repeat(4, 1fr); gap: 1rem; }
-
-        .flex-center { display: flex; align-items: center; justify-content: center; }
-        .flex-between { display: flex; align-items: center; justify-content: space-between; }
-        .flex-col { flex-direction: column; }
-
-        .text-center { text-align: center; }
-        .text-primary { color: var(--color-primary); }
-        .text-secondary { color: var(--color-secondary); }
-        .text-muted { color: var(--color-muted); }
-        .text-accent { color: var(--color-accent); }
-
-        .bg-accent { background: var(--color-accent); }
-        .bg-accent-secondary { background: var(--color-accent-secondary); }
-        .bg-card { background: var(--color-card); }
-        .bg-secondary { background: var(--color-bg-secondary); }
-        .bg-primary { background: var(--color-bg); }
-
-        .fw-light { font-weight: 300; }
-        .fw-regular { font-weight: 400; }
-        .fw-medium { font-weight: 500; }
-        .fw-semibold { font-weight: 600; }
-        .fw-bold { font-weight: 700; }
-        .fs-1 { font-size: 3.5rem; line-height: 1.1; }
-        .fs-2 { font-size: 2.5rem; line-height: 1.2; }
-        .fs-3 { font-size: 2rem; line-height: 1.3; }
-        .fs-4 { font-size: 1.5rem; line-height: 1.4; }
-        .mb-0 { margin-bottom: 0; }
-        .mb-sm { margin-bottom: 1rem; }
-        .mb-md { margin-bottom: 2rem; }
-        .mb-lg { margin-bottom: 3rem; }
-        .mt-sm { margin-top: 1rem; }
-        .mt-md { margin-top: 2rem; }
-        .mt-lg { margin-top: 3rem; }
-        .py-6 { padding-top: 6rem; padding-bottom: 6rem; }
-        .py-8 { padding-top: 8rem; padding-bottom: 8rem; }
-
-        /* Badge */
-        .badge {
-            display: inline-flex;
-            align-items: center;
-            padding: 0.25rem 0.75rem;
-            border-radius: var(--radius-full);
-            font-size: 0.75rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
-        /* Avatar */
-        .avatar {
-            width: 80px;
-            height: 80px;
-            border-radius: var(--radius-full);
-            object-fit: cover;
-            border: 4px solid var(--color-bg-secondary);
-        }
-
-        /* Helper */
-        .visually-hidden {
-            position: absolute !important;
-            width: 1px !important;
-            height: 1px !important;
-            padding: 0 !important;
-            margin: -1px !important;
-            overflow: hidden !important;
-            clip: rect(0, 0, 0, 0) !important;
-            white-space: nowrap !important;
-            border: 0 !important;
-        }
-    </style>
+    @media (max-width: 980px) {
+      .wrap, footer.colophon { width: min(100% - 32px, 760px); margin-left: auto; margin-right: auto; }
+      .hero, .about-grid, .stats, .repo-grid, .stamps { grid-template-columns: 1fr 1fr; }
+      .about-grid { grid-template-columns: 1fr; }
+      .route { grid-template-columns: 36px 1fr 20px; }
+      .route .kind { display: none; }
+      .route .num { grid-column: 1; grid-row: 1; }
+      .route > span:nth-child(2) { grid-column: 2; grid-row: 1; }
+      .route .go { grid-column: 3; grid-row: 1; }
+      .route p { grid-column: 2; grid-row: 2; margin: 0; }
+      .rail { left: 0; right: 0; top: auto; bottom: 0; width: auto; height: 72px; flex-direction: row; justify-content: space-around; gap: 0; background: color-mix(in srgb, var(--bg) 92%, transparent); backdrop-filter: blur(8px); border-top: 1px solid var(--line); }
+      .rail-line, .jet { display: none; }
+      .rail span { display: none; }
+      .hud { display: none; }
+      .panel { bottom: 88px; }
+      section { padding-top: 4.5rem; }
+      .hero { padding-top: 4.2rem; }
+      footer.colophon { margin-bottom: 6.5rem; }
+    }
+    @media (max-width: 680px) {
+      .hero, .repo-grid, .stamps { grid-template-columns: 1fr; }
+      .stats { grid-template-columns: 1fr 1fr; }
+      h1 { font-size: 3.6rem; }
+      .player b, .player small { display: none; }
+      .pass { transform: none; }
+      .pass header, .pass .stub, .pass .body { padding: 0.75rem 0.9rem; }
+      .field b { font-size: 1.15rem; }
+      .field .big { font-size: 1.55rem; }
+      .skill { grid-template-columns: 1fr; }
+      .skill span { text-align: left; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .plane, .playing .eq i, .pass { animation: none; transform: none; }
+      .stamp { transform: none; }
+    }
+  </style>
 </head>
 <body>
+  <a class="skip" href="#departure">Skip to content</a>
+  <div class="chart" aria-hidden="true"></div>
+  <svg class="sky" viewBox="0 0 1200 800" aria-hidden="true">
+    <path id="p1" d="M80 620 C 260 480, 420 700, 680 360 S 1040 180, 1160 260" fill="none" stroke="var(--path)" stroke-width="1.2" stroke-dasharray="4 7"/>
+    <path id="p2" d="M40 180 C 280 80, 460 320, 760 220 S 1000 420, 1180 300" fill="none" stroke="var(--path)" stroke-width="1" stroke-dasharray="3 8"/>
+    <path id="p3" d="M120 80 C 300 240, 540 40, 820 200 S 1080 520, 1160 640" fill="none" stroke="var(--path)" stroke-width="1" stroke-dasharray="2 9"/>
+    <g class="plane" style="offset-path: path('M80 620 C 260 480, 420 700, 680 360 S 1040 180, 1160 260');">
+      <path d="M0 0 l14 4 l-14 4 l3 -4 z" fill="var(--accent)"/>
+    </g>
+    <g class="plane b" style="offset-path: path('M40 180 C 280 80, 460 320, 760 220 S 1000 420, 1180 300');">
+      <path d="M0 0 l12 3.4 l-12 3.4 l2.4 -3.4 z" fill="var(--ink)" opacity="0.7"/>
+    </g>
+    <g class="plane c" style="offset-path: path('M120 80 C 300 240, 540 40, 820 200 S 1080 520, 1160 640');">
+      <path d="M0 0 l12 3.4 l-12 3.4 l2.4 -3.4 z" fill="var(--accent)"/>
+    </g>
+    <g fill="var(--faint)" font-family="IBM Plex Mono, monospace" font-size="11">
+      <text x="90" y="600">NBO</text>
+      <text x="250" y="150">MBA</text>
+      <text x="700" y="200">ADD</text>
+      <text x="980" y="250">DXB</text>
+      <text x="860" y="560">JNB</text>
+      <text x="1080" y="620">LHR</text>
+    </g>
+  </svg>
 
-    <!-- Terminal Intro -->
-    <div class="terminal-intro" id="terminalIntro" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #050510; z-index: 1000; display: flex; align-items: center; justify-content: center; overflow: hidden; transition: opacity 0.5s ease;">
-        <div style="font-family: var(--font-mono), monospace; color: #0f0; font-size: 1.1rem; white-space: pre; text-align: center; padding: 2rem; max-width: 600px;">
-<span style="color: #0f0;">>_ about</span>
-<span style="color: #8892b0; margin-left: 1rem;"> Davis Kunyu - Lead Software Developer</span>
-<br><span style="color: #0f0;">>_ skills</span>
-<span style="color: #8892b0; margin-left: 1rem;"> Python, React, Django, AWS, Cybersecurity</span>
-<br><span style="color: #0f0;">>_ projects</span>
-<span style="color: #8892b0; margin-left: 1rem;"> ElectraVote, Hotel System, Flutter App, Traffic Sim</span>
-<br><span style="color: #0f0;">>_ contact</span>
-<span style="color: #8892b0; margin-left: 1rem;"> daviskunyu@gmail.com</span>
-<br><span style="color: #0f0;">>_ hover</span>
-<span style="color: #8892b0; margin-left: 1rem;"> Move mouse to interact</span>
-        </div>
+  <nav class="rail" aria-label="Flight path">
+    <div class="rail-line"></div>
+    <svg class="jet" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M21 12 3 4l2 8-2 8 18-8z"/></svg>
+    <a href="#departure" data-stop="departure"><i class="dot"></i><em>NBO</em><span>Departure</span></a>
+    <a href="#about" data-stop="about"><i class="dot"></i><em>MBA</em><span>About</span></a>
+    <a href="#line" data-stop="line"><i class="dot"></i><em>KIS</em><span>The line</span></a>
+    <a href="#routes" data-stop="routes"><i class="dot"></i><em>EBB</em><span>Routes</span></a>
+    <a href="#passport" data-stop="passport"><i class="dot"></i><em>CAI</em><span>Passport</span></a>
+    <a href="#arrival" data-stop="arrival"><i class="dot"></i><em>LHR</em><span>Arrival</span></a>
+  </nav>
+
+  <div class="player" id="player">
+    <div>
+      <small>CABIN TONE</small>
+      <b>Night over NBO</b>
     </div>
+    <div class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+    <button class="icon-btn" id="tone" type="button" aria-label="Play or pause cabin tone">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" id="tone-icon"><path d="M4 2l10 6-10 6z"/></svg>
+    </button>
+    <button class="ask" id="open-ai" type="button">Ask DK</button>
+    <button class="icon-btn" id="theme" type="button" aria-label="Toggle night chart">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 1.2 9.1 6 14 7.1 9.1 8.2 8 13 6.9 8.2 2 7.1 6.9 6z"/></svg>
+    </button>
+  </div>
 
-    <!-- Header Section - Boarding Pass Style -->
-    <header class="section" style="padding-top: 8rem; padding-bottom: 8rem; background: var(--gradient-hero);">
-        <div class="container">
-            <div class="hero-content text-center">
-                <!-- Boarding Pass Style -->
-                <div class="boarding-pass mb-6" style="background: var(--color-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: 2rem 1.5rem; max-width: 600px; margin: 0 auto;">
-                    <div class="row align-items-center gy-3">
-                        <div class="col-4 text-center">
-                            <div class="avatar" style="background: var(--color-bg-secondary);"></div>
-                        </div>
-                        <div class="col-8">
-                            <h1 class="fs-1 mb-2" style="font-family: var(--font-primary); color: var(--color-primary);">
-                                Davis Kunyu
-                            </h1>
-                            <p class="fs-4 mb-3" style="color: var(--color-secondary); line-height: 1.8;">
-                                Lead Software Developer at D&V Technologies | Full-Stack Engineer specializing in Python, React, and AI-powered solutions.
-                            </p>
-                            <p class="fs-5 mb-0" style="color: var(--color-muted);">
-                                Nairobi, Kenya
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- CTA Buttons -->
-                <div class="hero-actions flex-center flex-wrap gap-3">
-                    <a href="/cv.pdf" class="btn bg-accent text-primary" style="font-weight: 600;">
-                        <i class="fas fa-download mr-2 align-middle"></i>Download CV
-                    </a>
-                    <a href="mailto:daviskunyu@gmail.com" class="btn bg-secondary text-primary" style="font-weight: 600; border: 1px solid var(--color-border);">
-                        <i class="fas fa-envelope mr-2 align-middle"></i>daviskunyu@gmail.com
-                    </a>
-                    <a href="https://github.com/daviesqunyu" class="btn bg-accent-secondary text-primary" style="font-weight: 600; border: 1px solid var(--color-border);">
-                        <i class="fab fa-github mr-2 align-middle"></i>GitHub
-                    </a>
-                </div>
-            </div>
+  <aside class="hud" aria-live="polite">
+    <div>NBO → LHR · DK-2026</div>
+    <div>ALT <b id="alt">0 FT</b></div>
+    <div><b id="km">5,200 KM</b> TO GO</div>
+    <div id="clock">NAIROBI —</div>
+  </aside>
+
+  <div class="scrim" id="scrim"></div>
+  <section class="panel" id="ai" aria-label="On-device copilot">
+    <header>
+      <div>
+        <strong>Cabin copilot</strong>
+        <p>Answers from this portfolio. Nothing is sent to a server.</p>
+      </div>
+      <button class="icon-btn" id="close-ai" type="button" aria-label="Close copilot">✕</button>
+    </header>
+    <div class="suggests" id="suggests">
+      <button type="button">Who are you?</button>
+      <button type="button">Show AI work</button>
+      <button type="button">How do I hire you?</button>
+      <button type="button">What is your stack?</button>
+    </div>
+    <div class="log" id="log"></div>
+    <form id="ai-form">
+      <input id="ai-input" type="text" placeholder="Ask about Davis, the work, or the flight" autocomplete="off">
+      <button type="submit">Send</button>
+    </form>
+  </section>
+
+  <div class="palette" id="palette" role="dialog" aria-label="Command deck">
+    <input id="palette-input" type="text" placeholder="Jump, copy email, toggle night, play tone…" autocomplete="off">
+    <div class="list" id="palette-list"></div>
+  </div>
+
+  <div class="preview" id="preview" aria-hidden="true">
+    <div class="art" id="preview-art"></div>
+    <div class="txt"><b id="preview-title"></b><span id="preview-stack"></span></div>
+  </div>
+  <div class="toast" id="toast" role="status"></div>
+
+  <main>
+    <header class="wrap hero" id="departure">
+      <div>
+        <p class="kicker">FLIGHT DK-2026 · NOW BOARDING</p>
+        <h1>Davis<br><em>Kunyu</em></h1>
+        <p class="lede">I design and ship software — web, systems, and the intelligence inside them. Fast interfaces, backends that stay up, and bots that do a real job.</p>
+        <p class="where">Nairobi, Kenya · Lead Software Developer, D&amp;V Technologies</p>
+        <div class="actions">
+          <a class="btn solid" href="#routes">See the routes</a>
+          <a class="btn" href="public/cv.pdf" download>Download CV</a>
         </div>
+      </div>
+      <article class="pass" aria-label="Boarding pass DK-2026">
+        <header>
+          <span>BOARDING PASS</span>
+          <strong>DK-2026</strong>
+        </header>
+        <div class="body">
+          <div class="field"><small>PASSENGER</small><b>Davis Kunyu</b></div>
+          <div class="field"><small>CLASS</small><b>Lead engineer</b></div>
+          <div class="field"><small>FROM</small><b class="big">NBO</b></div>
+          <div class="field"><small>TO</small><b>Your next product</b></div>
+        </div>
+        <div class="stub">
+          <div class="barcode" aria-hidden="true"></div>
+          <small>GATE A1 · SEAT 1A<br>NBO · NAIROBI</small>
+        </div>
+      </article>
     </header>
 
-    <!-- About Section -->
-    <section id="about" class="section" style="background: var(--color-bg-secondary);">
-        <div class="container">
-            <div class="row gy-5 gy-md-0">
-                <div class="col-lg-6 col-xl-5">
-                    <div class="fade-in-up" data-aos="fade-up" data-aos-delay="100">
-                        <span class="fw-bold fs-3 mb-3" style="color: var(--color-accent);">About Me</span>
-                        <h2 class="section__title mb-4">Davis Kunyu Wamalwa</h2>
-                        <p class="mb-4" style="color: var(--color-secondary); line-height: 1.8;">
-                            I am a Lead Software Developer based in Nairobi, Kenya, with 5+ years of expertise in building scalable, secure, and high-performance software solutions. I specialize in full-stack development, cybersecurity, and AI-enabled applications.
-                        </p>
-                        
-                        <div class="grid-2 gap-3 mb-4">
-                            <div>
-                                <span class="fw-semibold">Current Role:</span> <span class="text-primary">Lead Software Developer at D&V Technologies</span>
-                            </div>
-                            <div>
-                                <span class="fw-semibold">Experience:</span> <span class="text-secondary">5+ years</span>
-                            </div>
-                        </div>
-
-                        <h4 class="fw-semibold fs-5 mb-3">Professional Experience</h4>
-                        <div class="experience-timeline" style="border-left: 2px solid var(--color-border); padding-left: 2rem; margin-top: 1.5rem;">
-                            <div class="experience-item">
-                                <span class="fw-medium">Lead Software Developer</span>
-                                <span class="text-secondary">D&V Technologies</span>
-                                <span class="text-muted">Jan 2025 - Present</span>
-                            </div>
-                            <div class="experience-item">
-                                <span class="fw-medium">Startup Manager</span>
-                                <span class="text-secondary">D&V Global Technologies</span>
-                                <span class="text-muted">Jul 2024 - Present</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-6 col-xl-4">
-                    <div class="fade-in-up" data-aos="fade-up" data-aos-delay="300">
-                        <div class="card p-4 p-md-5">
-                            <span class="fw-bold fs-3 mb-3" style="color: var(--color-accent);">Education</span>
-                            <ul class="list-unstyled mb-4">
-                                <li class="mb-3">
-                                    <span class="fw-semibold">BSc Computer Science</span>
-                                    <span class="text-secondary">Catholic University of Eastern Africa (CUEA)</span>
-                                    <span class="text-muted">2025 - Second Upper-Class Honours</span>
-                                </li>
-                                <li class="mb-3">
-                                    <span class="fw-semibold">Diploma</span>
-                                    <span class="text-secondary">Information Technology</span>
-                                    <span class="text-secondary">Nairobi Technical Institute</span>
-                                    <span class="text-muted">2020</span>
-                                </li>
-                            </ul>
-                            
-                            <span class="fw-bold fs-3 mb-3" style="color: var(--color-accent);">Certifications</span>
-                            <ul class="list-unstyled" style="font-size: 0.875rem;">
-                                <li class="mb-2">
-                                    <i class="fas fa-certificate mr-2 text-primary"></i>Google Professional Data Analytics Certificate, 2024
-                                </li>
-                                <li class="mb-2">
-                                    <i class="fas fa-certificate mr-2 text-primary"></i>IBM Cybersecurity Analyst Professional Certificate, 2024
-                                </li>
-                                <li class="mb-2">
-                                    <i class="fas fa-certificate mr-2 text-primary"></i>AWS Certified Cloud Practitioner, 2023
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <section class="wrap" id="about">
+      <p class="lab">01 · About</p>
+      <div class="about-grid">
+        <figure class="polaroid">
+          <svg viewBox="0 0 256 256" role="img" aria-label="Nairobi at night">
+            <rect width="256" height="256" fill="#102033"/>
+            <rect y="150" width="256" height="106" fill="#1b2836"/>
+            <g fill="#e7c27a">
+              <rect x="28" y="118" width="36" height="90"/>
+              <rect x="74" y="78" width="48" height="130"/>
+              <rect x="132" y="96" width="28" height="112"/>
+              <rect x="170" y="60" width="52" height="148"/>
+            </g>
+            <g fill="#102033">
+              <rect x="36" y="130" width="8" height="8"/><rect x="48" y="130" width="8" height="8"/>
+              <rect x="36" y="146" width="8" height="8"/><rect x="48" y="146" width="8" height="8"/>
+              <rect x="84" y="92" width="10" height="10"/><rect x="100" y="92" width="10" height="10"/>
+              <rect x="84" y="112" width="10" height="10"/><rect x="100" y="112" width="10" height="10"/>
+              <rect x="84" y="132" width="10" height="10"/><rect x="100" y="132" width="10" height="10"/>
+              <rect x="180" y="76" width="12" height="10"/><rect x="198" y="76" width="12" height="10"/>
+              <rect x="180" y="96" width="12" height="10"/><rect x="198" y="96" width="12" height="10"/>
+              <rect x="180" y="116" width="12" height="10"/><rect x="198" y="116" width="12" height="10"/>
+              <rect x="180" y="136" width="12" height="10"/><rect x="198" y="136" width="12" height="10"/>
+            </g>
+            <circle cx="48" cy="42" r="3" fill="#f4ead7"/>
+            <circle cx="90" cy="28" r="2" fill="#f4ead7"/>
+            <circle cx="150" cy="36" r="2" fill="#f4ead7"/>
+            <circle cx="210" cy="24" r="2.5" fill="#f4ead7"/>
+            <path d="M0 214 H256" stroke="#9d2430" stroke-width="3"/>
+          </svg>
+          <figcaption>Nairobi, KE</figcaption>
+        </figure>
+        <div>
+          <h2>Built to be <em>used.</em></h2>
+          <p class="lede">I’m Davis Kunyu Wamalwa, a lead software developer in Nairobi. I care about products that still make sense on a busy Tuesday: a booking that cannot double-charge, a vote that can be explained, a bot that answers before someone has to.</p>
+          <div class="stats">
+            <div><strong>5+</strong><span>Years building</span></div>
+            <div><strong>Lead</strong><span>D&amp;V Technologies</span></div>
+            <div><strong id="repo-count">16</strong><span>Public repos</span></div>
+            <div><strong>BSc</strong><span>Computer Science</span></div>
+          </div>
+          <div class="skills">
+            <div class="skill"><b>Languages</b><span></span><span>Python, Java, JavaScript, TypeScript, PHP, Kotlin</span></div>
+            <div class="skill"><b>Frontend</b><span></span><span>React, HTML, CSS, responsive UI</span></div>
+            <div class="skill"><b>Backend</b><span></span><span>Django, Node.js, .NET</span></div>
+            <div class="skill"><b>Data</b><span></span><span>MySQL, PostgreSQL, notebooks</span></div>
+            <div class="skill"><b>Security</b><span></span><span>OWASP, network and web security</span></div>
+            <div class="skill"><b>AI</b><span></span><span>Payments bots, sales bots, trading automation</span></div>
+            <div class="skill"><b>Ops</b><span></span><span>AWS, Linux, Docker, Git</span></div>
+          </div>
         </div>
+      </div>
     </section>
 
-    <!-- Why Choose Me Section -->
-    <section id="why-choose" class="section" style="background: var(--color-bg-secondary);">
-        <div class="container">
-            <div class="text-center mb-8 fade-in-up" data-aos="fade-up">
-                <span class="fw-bold fs-3 mb-3" style="color: var(--color-accent);">Why Hire Me?</span>
-                <h2 class="section__title">Your Success, My Priority</h2>
-                <p class="section__subtitle">I don't just write code—I deliver business solutions that drive growth, security, and scalability.</p>
-            </div>
-
-            <div class="grid-2 gap-4 justify-content-center">
-                <div class="card p-4 p-lg-5 text-center">
-                    <div class="fs-3 mb-3" style="color: var(--color-accent);">🎯</div>
-                    <h4 class="fw-semibold mb-2">Targeted Solutions</h4>
-                    <p class="text-muted mb-0">I focus on solving your specific business problems, not just writing code.</p>
-                </div>
-                <div class="card p-4 p-lg-5 text-center">
-                    <div class="fs-3 mb-3" style="color: var(--color-accent);">🔒</div>
-                    <h4 class="fw-semibold mb-2">Security-First</h4>
-                    <p class="text-muted mb-0">Every solution I build includes security best practices and OWASP compliance.</p>
-                </div>
-                <div class="card p-4 p-lg-5 text-center">
-                    <div class="fs-3 mb-3" style="color: var(--color-accent);">⚡</div>
-                    <h4 class="fw-semibold mb-2">Performance</h4>
-                    <p class="text-muted mb-0">Optimized code that loads fast and scales effortlessly.</p>
-                </div>
-                <div class="card p-4 p-lg-5 text-center">
-                    <div class="fs-3 mb-3" style="color: var(--color-accent);">🤝</div>
-                    <h4 class="fw-semibold mb-2">Partnership</h4>
-                    <p class="text-muted mb-0">I don't just deliver projects—I build long-term partnerships for success.</p>
-                </div>
-            </div>
-        </div>
+    <section class="wrap" id="line">
+      <p class="lab">02 · The line</p>
+      <h2>Every <em>stop</em> so far.</h2>
+      <p class="lede">Same direction the whole way: ship it, then make it sturdier.</p>
+      <div class="stops">
+        <article class="stop">
+          <p class="lab">Stop 01</p>
+          <h3>Lead Software Developer</h3>
+          <p class="org">D&amp;V Technologies · Jan 2025 — Present</p>
+          <p>I lead delivery for product and client software: architecture, the hard parts of the codebase, and the release that actually reaches users.</p>
+          <div class="chips"><span>Python</span><span>React</span><span>Django</span><span>AWS</span></div>
+        </article>
+        <article class="stop">
+          <p class="lab">Stop 02</p>
+          <h3>Startup Manager</h3>
+          <p class="org">D&amp;V Global Technologies · Jul 2024 — Present</p>
+          <p>I run the studio side by side with the engineering: scope, shipping rhythm, and work that has to survive first contact with customers.</p>
+          <div class="chips"><span>Product</span><span>Delivery</span><span>Clients</span></div>
+        </article>
+      </div>
     </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="section" style="background: var(--color-bg);">
-        <div class="container">
-            <div class="text-center mb-8 fade-in-up" data-aos="fade-up">
-                <span class="fw-bold fs-3 mb-3" style="color: var(--color-accent);">Skills</span>
-                <h2 class="section__title">Technologies I Master</h2>
-                <p class="section__subtitle">Organized by category with proficiency levels based on real project experience.</p>
-            </div>
+    <section class="wrap" id="routes">
+      <p class="lab">03 · Routes</p>
+      <h2>Things I’ve <em>shipped.</em></h2>
+      <p class="lede">Public work from the flight log. Open any route on GitHub.</p>
+      <div class="filters" role="tablist">
+        <button type="button" class="on" data-filter="all">All</button>
+        <button type="button" data-filter="ai">AI</button>
+        <button type="button" data-filter="systems">Systems</button>
+        <button type="button" data-filter="web">Web</button>
+        <button type="button" data-filter="data">Data</button>
+      </div>
+      <div id="routes-list">
+        <a class="route" data-cat="systems" data-art="vote" data-stack="PHP · Java" href="https://github.com/daviesqunyu/VOTING" target="_blank" rel="noopener">
+          <span class="num">01</span>
+          <span><strong>ElectraVote</strong></span>
+          <span class="kind">Systems · Code</span>
+          <p>Voting flows in PHP, with a Java sibling in E-vot. Built so a ballot can be recorded and explained.</p>
+          <span class="go">↗</span>
+        </a>
+        <a class="route" data-cat="web" data-art="hotel" data-stack="JavaScript" href="https://github.com/daviesqunyu/DAVIS-HOTEL" target="_blank" rel="noopener">
+          <span class="num">02</span>
+          <span><strong>Davis Hotel</strong></span>
+          <span class="kind">Web · Code</span>
+          <p>Hotel desk software for rooms, bookings, and the day-to-day of a property.</p>
+          <span class="go">↗</span>
+        </a>
+        <a class="route" data-cat="systems" data-art="traffic" data-stack="Kotlin · HTML" href="https://github.com/daviesqunyu/Traffic_app" target="_blank" rel="noopener">
+          <span class="num">03</span>
+          <span><strong>Nairobi traffic</strong></span>
+          <span class="kind">Systems · Code</span>
+          <p>A Kotlin traffic app plus the TLCS junction model for how Nairobi lights should change.</p>
+          <span class="go">↗</span>
+        </a>
+        <a class="route" data-cat="ai" data-art="bot" data-stack="JavaScript" href="https://github.com/daviesqunyu/dtdpaymentsbot" target="_blank" rel="noopener">
+          <span class="num">04</span>
+          <span><strong>Payments bot</strong></span>
+          <span class="kind">AI · Bot</span>
+          <p>Conversational payments for DTD. A bot handles the checkout talk instead of a dead form.</p>
+          <span class="go">↗</span>
+        </a>
+        <a class="route" data-cat="ai" data-art="bot" data-stack="TypeScript" href="https://github.com/daviesqunyu/dtdsalesbotnew" target="_blank" rel="noopener">
+          <span class="num">05</span>
+          <span><strong>Sales bot</strong></span>
+          <span class="kind">AI · Bot</span>
+          <p>TypeScript sales assistant for product questions, follow-ups, and lead conversations.</p>
+          <span class="go">↗</span>
+        </a>
+        <a class="route" data-cat="ai" data-art="chart" data-stack="Python" href="https://github.com/daviesqunyu/crypto-binance-trading-bot" target="_blank" rel="noopener">
+          <span class="num">06</span>
+          <span><strong>Trading desk</strong></span>
+          <span class="kind">AI · Python</span>
+          <p>An algorithmic trading bot written in Python around the Binance workflow.</p>
+          <span class="go">↗</span>
+        </a>
+        <a class="route extra" data-cat="systems" data-art="vote" data-stack="Java" href="https://github.com/daviesqunyu/E-vot" target="_blank" rel="noopener" hidden>
+          <span class="num">07</span>
+          <span><strong>E-vot</strong></span>
+          <span class="kind">Systems · Java</span>
+          <p>The Java side of the voting work. Same problem, a different cockpit.</p>
+          <span class="go">↗</span>
+        </a>
+        <a class="route extra" data-cat="systems" data-art="traffic" data-stack="HTML" href="https://github.com/daviesqunyu/Nairobi-app-TLCS-Traffic-Lights-Control-System" target="_blank" rel="noopener" hidden>
+          <span class="num">08</span>
+          <span><strong>TLCS</strong></span>
+          <span class="kind">Systems · Code</span>
+          <p>Traffic-light control system for Nairobi junctions.</p>
+          <span class="go">↗</span>
+        </a>
+        <a class="route extra" data-cat="web" data-art="pay" data-stack="HTML" href="https://github.com/daviesqunyu/secure-pay" target="_blank" rel="noopener" hidden>
+          <span class="num">09</span>
+          <span><strong>Secure Pay</strong></span>
+          <span class="kind">Web · Code</span>
+          <p>A payments screen built to feel obvious and hard to mis-tap.</p>
+          <span class="go">↗</span>
+        </a>
+        <a class="route extra" data-cat="web" data-art="web" data-stack="TypeScript" href="https://github.com/daviesqunyu/D-V-TECHNOLOGIES.XYZ" target="_blank" rel="noopener" hidden>
+          <span class="num">10</span>
+          <span><strong>D&amp;V Technologies</strong></span>
+          <span class="kind">Web · Company</span>
+          <p>The company site for the studio where I lead software.</p>
+          <span class="go">↗</span>
+        </a>
+        <a class="route extra" data-cat="web" data-art="arch" data-stack="HTML" href="https://github.com/daviesqunyu/bridandesignbuild" target="_blank" rel="noopener" hidden>
+          <span class="num">11</span>
+          <span><strong>Bridan</strong></span>
+          <span class="kind">Web · Architecture</span>
+          <p>A studio site for a design-and-build practice. Projects, craft, and a client front door.</p>
+          <span class="go">↗</span>
+        </a>
+        <a class="route extra" data-cat="data" data-art="chart" data-stack="HTML · Jupyter" href="https://github.com/daviesqunyu/data-analysis2" target="_blank" rel="noopener" hidden>
+          <span class="num">12</span>
+          <span><strong>Data analysis</strong></span>
+          <span class="kind">Data · Tools</span>
+          <p>Tables, notebooks, and small tools for reading what the numbers are actually saying.</p>
+          <span class="go">↗</span>
+        </a>
+        <a class="route extra" data-cat="data" data-art="chart" data-stack="Jupyter" href="https://github.com/daviesqunyu/GDA-General-Data-Analisis-" target="_blank" rel="noopener" hidden>
+          <span class="num">13</span>
+          <span><strong>GDA notebooks</strong></span>
+          <span class="kind">Data · Notebooks</span>
+          <p>General data analysis work in Jupyter. The messy middle, cleaned up.</p>
+          <span class="go">↗</span>
+        </a>
+        <a class="route extra" data-cat="web" data-art="form" data-stack="TypeScript" href="https://github.com/daviesqunyu/formdotcom" target="_blank" rel="noopener" hidden>
+          <span class="num">14</span>
+          <span><strong>Formdotcom</strong></span>
+          <span class="kind">Web · Forms</span>
+          <p>A snap form app for collecting answers without the usual builder clutter.</p>
+          <span class="go">↗</span>
+        </a>
+        <a class="route extra" data-cat="web" data-art="web" data-stack="JavaScript" href="https://github.com/daviesqunyu/Ndakaru" target="_blank" rel="noopener" hidden>
+          <span class="num">15</span>
+          <span><strong>Ndakaru</strong></span>
+          <span class="kind">Web · Product</span>
+          <p>A JavaScript product build on the public log.</p>
+          <span class="go">↗</span>
+        </a>
+        <a class="route extra" data-cat="web" data-art="pay" data-stack="HTML" href="https://github.com/daviesqunyu/dtd-store" target="_blank" rel="noopener" hidden>
+          <span class="num">16</span>
+          <span><strong>DTD Store</strong></span>
+          <span class="kind">Web · Shop</span>
+          <p>Storefront groundwork for catalog and checkout.</p>
+          <span class="go">↗</span>
+        </a>
+        <a class="route extra" data-cat="web" data-art="chart" data-stack="HTML" href="https://github.com/daviesqunyu/CryptoConnect" target="_blank" rel="noopener" hidden>
+          <span class="num">17</span>
+          <span><strong>CryptoConnect</strong></span>
+          <span class="kind">Web · Code</span>
+          <p>A calmer front door for a crypto audience.</p>
+          <span class="go">↗</span>
+        </a>
+      </div>
+      <button class="more" id="more" type="button">Show the rest of the log</button>
 
-            <div class="row gy-4">
-                <!-- Programming Languages -->
-                <div class="col-md-6 col-lg-4 fade-in-up" data-aos="fade-up" data-aos-delay="100">
-                    <div class="card p-4">
-                        <span class="fw-bold fs-3 mb-4" style="color: var(--color-accent);">Programming Languages</span>
-                        <ul class="list-unstyled">
-                            <li class="mb-3">
-                                <span class="fw-medium">Python</span> - Expert: Backend development, data analysis, scripting
-                            </li>
-                            <li class="mb-3">
-                                <span class="fw-medium">Java</span> - Advanced: Core Java, Spring Boot, enterprise applications
-                            </li>
-                            <li class="mb-3">
-                                <span class="fw-medium">JavaScript</span> - Advanced: Vanilla JS, ES6+, frontend development
-                            </li>
-                            <li class="mb-3">
-                                <span class="fw-medium">TypeScript</span> - Intermediate: Modern type-safe development
-                            </li>
-                            <li class="mb-3">
-                                <span class="fw-medium">PHP</span> - Intermediate: Laravel, WordPress development
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Frontend Development -->
-                <div class="col-md-6 col-lg-4 fade-in-up" data-aos="fade-up" data-aos-delay="200">
-                    <div class="card p-4">
-                        <span class="fw-bold fs-3 mb-4" style="color: var(--color-accent);">Frontend Development</span>
-                        <ul class="list-unstyled">
-                            <li class="mb-3">
-                                <span class="fw-medium">React</span> - Expert: Scalable SPA applications with Hooks and Context
-                            </li>
-                            <li class="mb-3">
-                                <span class="fw-medium">HTML5</span> - Expert: Semantic markup and accessibility
-                            </li>
-                            <li class="mb-3">
-                                <span class="fw-medium">CSS3</span> - Expert: Flexbox, Grid, animations, responsive design
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Backend Development -->
-                <div class="col-md-6 col-lg-4 fade-in-up" data-aos="fade-up" data-aos-delay="300">
-                    <div class="card p-4">
-                        <span class="fw-bold fs-3 mb-4" style="color: var(--color-accent);">Backend Development</span>
-                        <ul class="list-unstyled">
-                            <li class="mb-3">
-                                <span class="fw-medium">Node.js</span> - Advanced: REST APIs, GraphQL, server-side JavaScript
-                            </li>
-                            <li class="mb-3">
-                                <span class="fw-medium">Django</span> - Advanced: Rapid backend development with Python
-                            </li>
-                            <li class="mb-3">
-                                <span class="fw-medium">.NET</span> - Intermediate: C# and ASP.NET framework
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Databases -->
-                <div class="col-md-6 col-lg-4 fade-in-up" data-aos="fade-up" data-aos-delay="400">
-                    <div class="card p-4">
-                        <span class="fw-bold fs-3 mb-4" style="color: var(--color-accent);">Databases</span>
-                        <ul class="list-unstyled">
-                            <li class="mb-3">
-                                <span class="fw-medium">MySQL</span> - Advanced: Relational databases, optimization, migrations
-                            </li>
-                            <li class="mb-3">
-                                <span class="fw-medium">PostgreSQL</span> - Advanced: Complex queries, extensions, administration
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Cybersecurity -->
-                <div class="col-md-6 col-lg-4 fade-in-up" data-aos="fade-up" data-aos-delay="500">
-                    <div class="card p-4">
-                        <span class="fw-bold fs-3 mb-4" style="color: var(--color-accent);">Cybersecurity</span>
-                        <ul class="list-unstyled">
-                            <li class="mb-3">
-                                <span class="fw-medium">Network Security</span> - Advanced: Firewalls, intrusion detection, vulnerability assessment
-                            </li>
-                            <li class="mb-3">
-                                <span class="fw-medium">Web Security</span> - Advanced: OWASP, secure coding, penetration testing
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Networking -->
-                <div class="col-md-6 col-lg-4 fade-in-up" data-aos="fade-up" data-aos-delay="600">
-                    <div class="card p-4">
-                        <span class="fw-bold fs-3 mb-4" style="color: var(--color-accent);">Networking & Infrastructure</span>
-                        <ul class="list-unstyled">
-                            <li class="mb-3">
-                                <span class="fw-medium">Linux Administration</span> - Advanced: Server management, shell scripting, permissions
-                            </li>
-                            <li class="mb-3">
-                                <span class="fw-medium">Windows Administration</span> - Intermediate: Active Directory, Group Policy
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Tools -->
-                <div class="col-md-6 col-lg-4 fade-in-up" data-aos="fade-up" data-aos-delay="700">
-                    <div class="card p-4">
-                        <span class="fw-bold fs-3 mb-4" style="color: var(--color-accent);">Tools & Platforms</span>
-                        <ul class="list-unstyled">
-                            <li class="mb-3">
-                                <span class="fw-medium">Git & GitHub</span> - Expert: Version control, collaboration, CI/CD
-                            </li>
-                            <li class="mb-3">
-                                <span class="fw-medium">Docker</span> - Intermediate: Containerization and deployment
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+      <div class="radar-head">
+        <div>
+          <p class="lab">Live radar</p>
+          <h2 style="font-size:clamp(2rem,4vw,3rem)">Fresh off <em>GitHub.</em></h2>
         </div>
+        <a class="btn" href="https://github.com/daviesqunyu" target="_blank" rel="noopener">@daviesqunyu</a>
+      </div>
+      <div class="repo-grid" id="radar"></div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="section" style="background: var(--color-bg-secondary);">
-        <div class="container">
-            <div class="text-center mb-8 fade-in-up" data-aos="fade-up">
-                <span class="fw-bold fs-3 mb-3" style="color: var(--color-accent);">Projects</span>
-                <h2 class="section__title">Selected Projects</h2>
-                <p class="section__subtitle">A showcase of my work with real-world applications, case studies, and live demonstrations.</p>
-            </div>
-
-            <!-- Project Filters -->
-            <div class="row gy-3 gy-md-0 mb-8 justify-content-center">
-                <div class="col-12 col-md-6 col-lg-8">
-                    <div class="btn-group flex-wrap justify-center" role="group">
-                        <button class="btn btn-outline-secondary px-4 py-2 rounded-pill active" data-filter="all">All Projects</button>
-                        <button class="btn btn-outline-secondary px-4 py-2 rounded-pill" data-filter="electravote">ElectraVote</button>
-                        <button class="btn btn-outline-secondary px-4 py-2 rounded-pill" data-filter="health">Health Tech</button>
-                        <button class="btn btn-outline-secondary px-4 py-2 rounded-pill" data-filter="hotel">Hotel System</button>
-                        <button class="btn btn-outline-secondary px-4 py-2 rounded-pill" data-filter="flutter">Flutter App</button>
-                        <button class="btn btn-outline-secondary px-4 py-2 rounded-pill" data-filter="traffic">Traffic Sim</button>
-                        <button class="btn btn-outline-secondary px-4 py-2 rounded-pill" data-filter="dairy">Dairy Farm</button>
-                        <button class="btn btn-outline-secondary px-4 py-2 rounded-pill" data-filter="github">GitHub Repos</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Swiper Projects -->
-            <div class="swiper projects-swiper">
-                <div class="swiper-wrapper">
-
-                    <!-- ElectraVote -->
-                    <div class="swiper-slide project-card" style="display: none;">
-                        <div class="project-image mb-4">
-                            <div style="width: 100%; height: 200px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 1.2rem;">
-                                <i class="fas fa-robot"></i> Voting System
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <h3 class="card-title fs-5 mb-2">ElectraVote</h3>
-                            <p class="card-text text-muted small">Secure blockchain-integrated voting system</p>
-                            <ul class="list-unstyled small">
-                                <li><i class="fas fa-check-circle mr-2 text-primary"></i>Lead Developer</li>
-                                <li><i class="fas fa-check-circle mr-2 text-primary"></i>Python, Django, PostgreSQL</li>
-                                <li><i class="fas fa-check-circle mr-2 text-primary"></i>99.9% accuracy in vote recording</li>
-                            </ul>
-                            <a href="https://github.com/daviesqunyu/ElectraVote" class="btn btn-sm bg-accent text-primary mt-3" target="_blank">GitHub Repository</a>
-                        </div>
-                    </div>
-
-                    <!-- AI Chatbots for Health Conditions -->
-                    <div class="swiper-slide project-card">
-                        <div class="project-image mb-4">
-                            <div style="width: 100%; height: 200px; background: #1a1a25; border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; color: #aaa; font-size: 1.2rem;">
-                                <i class="fas fa-brain"></i> Chatbot Interface
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <h3 class="card-title fs-5 mb-2">AI Chatbots for Health Conditions</h3>
-                            <p class="card-text text-muted small">Customizable AI bots for patient assistance</p>
-                            <ul class="list-unstyled small">
-                                <li><i class="fas fa-check-circle mr-2 text-primary"></i>Full-Stack Developer</li>
-                                <li><i class="fas fa-check-circle mr-2 text-primary"></i>Python, Flask, scikit-learn</li>
-                                <li><i class="fas fa-check-circle mr-2 text-primary"></i>65% reduced response time</li>
-                            </ul>
-                            <a href="https://github.com/DavisK2/ai-health-chatbot" class="btn btn-sm bg-accent text-primary mt-3" target="_blank">GitHub Repository</a>
-                        </div>
-                    </div>
-
-                    <!-- Hotel Management System -->
-                    <div class="swiper-slide project-card">
-                        <div class="project-image mb-4">
-                            <div style="width: 100%; height: 200px; background: #1a1a25; border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; color: #aaa; font-size: 1.2rem;">
-                                <i class="fas fa-hotel"></i> Hotel System
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <h3 class="card-title fs-5 mb-2">Hotel Management System</h3>
-                            <p class="card-text text-muted small">Complete booking and management system</p>
-                            <ul class="list-unstyled small">
-                                <li><i class="fas fa-check-circle mr-2 text-primary"></i>Lead Developer</li>
-                                <li><i class="fas fa-check-circle mr-2 text-primary"></i>Django, booking engine, billing automation</li>
-                                <li><i class="fas fa-check-circle mr-2 text-primary"></i>40% booking efficiency increase</li>
-                            </ul>
-                            <a href="https://github.com/DavisK2/hotel-management-django" class="btn btn-sm bg-accent text-primary mt-3" target="_blank">GitHub Repository</a>
-                        </div>
-                    </div>
-
-                    <!-- Flutter Mobile App -->
-                    <div class="swiper-slide project-card">
-                        <div class="project-image mb-4">
-                            <div style="width: 100%; height: 200px; background: #1a1a25; border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; color: #aaa; font-size: 1.2rem;">
-                                <i class="fab fa-android"></i> Flutter App
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <h3 class="card-title fs-5 mb-2">Mobile App - Flutter</h3>
-                            <p class="card-text text-muted small">Cross-platform task management application</p>
-                            <ul class="list-unstyled small">
-                                <li><i class="fas fa-check-circle mr-2 text-primary"></i>Mobile Developer</li>
-                                <li><i class="fas fa-check-circle mr-2 text-primary"></i>Flutter, Firebase, offline-first sync</li>
-                            </ul>
-                            <a href="https://github.com/DavisK2/flutter-task-manager" class="btn btn-sm bg-accent text-primary mt-3" target="_blank">GitHub Repository</a>
-                        </div>
-                    </div>
-
-                    <!-- Traffic Control Simulation -->
-                    <div class="swiper-slide project-card">
-                        <div class="project-image mb-4">
-                            <div style="width: 100%; height: 200px; background: #1a1a25; border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; color: #aaa; font-size: 1.2rem;">
-                                <i class="fas fa-car"></i> Traffic Simulation
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <h3 class="card-title fs-5 mb-2">Traffic Control Simulation</h3>
-                            <p class="card-text text-muted small">Nairobi CBD traffic optimization</p>
-                            <ul class="list-unstyled small">
-                                <li><i class="fas fa-check-circle mr-2 text-primary"></i>Systems Engineer</li>
-                                <li><i class="fas fa-check-circle mr-2 text-primary"></i>Python, Pandas, Plotly</li>
-                                <li><i class="fas fa-check-circle mr-2 text-primary"></i>25% congestion improvement</li>
-                            </ul>
-                            <a href="https://github.com/DavisK2/traffic-simulation" class="btn btn-sm bg-accent text-primary mt-3" target="_blank">GitHub Repository</a>
-                        </div>
-                    </div>
-
-                    <!-- Dairy Farm Management -->
-                    <div class="swiper-slide project-card">
-                        <div class="project-image mb-4">
-                            <div style="width: 100%; height: 200px; background: #1a1a25; border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; color: #aaa; font-size: 1.2rem;">
-                                <i class="fas fa-cow"></i> Dairy Farm System
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <h3 class="card-title fs-5 mb-2">Dairy Farm Management</h3>
-                            <p class="card-text text-muted small">Breed selection and milk production tracking</p>
-                            <ul class="list-unstyled small mb-0">
-                                <li><i class="fas fa-check-circle mr-2 text-primary"></i>Full-Stack Developer</li>
-                                <li><i class="fas fa-check-circle mr-2 text-primary"></i>Python, SQLite, no frameworks</li>
-                                <li><i class="fas fa-check-circle mr-2 text-primary"></i>70% to 95% tracking accuracy</li>
-                            </ul>
-                            <a href="https://github.com/DavisK2/dairy-farm-management" class="btn btn-sm bg-accent text-primary mt-3" target="_blank">GitHub Repository</a>
-                        </div>
-                    </div>
-
-                    <!-- GitHub Repos Showcase -->
-                    <div class="swiper-slide project-card" style="background: var(--color-bg); border-color: var(--color-border);">
-                        <div class="project-image mb-4">
-                            <div style="width: 100%; height: 200px; background: var(--color-bg); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; color: #7c8c9e; font-size: 1.2rem;">
-                                <i class="fab fa-github"></i> GitHub Repos
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <h3 class="card-title fs-5 mb-2">GitHub Showcase</h3>
-                            <p class="card-text text-muted small">Active repositories from daviesqunyu</p>
-                            <ul class="list-unstyled small mb-0">
-                                <li><i class="fas fa-check-circle mr-2 text-primary"></i>ElectraVote - Secure voting system</li>
-                                <li><i class="fas fa-check-circle mr-2 text-primary"></i>D-V-TECHNOLOGIES - Django hotel management</li>
-                                <li><i class="fas fa-check-circle mr-2 text-primary"></i>Traffic_app - Traffic optimization</li>
-                                <li><i class="fas fa-check-circle mr-2 text-primary"></i>crypto-binance-trading-bot - Algorithmic trading</li>
-                                <li><i class="fas fa-check-circle mr-2 text-primary"></i>VOTING - Voting system prototype</li>
-                                <li><i class="fas fa-check-circle mr-2 text-primary"></i>data-analysis2 - Data analysis tools</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
-            <!-- Arrows -->
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
-        </div>
+    <section class="wrap" id="passport">
+      <p class="lab">04 · Passport</p>
+      <h2>Stamps <em>collected.</em></h2>
+      <div class="stamps">
+        <article class="stamp"><span>Certificate</span><b>Google</b><span>Data Analytics · 2024</span></article>
+        <article class="stamp"><span>Certificate</span><b>IBM</b><span>Cybersecurity · 2024</span></article>
+        <article class="stamp"><span>Certificate</span><b>AWS</b><span>Cloud Practitioner · 2023</span></article>
+        <article class="stamp"><span>Degree</span><b>BSc CS</b><span>CUEA · 2025</span></article>
+        <article class="stamp"><span>Diploma</span><b>IT</b><span>Nairobi Technical · 2020</span></article>
+        <article class="stamp"><span>Base</span><b>NBO</b><span>Nairobi, Kenya</span></article>
+      </div>
+      <p class="edu">BSc Computer Science, Catholic University of Eastern Africa — Second Upper-Class Honours, 2025. Diploma in Information Technology, Nairobi Technical Institute, 2020.</p>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="section" style="background: var(--color-bg-secondary);">
-        <div class="container">
-            <div class="row gy-5">
-                <div class="col-lg-6 col-xl-5 fade-in-up" data-aos="fade-up">
-                    <div class="card p-5 p-lg-6">
-                        <h2 class="fs-2 mb-4" style="color: var(--color-primary);">Contact Me</h2>
-                        <p class="text-muted mb-4">If you're interested in working with me or learning more about my work, feel free to reach out!</p>
-                        
-                        <div class="contact-info">
-                            <div class="mb-3">
-                                <i class="fas fa-envelope fa-fw me-3 text-accent"></i>
-                                <a href="mailto:daviskunyu@gmail.com" class="text-primary">daviskunyu@gmail.com</a>
-                            </div>
-                            <div class="mb-3">
-                                <i class="fab fa-github fa-fw me-3 text-accent"></i>
-                                <a href="https://github.com/daviesqunyu" class="text-primary" target="_blank">GitHub: daviesqunyu</a>
-                            </div>
-                            <div class="mb-3">
-                                <i class="fas fa-linkedin fa-fw me-3 text-accent"></i>
-                                <a href="https://linkedin.com/in/davis-kunyu" class="text-primary" target="_blank">LinkedIn</a>
-                            </div>
-                        </div>
-
-                        <div class="social-links mt-5 flex-wrap justify-content-center gap-2">
-                            <a href="mailto:daviskunyu@gmail.com" class="btn btn-outline-accent btn-sm">
-                                <i class="fas fa-envelope"></i>
-                            </a>
-                            <a href="https://github.com/daviesqunyu" class="btn btn-outline-accent btn-sm" target="_blank">
-                                <i class="fab fa-github"></i>
-                            </a>
-                            <a href="https://linkedin.com/in/davis-kunyu" class="btn btn-outline-accent btn-sm" target="_blank">
-                                <i class="fab fa-linkedin-in"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-6 col-xl-4 fade-in-up" data-aos="fade-up" data-aos-delay="200">
-                    <div class="card p-4 p-lg-5">
-                        <h4 class="fs-4 mb-3" style="color: var(--color-accent);">Quick Links</h4>
-                        <ul class="list-unstyled">
-                            <li class="mb-2"><a href="#about" class="text-muted">About Me</a></li>
-                            <li class="mb-2"><a href="#skills" class="text-muted">Skills</a></li>
-                            <li class="mb-2"><a href="#projects" class="text-muted">Projects</a></li>
-                            <li class="mb-2"><a href="#why-choose" class="text-muted">Why Hire Me?</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <section class="wrap arrive" id="arrival">
+      <p class="lab">05 · Arrival</p>
+      <h2>You’ve <em>arrived.</em></h2>
+      <button class="mail" id="copy-mail" type="button">daviskunyu@gmail.com</button>
+      <div class="socials">
+        <a href="mailto:daviskunyu@gmail.com">Email</a>
+        <a href="https://github.com/daviesqunyu" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://linkedin.com/in/davis-kunyu" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="public/cv.pdf" download>CV</a>
+      </div>
     </section>
+  </main>
 
-    <!-- Footer -->
-    <footer class="section" style="background: var(--color-bg); border-top: 1px solid var(--color-border);">
-        <div class="container">
-            <div class="flex-center flex-col text-center">
-                <p>&copy; <span class="current-year"></span> Davis Kunyu. All Rights Reserved.</p>
-                <p class="text-muted small mt-2">Lead Software Developer | Nairobi, Kenya | Committed to building secure, scalable software solutions</p>
-            </div>
-        </div>
-    </footer>
+  <footer class="colophon">
+    <span>© <span id="year"></span> Davis Kunyu Wamalwa</span>
+    <span>Press K for the flight deck</span>
+  </footer>
 
-    <!-- Core JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <script>
-        // Initialize AOS
-        AOS.init({
-            duration: 1000,
-            once: true,
-            easing: 'ease-out-cubic'
+  <div id="door" role="dialog" aria-modal="true" aria-label="Now boarding">
+    <div>
+      <p>FLIGHT DK-2026 · NOW BOARDING</p>
+      <button class="hatch" id="hatch" type="button" aria-label="Open the cabin door">
+        <svg viewBox="0 0 240 340">
+          <defs>
+            <radialGradient id="glow" cx="50%" cy="40%" r="60%">
+              <stop offset="0%" stop-color="#f0d7a4"/>
+              <stop offset="100%" stop-color="#100e0c" stop-opacity="0"/>
+            </radialGradient>
+            <linearGradient id="doorface" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#f4ead7"/>
+              <stop offset="100%" stop-color="#e2d3b6"/>
+            </linearGradient>
+          </defs>
+          <ellipse cx="120" cy="170" rx="118" ry="160" fill="url(#glow)"/>
+          <path d="M70 36 h100 a78 78 0 0 1 78 78 v150 a28 28 0 0 1 -28 28 h-200 a28 28 0 0 1 -28 -28 v-150 a78 78 0 0 1 78 -78z" fill="url(#doorface)" stroke="#c9b28a" stroke-width="3"/>
+          <circle cx="120" cy="118" r="34" fill="#142033" stroke="#c9b28a" stroke-width="6"/>
+          <circle cx="112" cy="110" r="8" fill="#8fb7d6" opacity="0.85"/>
+          <rect x="78" y="196" width="84" height="18" rx="9" fill="#8e2a2a"/>
+          <text x="120" y="268" text-anchor="middle" fill="#6d6254" font-family="IBM Plex Mono, monospace" font-size="11" letter-spacing="3">PULL TO OPEN</text>
+        </svg>
+      </button>
+      <p class="hint">CLICK THE DOOR TO OPEN IT</p>
+    </div>
+  </div>
+
+  <svg width="0" height="0" aria-hidden="true" style="position:absolute">
+    <symbol id="art-vote" viewBox="0 0 320 180">
+      <rect width="320" height="180" fill="#1b1714"/>
+      <rect x="36" y="28" width="248" height="124" rx="12" fill="#f4ead7"/>
+      <rect x="56" y="52" width="120" height="12" rx="6" fill="#9d2430"/>
+      <rect x="56" y="76" width="90" height="8" fill="#c9b28a"/>
+      <rect x="56" y="94" width="150" height="8" fill="#1b1714" opacity=".35"/>
+      <circle cx="230" cy="100" r="28" fill="none" stroke="#9d2430" stroke-width="6"/>
+      <path d="M216 100 l10 10 18 -22" fill="none" stroke="#9d2430" stroke-width="6"/>
+    </symbol>
+    <symbol id="art-hotel" viewBox="0 0 320 180">
+      <rect width="320" height="180" fill="#142033"/>
+      <rect x="70" y="36" width="180" height="120" fill="#f4ead7"/>
+      <g fill="#9d2430">
+        <rect x="90" y="54" width="22" height="16"/><rect x="124" y="54" width="22" height="16"/><rect x="158" y="54" width="22" height="16"/><rect x="192" y="54" width="22" height="16"/>
+        <rect x="90" y="82" width="22" height="16"/><rect x="124" y="82" width="22" height="16"/><rect x="158" y="82" width="22" height="16"/><rect x="192" y="82" width="22" height="16"/>
+      </g>
+      <rect x="140" y="112" width="40" height="44" fill="#1b1714"/>
+    </symbol>
+    <symbol id="art-traffic" viewBox="0 0 320 180">
+      <rect width="320" height="180" fill="#1d2418"/>
+      <rect x="146" y="24" width="28" height="110" rx="8" fill="#111"/>
+      <circle cx="160" cy="48" r="8" fill="#e24b4b"/>
+      <circle cx="160" cy="72" r="8" fill="#e2b84b"/>
+      <circle cx="160" cy="96" r="8" fill="#3faf6a"/>
+      <path d="M20 150 H300" stroke="#f4ead7" stroke-width="4"/>
+      <path d="M40 150 l30 -20 h40 l20 20" fill="#9d2430"/>
+    </symbol>
+    <symbol id="art-bot" viewBox="0 0 320 180">
+      <rect width="320" height="180" fill="#241816"/>
+      <rect x="48" y="40" width="150" height="64" rx="14" fill="#f4ead7"/>
+      <rect x="120" y="112" width="160" height="40" rx="14" fill="#9d2430"/>
+      <circle cx="78" cy="72" r="6" fill="#1b1714"/><circle cx="100" cy="72" r="6" fill="#1b1714"/>
+    </symbol>
+    <symbol id="art-chart" viewBox="0 0 320 180">
+      <rect width="320" height="180" fill="#141a22"/>
+      <polyline points="30,140 80,100 120,120 170,60 220,80 290,36" fill="none" stroke="#e2b84b" stroke-width="4"/>
+      <polyline points="30,150 90,130 150,136 210,90 290,70" fill="none" stroke="#9d2430" stroke-width="3"/>
+    </symbol>
+    <symbol id="art-pay" viewBox="0 0 320 180">
+      <rect width="320" height="180" fill="#1b1714"/>
+      <rect x="50" y="46" width="220" height="96" rx="12" fill="#f4ead7"/>
+      <rect x="50" y="70" width="220" height="22" fill="#1b1714"/>
+      <rect x="70" y="110" width="70" height="10" fill="#9d2430"/>
+    </symbol>
+    <symbol id="art-web" viewBox="0 0 320 180">
+      <rect width="320" height="180" fill="#102028"/>
+      <rect x="40" y="28" width="240" height="128" rx="10" fill="#f4ead7"/>
+      <rect x="40" y="28" width="240" height="22" fill="#1b1714"/>
+      <circle cx="58" cy="39" r="4" fill="#9d2430"/>
+      <rect x="58" y="68" width="120" height="10" fill="#9d2430"/>
+      <rect x="58" y="88" width="180" height="8" fill="#c9b28a"/>
+      <rect x="58" y="104" width="150" height="8" fill="#c9b28a"/>
+    </symbol>
+    <symbol id="art-arch" viewBox="0 0 320 180">
+      <rect width="320" height="180" fill="#2a241c"/>
+      <path d="M70 150 V70 h40 v80 M130 150 V40 h60 v110 M210 150 V80 h40 v70" fill="#f4ead7"/>
+      <path d="M130 70 q30 -40 60 0" fill="none" stroke="#9d2430" stroke-width="4"/>
+    </symbol>
+    <symbol id="art-form" viewBox="0 0 320 180">
+      <rect width="320" height="180" fill="#1b1714"/>
+      <rect x="70" y="28" width="180" height="124" rx="8" fill="#f4ead7"/>
+      <rect x="90" y="52" width="140" height="14" rx="4" fill="#fff" stroke="#1b1714"/>
+      <rect x="90" y="76" width="140" height="14" rx="4" fill="#fff" stroke="#1b1714"/>
+      <rect x="90" y="108" width="70" height="18" rx="9" fill="#9d2430"/>
+    </symbol>
+  </svg>
+
+  <noscript><style>#door{display:none}</style></noscript>
+  <script>
+    const $ = (s, r = document) => r.querySelector(s);
+    const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+    const year = $("#year");
+    year.textContent = new Date().getFullYear();
+
+    const door = $("#door");
+    const openDoor = () => {
+      door.classList.add("hide");
+      door.setAttribute("aria-hidden", "true");
+      try { sessionStorage.setItem("dk-boarded", "1"); } catch (e) {}
+    };
+    if (sessionStorage.getItem("dk-boarded") === "1" || matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      door.classList.add("hide");
+    }
+    $("#hatch").addEventListener("click", openDoor);
+    door.addEventListener("click", (e) => { if (e.target === door) openDoor(); });
+    document.addEventListener("keydown", (e) => {
+      if (!door.classList.contains("hide") && (e.key === "Enter" || e.key === " ")) {
+        e.preventDefault();
+        openDoor();
+      }
+    });
+
+    const stops = $$(".rail a");
+    const sections = stops.map((a) => document.getElementById(a.dataset.stop));
+    const jet = $(".jet");
+    const setActive = () => {
+      const y = window.scrollY + 160;
+      let current = sections[0].id;
+      sections.forEach((sec) => { if (sec.offsetTop <= y) current = sec.id; });
+      stops.forEach((a) => a.classList.toggle("on", a.dataset.stop === current));
+      const max = document.documentElement.scrollHeight - innerHeight;
+      const p = max > 0 ? Math.min(1, window.scrollY / max) : 0;
+      const line = $(".rail-line");
+      if (line && jet) {
+        const top = line.offsetTop + p * line.offsetHeight;
+        jet.style.top = top + "px";
+      }
+      $("#alt").textContent = Math.round(p * 38000).toLocaleString() + " FT";
+      $("#km").textContent = Math.round((1 - p) * 5200).toLocaleString() + " KM";
+    };
+    document.addEventListener("scroll", setActive, { passive: true });
+    setActive();
+
+    const clock = () => {
+      const t = new Intl.DateTimeFormat("en-GB", {
+        hour: "2-digit", minute: "2-digit", hour12: false, timeZone: "Africa/Nairobi"
+      }).format(new Date());
+      $("#clock").textContent = "NAIROBI " + t;
+    };
+    clock();
+    setInterval(clock, 15000);
+
+    const toast = (msg) => {
+      const el = $("#toast");
+      el.textContent = msg;
+      el.classList.add("show");
+      clearTimeout(toast._t);
+      toast._t = setTimeout(() => el.classList.remove("show"), 1800);
+    };
+    $("#copy-mail").addEventListener("click", async () => {
+      try {
+        await navigator.clipboard.writeText("daviskunyu@gmail.com");
+        toast("Email copied");
+      } catch (e) {
+        location.href = "mailto:daviskunyu@gmail.com";
+      }
+    });
+
+    const themeBtn = $("#theme");
+    const applyTheme = (theme) => {
+      document.documentElement.dataset.theme = theme;
+      document.querySelector('meta[name="theme-color"]').content = theme === "night" ? "#10140f" : "#efe6d6";
+      try { localStorage.setItem("dk-theme", theme); } catch (e) {}
+    };
+    try {
+      const saved = localStorage.getItem("dk-theme");
+      if (saved) applyTheme(saved);
+    } catch (e) {}
+    themeBtn.addEventListener("click", () => {
+      applyTheme(document.documentElement.dataset.theme === "night" ? "day" : "night");
+    });
+
+    let audioCtx, toneNodes = [];
+    const toneBtn = $("#tone");
+    const player = $("#player");
+    const playIcon = '<path d="M4 2h3v12H4zM9 2h3v12H9z"/>';
+    const pauseIcon = '<path d="M4 2l10 6-10 6z"/>';
+    toneBtn.addEventListener("click", async () => {
+      if (!audioCtx) {
+        const Ctx = window.AudioContext || window.webkitAudioContext;
+        audioCtx = new Ctx();
+        const master = audioCtx.createGain();
+        master.gain.value = 0.045;
+        const filter = audioCtx.createBiquadFilter();
+        filter.type = "lowpass";
+        filter.frequency.value = 720;
+        filter.connect(master);
+        master.connect(audioCtx.destination);
+        [110, 164.81, 220].forEach((freq, i) => {
+          const osc = audioCtx.createOscillator();
+          osc.type = i === 1 ? "triangle" : "sine";
+          osc.frequency.value = freq;
+          const g = audioCtx.createGain();
+          g.gain.value = i === 2 ? 0.15 : 0.4;
+          osc.connect(g); g.connect(filter); osc.start();
+          toneNodes.push(osc);
         });
+        const lfo = audioCtx.createOscillator();
+        const lg = audioCtx.createGain();
+        lfo.frequency.value = 0.07;
+        lg.gain.value = 180;
+        lfo.connect(lg); lg.connect(filter.frequency); lfo.start();
+      }
+      if (audioCtx.state === "suspended") await audioCtx.resume();
+      else await audioCtx.suspend();
+      const on = audioCtx.state === "running";
+      player.classList.toggle("playing", on);
+      $("#tone-icon").innerHTML = on ? playIcon : pauseIcon;
+    });
 
-        // Initialize Swiper
-        const projectsSwiper = new Swiper('.projects-swiper', {
-            loop: true,
-            autoplay: {
-                delay: 6000,
-                disableOnInteraction: false,
-            },
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-            },
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-            slidesPerView: 1,
-            spaceBetween: 20,
-            breakpoints: {
-                640: { slidesPerView: 2, spaceBetween: 20 },
-                768: { slidesPerView: 3, spaceBetween: 24 },
-                1024: { slidesPerView: 4, spaceBetween: 30 },
-            }
-        });
+    const routes = $$(".route");
+    const extras = $$(".route.extra");
+    let expanded = false;
+    let filter = "all";
+    const paintRoutes = () => {
+      routes.forEach((row) => {
+        const catOk = filter === "all" || row.dataset.cat === filter;
+        const extraOk = expanded || filter !== "all" || !row.classList.contains("extra");
+        row.hidden = !(catOk && extraOk);
+      });
+      $("#more").hidden = filter !== "all";
+      $("#more").textContent = expanded ? "Show the short log" : "Show the rest of the log";
+    };
+    $$(".filters button").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        filter = btn.dataset.filter;
+        $$(".filters button").forEach((b) => b.classList.toggle("on", b === btn));
+        paintRoutes();
+      });
+    });
+    $("#more").addEventListener("click", () => { expanded = !expanded; paintRoutes(); });
 
-        // Terminal Intro Auto-hide
-        document.addEventListener('DOMContentLoaded', () => {
-            const terminalIntro = document.getElementById('terminalIntro');
-            if (terminalIntro) {
-                setTimeout(() => {
-                    terminalIntro.style.opacity = '0';
-                    setTimeout(() => terminalIntro.remove(), 500);
-                }, 3000);
-            }
-        });
+    const arts = {
+      vote: "#art-vote", hotel: "#art-hotel", traffic: "#art-traffic", bot: "#art-bot",
+      chart: "#art-chart", pay: "#art-pay", web: "#art-web", arch: "#art-arch", form: "#art-form"
+    };
+    const preview = $("#preview");
+    routes.forEach((row) => {
+      row.addEventListener("mouseenter", (e) => {
+        if (matchMedia("(max-width: 980px)").matches) return;
+        $("#preview-art").innerHTML = '<svg viewBox="0 0 320 180"><use href="' + arts[row.dataset.art] + '"/></svg>';
+        $("#preview-title").textContent = row.querySelector("strong").textContent;
+        $("#preview-stack").textContent = row.dataset.stack;
+        preview.classList.add("show");
+        movePreview(e);
+      });
+      row.addEventListener("mousemove", movePreview);
+      row.addEventListener("mouseleave", () => preview.classList.remove("show"));
+    });
+    function movePreview(e) {
+      const x = Math.min(e.clientX + 18, innerWidth - 260);
+      const y = Math.min(e.clientY + 18, innerHeight - 200);
+      preview.style.left = x + "px";
+      preview.style.top = y + "px";
+    }
 
-        // Project Filter
-        document.addEventListener('DOMContentLoaded', () => {
-            const filterBtns = document.querySelectorAll('.project-filter-btn');
-            const projectCards = document.querySelectorAll('.project-card');
+    const radar = $("#radar");
+    const skipRepos = new Set(["DavisPortfolio", "netflix.co.uk", "daviesqunyu"]);
+    fetch("https://api.github.com/users/daviesqunyu/repos?per_page=100&sort=updated")
+      .then((r) => r.json())
+      .then((repos) => {
+        if (!Array.isArray(repos)) throw new Error("rate");
+        const list = repos.filter((repo) => !skipRepos.has(repo.name) && !repo.fork);
+        $("#repo-count").textContent = String(list.length);
+        const esc = (s) => String(s == null ? "" : s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+        radar.innerHTML = list.slice(0, 6).map((repo) => (
+          '<a class="repo" href="' + esc(repo.html_url) + '" target="_blank" rel="noopener">' +
+          "<small>" + esc(repo.language || "Code") + "</small><b>" + esc(repo.name) + "</b><p>" +
+          esc(repo.description || "Public repository on the flight log.") + "</p></a>"
+        )).join("");
+      })
+      .catch(() => {
+        radar.innerHTML = '<a class="repo" href="https://github.com/daviesqunyu" target="_blank" rel="noopener"><small>GitHub</small><b>daviesqunyu</b><p>Live radar is quiet right now. The full log is on GitHub.</p></a>';
+      });
 
-            filterBtns.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    // Update active state
-                    filterBtns.forEach(b => b.classList.remove('active'));
-                    btn.classList.add('active');
+    const knowledge = [
+      { q: ["who", "about", "yourself", "davis"], a: "I’m Davis Kunyu Wamalwa, lead software developer at D&V Technologies in Nairobi. I build web apps, backend systems, and AI bots people actually use." },
+      { q: ["hire", "contact", "email", "work with", "available"], a: "Email daviskunyu@gmail.com — click it on the arrival section to copy. I’m the lead developer at D&V Technologies and I take product work from Nairobi." },
+      { q: ["stack", "skill", "tech", "language", "tools"], a: "Day to day: Python, JavaScript, TypeScript, Java, React, Django, Node, MySQL, PostgreSQL, AWS, Linux, and Docker. Security work sits on OWASP and network practice. AI work is bots and automation, not a slide." },
+      { q: ["ai", "bot", "machine", "model"], a: "AI on the log: a payments bot, a TypeScript sales bot, and a Python Binance trading bot. This page also runs an on-device copilot — your question never leaves the browser." },
+      { q: ["vote", "electra", "ballot"], a: "ElectraVote is the voting work: a PHP system in the VOTING repo and a Java version called E-vot. Both are public on GitHub." },
+      { q: ["hotel"], a: "Davis Hotel is a JavaScript hotel management system — rooms, bookings, and the front desk." },
+      { q: ["traffic", "nairobi light", "tlcs"], a: "Traffic work is a Kotlin app plus TLCS, a Nairobi traffic-light control system." },
+      { q: ["experience", "job", "d&v", "work history", "role"], a: "Lead Software Developer at D&V Technologies since January 2025. Startup Manager at D&V Global Technologies since July 2024." },
+      { q: ["school", "degree", "education", "university", "cuea"], a: "BSc Computer Science at the Catholic University of Eastern Africa, 2025, Second Upper-Class Honours. Diploma in IT from Nairobi Technical Institute, 2020." },
+      { q: ["cert", "aws", "ibm", "google"], a: "Google Professional Data Analytics (2024), IBM Cybersecurity Analyst (2024), and AWS Certified Cloud Practitioner (2023)." },
+      { q: ["cv", "resume"], a: "The CV is on this flight. Use Download CV in the header or the CV link at arrival." },
+      { q: ["where", "nairobi", "location", "kenya"], a: "Based in Nairobi, Kenya. The flight code is NBO." },
+      { q: ["github", "repo", "code"], a: "Everything public is under github.com/daviesqunyu. The live radar on this page lists the newest repos." }
+    ];
+    const answer = (text) => {
+      const s = text.toLowerCase();
+      let best = null, score = 0;
+      knowledge.forEach((row) => {
+        const hit = row.q.reduce((n, k) => n + (s.includes(k) ? k.length : 0), 0);
+        if (hit > score) { score = hit; best = row; }
+      });
+      if (!best) return "I can talk about Davis, his stack, AI bots, voting, hotel and traffic systems, education, certificates, or how to get in touch. Try one of those.";
+      return best.a;
+    };
+    const log = $("#log");
+    const say = (text, who) => {
+      const b = document.createElement("div");
+      b.className = "bubble " + who;
+      b.textContent = text;
+      log.appendChild(b);
+      log.scrollTop = log.scrollHeight;
+    };
+    const ask = (text) => {
+      const q = text.trim();
+      if (!q) return;
+      say(q, "user");
+      say(answer(q), "bot");
+    };
+    $("#open-ai").addEventListener("click", () => {
+      $("#ai").classList.add("open");
+      $("#scrim").classList.add("show");
+      if (!log.childElementCount) say("Cabin copilot online. Ask me about the work, the stack, or how to reach Davis.", "bot");
+      $("#ai-input").focus();
+    });
+    const closeAi = () => { $("#ai").classList.remove("open"); if (!$("#palette").classList.contains("open")) $("#scrim").classList.remove("show"); };
+    $("#close-ai").addEventListener("click", closeAi);
+    $("#ai-form").addEventListener("submit", (e) => {
+      e.preventDefault();
+      ask($("#ai-input").value);
+      $("#ai-input").value = "";
+    });
+    $$("#suggests button").forEach((b) => b.addEventListener("click", () => ask(b.textContent)));
 
-                    const filter = btn.getAttribute('data-filter');
-
-                    projectCards.forEach(card => {
-                        if (filter === 'all' || card.classList.contains(filter)) {
-                            card.style.display = 'block';
-                            setTimeout(() => {
-                                card.style.opacity = '1';
-                                card.style.transform = 'scale(1)';
-                            }, 100);
-                        } else {
-                            card.style.opacity = '0';
-                            card.style.transform = 'scale(0.8)';
-                            setTimeout(() => {
-                                card.style.display = 'none';
-                            }, 300);
-                        }
-                    });
-                });
-            });
-        });
-
-        // Scroll Reveal on Scroll
-        const revealElements = document.querySelectorAll('.fade-in-up');
-
-        const revealObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        });
-
-        revealElements.forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(20px)';
-            el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-            revealObserver.observe(el);
-        });
-
-        // Smooth page scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Copyright year
-        document.querySelector('.current-year').textContent = new Date().getFullYear();
-    </script>
+    const commands = [
+      { label: "Departure", run: () => location.hash = "#departure" },
+      { label: "About", run: () => location.hash = "#about" },
+      { label: "The line", run: () => location.hash = "#line" },
+      { label: "Routes", run: () => location.hash = "#routes" },
+      { label: "Passport", run: () => location.hash = "#passport" },
+      { label: "Arrival", run: () => location.hash = "#arrival" },
+      { label: "Ask the copilot", run: () => $("#open-ai").click() },
+      { label: "Copy email", run: () => $("#copy-mail").click() },
+      { label: "Download CV", run: () => { location.href = "public/cv.pdf"; } },
+      { label: "Open GitHub", run: () => window.open("https://github.com/daviesqunyu", "_blank", "noopener") },
+      { label: "Toggle night chart", run: () => themeBtn.click() },
+      { label: "Play cabin tone", run: () => toneBtn.click() }
+    ];
+    const palette = $("#palette");
+    const paletteInput = $("#palette-input");
+    const paletteList = $("#palette-list");
+    let paletteIndex = 0;
+    let paletteItems = commands;
+    const renderPalette = () => {
+      const q = paletteInput.value.toLowerCase();
+      paletteItems = commands.filter((c) => c.label.toLowerCase().includes(q));
+      paletteIndex = 0;
+      paletteList.innerHTML = paletteItems.map((c, i) =>
+        '<button type="button" class="row' + (i === 0 ? " on" : "") + '" data-i="' + i + '"><span>' + c.label + "</span><span>↵</span></button>"
+      ).join("") || "<p style='padding:12px;color:var(--muted)'>No matching command.</p>";
+    };
+    const openPalette = () => {
+      palette.classList.add("open");
+      $("#scrim").classList.add("show");
+      paletteInput.value = "";
+      renderPalette();
+      paletteInput.focus();
+    };
+    const closePalette = () => {
+      palette.classList.remove("open");
+      if (!$("#ai").classList.contains("open")) $("#scrim").classList.remove("show");
+    };
+    paletteList.addEventListener("click", (e) => {
+      const btn = e.target.closest("button");
+      if (!btn) return;
+      paletteItems[Number(btn.dataset.i)].run();
+      closePalette();
+    });
+    paletteInput.addEventListener("input", renderPalette);
+    paletteInput.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowDown" || e.key === "ArrowUp") {
+        e.preventDefault();
+        paletteIndex = (paletteIndex + (e.key === "ArrowDown" ? 1 : -1) + paletteItems.length) % paletteItems.length;
+        $$("#palette-list .row").forEach((el, i) => el.classList.toggle("on", i === paletteIndex));
+      }
+      if (e.key === "Enter" && paletteItems[paletteIndex]) {
+        paletteItems[paletteIndex].run();
+        closePalette();
+      }
+    });
+    $("#scrim").addEventListener("click", () => { closeAi(); closePalette(); });
+    document.addEventListener("keydown", (e) => {
+      const typing = ["INPUT", "TEXTAREA"].includes(document.activeElement.tagName);
+      if (e.key === "Escape") { closeAi(); closePalette(); }
+      if (typing) return;
+      if ((e.key === "k" || e.key === "K") || (e.key === "/" )) {
+        e.preventDefault();
+        palette.classList.contains("open") ? closePalette() : openPalette();
+      }
+    });
+  </script>
 </body>
 </html>

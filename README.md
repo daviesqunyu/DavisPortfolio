@@ -8,14 +8,11 @@ A modern, responsive personal portfolio website showcasing Davis Kunyu's skills,
 
 ## 🛠️ Built With
 
-- **HTML5** - Semantic markup structure
-- **CSS3** - Custom properties, gradients, and animations
-- **Bootstrap 5.3.3** - Utility classes and responsive grid
-- **Font Awesome 6.5.2** - Icons and social links
-- **AOS Animation** - Scroll reveal animations
-- **Swiper.js** - Project carousel slider
-- **Three.js** - 3D background canvas
-- **Google Fonts** - DM Sans & Space Mono
+- **HTML, CSS, and JavaScript** — one static page, no framework
+- **Flight chart UI** — boarding door, pass, route rail, and live instruments
+- **On-device copilot** — answers about Davis without sending prompts to a server
+- **GitHub radar** — newest public repositories from `@daviesqunyu`
+- **Google Fonts** — Fraunces, Outfit, and IBM Plex Mono
 
 ## 📁 Project Structure
 
