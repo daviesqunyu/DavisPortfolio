@@ -22,8 +22,14 @@ body {
   background: rgba(20, 16, 13, 0.96); color: var(--cream);
   border-bottom: 3px solid var(--gold);
 }
-.brand { color: var(--cream); text-decoration: none; display: flex; align-items: baseline; gap: 10px; font-family: var(--serif); font-size: 1.35rem; }
-.brand b { font-family: var(--mono); font-size: 12px; letter-spacing: 0.16em; color: var(--gold); }
+.brand { color: var(--cream); text-decoration: none; display: inline-flex; align-items: center; }
+.mark {
+  width: 44px; height: 44px; display: grid; place-items: center; border-radius: 50%;
+  background: radial-gradient(circle at 32% 28%, #a34454, #7a2430 58%, #3d1016);
+  color: #f6efe4; font-family: var(--serif); font-size: 1.05rem; letter-spacing: -0.07em;
+  box-shadow: 0 0 0 1.5px #c6a15b, 0 8px 18px rgba(0,0,0,.35);
+}
+.brand:hover .mark { background: var(--gold); color: #1a140f; }
 .clock { margin-left: 8px; font-family: var(--mono); font-size: 12px; letter-spacing: 0.14em; color: var(--gold); }
 .menu {
   display: none; margin-left: 8px; border: 1px solid var(--gold); background: transparent; color: var(--cream);
