@@ -16,12 +16,36 @@
   <link rel="stylesheet" href="/book.css" />
 </head>
 <body>
+  <header class="top">
+    <a class="brand" href="/"><b>DK</b> Field book</a>
+    <button class="menu" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav id="site-nav" aria-label="Chapters">
+      <a href="/contents/">Contents</a>
+      <a href="/about/">About</a>
+      <a href="/work/">Work</a>
+      <a href="/projects/">Projects</a>
+      <a href="/craft/">Craft</a>
+      <a href="/marks/">Marks</a>
+      <a href="/listen/">Music</a>
+      <a href="/frames/">Frames</a>
+      <a href="/write/">Contact</a>
+    </nav>
+  </header>
   <main class="stage">
     <img class="stage-bg" src="/images/desk-night.jpg" alt="" />
     <div class="wash" aria-hidden="true"></div>
     <div class="opener">
       <button class="volume" id="book" type="button" aria-label="Open the field book">
-        <span class="volume-pages" aria-hidden="true"></span>
+        <span class="volume-pages" aria-hidden="true">
+          <span class="leaf">
+            <small>01 · About</small>
+            <b>Davis Kunyu</b>
+            <small>03 · Projects</small>
+            <b>The plates</b>
+            <small>06 · Contact</small>
+            <b>Write back</b>
+          </span>
+        </span>
         <span class="volume-cover">
           <small>Nairobi · 2026</small>
           <strong>Field<br />Notes</strong>
@@ -29,27 +53,23 @@
         </span>
       </button>
       <p class="hint" id="hint">Open the book</p>
-      <a class="skip-read" href="/contents/">Skip to the contents</a>
-      <nav class="chapters" aria-label="Chapters">
-        <a href="/about/">About</a>
-        <a href="/work/">Work</a>
-        <a href="/projects/">Projects</a>
-        <a href="/craft/">Craft</a>
-        <a href="/listen/">Music</a>
-        <a href="/write/">Contact</a>
-      </nav>
+      <a class="skip-read" href="/contents/">Or open the contents</a>
     </div>
   </main>
-  <script>
-    var book = document.getElementById("book");
-    var hint = document.getElementById("hint");
-    var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    book.addEventListener("click", function () {
-      if (reduce) { location.href = "/contents/"; return; }
-      book.classList.add("is-open");
-      hint.textContent = "The first page";
-      window.setTimeout(function () { location.href = "/contents/"; }, 980);
-    });
-  </script>
+  <footer class="foot">
+    <p>Davis Kunyu · Nairobi</p>
+    <nav aria-label="Footer">
+      <a href="/about/">About</a>
+      <a href="/projects/">Projects</a>
+      <a href="/work/">Work</a>
+      <a href="mailto:daviskunyu@gmail.com">Email</a>
+      <a href="https://github.com/daviesqunyu">GitHub</a>
+      <a href="https://www.instagram.com/jerara_/">Instagram</a>
+      <a href="https://open.spotify.com/user/jerara">Spotify</a>
+      <a href="https://www.linkedin.com/in/davis-kunyu">LinkedIn</a>
+      <a href="/cv.pdf">CV</a>
+    </nav>
+  </footer>
+  <script src="/shell.js"></script>
 </body>
 </html>
