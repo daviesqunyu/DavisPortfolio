@@ -45,9 +45,26 @@ body {
 .icon-row { display: flex; gap: 6px; margin-left: 12px; }
 .icon-row a {
   width: 34px; height: 34px; display: grid; place-items: center; border-radius: 50%;
-  border: 1px solid rgba(198,161,91,.55); color: var(--cream); padding: 0;
+  border: 0; color: #1a140f; padding: 0;
+  box-shadow: 0 0 0 1px rgba(246,239,228,.2);
+  transition: transform .2s ease, background .2s ease, color .2s ease;
 }
-.icon-row a:hover, .icon-row a.on { background: var(--gold); color: #1a140f; }
+.icon-row a[aria-label="GitHub"] { background: #f4ead7; color: #1a140f; }
+.icon-row a[aria-label="LinkedIn"] { background: #0a66c2; color: #fff; }
+.icon-row a[aria-label="Instagram"] { background: linear-gradient(140deg, #f7ce68, #ee4d5f 48%, #7b4b9a); color: #fff; }
+.icon-row a[aria-label="WhatsApp"] { background: #25d366; color: #062e16; }
+.icon-row a[aria-label="Call"] { background: #ff8a4c; color: #1a140f; }
+.icon-row a[aria-label="Download CV"] { background: #7a2430; color: #f6efe4; }
+.icon-row a:hover { transform: translateY(-2px); background: #fffaf3; color: #1a140f; }
+.top nav a svg {
+  width: 22px; height: 22px; padding: 3px; box-sizing: border-box; border-radius: 50%;
+  transition: background .2s ease, color .2s ease;
+}
+.top nav a[href="/about/"] svg { color: #fff5f0; background: #c4524a; }
+.top nav a[href="/work/"] svg { color: #1a140f; background: #e7c27a; }
+.top nav a[href="/projects/"] svg { color: #10261c; background: #7dcea0; }
+.top nav a[href="/write/"] svg { color: #102033; background: #8eb7e8; }
+.top nav a:hover svg, .top nav a.on svg { color: #1a140f; background: #fffaf3; }
 .copy-mail {
   border: 0; background: var(--oxblood); color: #f6efe4; border-radius: 999px;
   padding: 8px 14px; margin-left: 8px; font-family: var(--mono); letter-spacing: 0.08em; text-transform: uppercase; font-size: 12px;
