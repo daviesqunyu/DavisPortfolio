@@ -30,17 +30,29 @@
         <h1>Davis<br /><em>Kunyu</em></h1>
         <p class="lede">Lead software developer at D&amp;V Technologies in Nairobi. I build software that has to work for real people: payments, hotels, traffic, and the small tools a company actually uses. On GitHub the line is short: sharp, smart, active.</p>
         <div class="facts">
-          <p><strong>NRB</strong> Based in Nairobi</p>
-          <p><strong>2025</strong> BSc Computer Science, CUEA, Second Upper, 62.39</p>
-          <p><strong>2020</strong> Diploma in IT, Nairobi Technical Training Institute</p>
-          <p><strong>2017</strong> Friends' School Kamusinga, KCSE</p>
+          <a class="fact" href="/work/"><strong>NRB</strong> Based in Nairobi, building at D&amp;V</a>
+          <a class="fact" href="/marks/"><strong>2025</strong> BSc Computer Science, CUEA, Second Upper, 62.39</a>
+          <a class="fact" href="/marks/"><strong>2020</strong> Diploma in IT, Nairobi Technical Training Institute</a>
+          <a class="fact" href="/marks/"><strong>2017</strong> Friends' School Kamusinga, KCSE</a>
+        </div>
+        <div class="links">
+          <a href="/projects/">Projects</a>
+          <a href="/work/">Work</a>
+          <a href="https://github.com/daviesqunyu">GitHub</a>
+          <a href="mailto:daviskunyu@gmail.com">Email</a>
         </div>
       </article>
       <aside class="copy">
         <p class="kicker">GitHub · updates itself</p>
-        <h2>daviesqunyu</h2>
+        <h2><a href="https://github.com/daviesqunyu">daviesqunyu</a></h2>
         <p id="gh-meta">Reading the public profile…</p>
-        <ul class="gh-list" id="gh-repos"></ul>
+        <ul class="gh-list" id="gh-repos">
+          <li><a href="https://github.com/daviesqunyu/DAVIS-HOTEL"><strong>Davis Hotel</strong><span>Repo</span></a></li>
+          <li><a href="https://github.com/daviesqunyu/Traffic_app"><strong>Traffic app</strong><span>Repo</span></a></li>
+          <li><a href="https://github.com/daviesqunyu/VOTING"><strong>Voting</strong><span>Repo</span></a></li>
+          <li><a href="https://github.com/daviesqunyu/dtdpaymentsbot"><strong>Payments bot</strong><span>Repo</span></a></li>
+          <li><a href="https://github.com/daviesqunyu/D-V-TECHNOLOGIES.XYZ"><strong>D&amp;V site</strong><span>Repo</span></a></li>
+        </ul>
       </aside>
     </main>
   </div>
@@ -54,6 +66,7 @@
     fetch("https://api.github.com/users/daviesqunyu/repos?sort=updated&per_page=12").then(function (r) { return r.json(); }).then(function (repos) {
       var list = document.getElementById("gh-repos");
       if (!list || !repos.forEach) return;
+      list.textContent = "";
       repos.filter(function (repo) { return !skip[repo.name]; }).slice(0, 5).forEach(function (repo) {
         var item = document.createElement("li");
         var link = document.createElement("a");
