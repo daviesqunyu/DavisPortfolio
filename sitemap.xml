@@ -31,30 +31,6 @@
       <priority>0.8</priority>
    </url>
    <url>
-      <loc>https://davis.dvtechnologies.xyz/craft/</loc>
-      <lastmod>2026-11-05</lastmod>
-      <changefreq>monthly</changefreq>
-      <priority>0.6</priority>
-   </url>
-   <url>
-      <loc>https://davis.dvtechnologies.xyz/marks/</loc>
-      <lastmod>2026-11-05</lastmod>
-      <changefreq>monthly</changefreq>
-      <priority>0.6</priority>
-   </url>
-   <url>
-      <loc>https://davis.dvtechnologies.xyz/listen/</loc>
-      <lastmod>2026-11-05</lastmod>
-      <changefreq>weekly</changefreq>
-      <priority>0.6</priority>
-   </url>
-   <url>
-      <loc>https://davis.dvtechnologies.xyz/frames/</loc>
-      <lastmod>2026-11-05</lastmod>
-      <changefreq>weekly</changefreq>
-      <priority>0.6</priority>
-   </url>
-   <url>
       <loc>https://davis.dvtechnologies.xyz/write/</loc>
       <lastmod>2026-11-05</lastmod>
       <changefreq>monthly</changefreq>

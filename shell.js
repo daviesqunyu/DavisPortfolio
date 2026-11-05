@@ -39,8 +39,21 @@
         el.textContent = "Copied";
         window.setTimeout(function () { el.textContent = previous; }, 1400);
       };
+      var fallback = function () {
+        var area = document.createElement("textarea");
+        area.value = value;
+        area.setAttribute("readonly", "");
+        area.style.position = "fixed";
+        area.style.left = "-999px";
+        document.body.appendChild(area);
+        area.select();
+        try { document.execCommand("copy"); done(); } catch (err) {}
+        area.remove();
+      };
       if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(value).then(done);
+        navigator.clipboard.writeText(value).then(done).catch(fallback);
+      } else {
+        fallback();
       }
     });
   }

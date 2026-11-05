@@ -54,6 +54,7 @@ body {
 }
 .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
 .chips a { text-decoration: none; border: 1px solid rgba(26,20,15,.25); border-radius: 999px; padding: 8px 12px; font-family: var(--mono); font-size: 12px; letter-spacing: 0.06em; color: #241910; background: #fffaf3; }
+#seals { margin-top: 28px; background: #fbf7f0; color: #241910; padding: 22px 22px 26px; }
 .seal-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
 .seal-row a { background: #f7f1e6; color: var(--ink); text-decoration: none; border-radius: 999px; padding: 8px 12px; font-family: var(--mono); font-size: 12px; }
 .cap em { font-style: normal; font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: #e7c27a; }
