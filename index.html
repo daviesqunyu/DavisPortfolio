@@ -9,7 +9,7 @@
   <meta property="og:title" content="Davis Kunyu — Field Notes" />
   <meta property="og:description" content="Open the book. Chapters on software, Nairobi, and the work in between." />
   <meta property="og:url" content="https://davis.dvtechnologies.xyz/" />
-  <link rel="icon" href="/favicon.svg?v=3" type="image/svg+xml" />
+  <link rel="icon" href="/favicon.svg?v=4" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;1,9..144,500&family=IBM+Plex+Mono:wght@400;500&family=Outfit:wght@400;500&display=swap" rel="stylesheet" />
@@ -40,14 +40,37 @@
     <div class="wash" aria-hidden="true"></div>
     <div class="opener">
       <button class="volume" id="book" type="button" aria-label="Open the book">
-        <span class="volume-pages" aria-hidden="true">
-          <span class="leaf">
-            <small>01 · About</small>
-            <b>Davis Kunyu</b>
-            <small>02 · Work</small>
-            <b>The ledger</b>
-            <small>04 · Contact</small>
-            <b>Write back</b>
+        <span class="volume-pages">
+          <span class="film" id="reel">
+            <span class="perfs" aria-hidden="true"></span>
+            <span class="screen">
+              <span class="shot is-on">
+                <img src="/images/nairobi-pexels.jpg" alt="" />
+                <span class="line"><small>Scene 01</small><strong>Davis Kunyu</strong><em>Lead software developer in Nairobi, at D&amp;V Technologies.</em></span>
+              </span>
+              <span class="shot">
+                <img src="/images/phone-pay.jpg" alt="" />
+                <span class="line"><small>Scene 02</small><strong>Payments</strong><em>Bots that take payments and sales for the company.</em></span>
+              </span>
+              <span class="shot">
+                <img src="/images/hotel-lobby-pexels.jpg" alt="" />
+                <span class="line"><small>Scene 03</small><strong>Davis Hotel</strong><em>A hotel system, from the lobby through to the desk.</em></span>
+              </span>
+              <span class="shot">
+                <img src="/images/red-lights.jpg" alt="" />
+                <span class="line"><small>Scene 04</small><strong>Traffic</strong><em>Night roads, and the lights that move Nairobi traffic.</em></span>
+              </span>
+              <span class="shot">
+                <img src="/images/build-site.jpg" alt="" />
+                <span class="line"><small>Scene 05</small><strong>Ndakaru and Bridan</strong><em>Ndakaru Bricks and Construction, and Bridan design and build.</em></span>
+              </span>
+              <span class="shot">
+                <img src="/images/code-desk.jpg" alt="" />
+                <span class="line"><small>Scene 06</small><strong>The company</strong><em>dvtechnologies.xyz. The chapters of this book come next.</em></span>
+              </span>
+            </span>
+            <span class="perfs" aria-hidden="true"></span>
+            <span class="filmbar" aria-hidden="true"><i id="film-bar"></i></span>
           </span>
         </span>
         <span class="volume-cover">
@@ -55,6 +78,10 @@
           <strong>Field<br />Notes</strong>
           <em>Davis Kunyu</em>
         </span>
+      </button>
+      <button class="play" id="play" type="button" aria-label="Play the book">
+        <span class="play-mark" aria-hidden="true"></span>
+        <span id="play-label">Play</span>
       </button>
       <p class="hint" id="hint">Open the book</p>
       <nav class="reach" aria-label="LinkedIn, WhatsApp, and phone">
