@@ -144,7 +144,7 @@ button { font: inherit; cursor: pointer; }
 
 .spread {
   min-height: 100vh;
-  background: #e7dcc8 url("/images/paper-fiber.jpg") center/cover;
+  background: #e7dcc8 url("/images/open-book.jpg") center/cover;
   color: var(--ink);
 }
 .spread .ribbon { background: rgba(244,236,223,.82); }
@@ -172,7 +172,7 @@ h1, h2 { font-family: var(--serif); font-weight: 560; letter-spacing: -0.03em; m
 
 .person {
   min-height: 100vh;
-  background: #0c1218 url("/images/nairobi-skyline.jpg") center 42%/cover no-repeat fixed;
+  background: #0c1218 url("/images/nairobi-pexels.jpg") center 62%/cover no-repeat fixed;
 }
 .person .ribbon { background: rgba(12, 14, 18, 0.78); color: #f6efe4; backdrop-filter: blur(8px); }
 .person .ribbon a.on { color: #e7c27a; }
@@ -254,7 +254,7 @@ h1, h2 { font-family: var(--serif); font-weight: 560; letter-spacing: -0.03em; m
 
 .ledger {
   min-height: 100vh; color: #f6efe4;
-  background: #0e1210 url("/images/library-night.jpg") center/cover fixed;
+  background: #0e1210 url("/images/library-desks.jpg") center/cover fixed;
 }
 .ledger .ribbon { background: rgba(8,10,9,.72); color: #f6efe4; backdrop-filter: blur(8px); }
 .ledger .ribbon a.on { color: #e7c27a; }
