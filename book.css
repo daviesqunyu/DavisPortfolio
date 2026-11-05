@@ -134,6 +134,38 @@ button { font: inherit; cursor: pointer; }
 .skip-read {
   position: relative; z-index: 1; margin-top: 10px; color: #f6efe4; font-size: 14px;
 }
+.reach {
+  position: relative; z-index: 2;
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 12px;
+  margin-top: 22px;
+}
+.sticker {
+  display: flex; align-items: center; gap: 8px;
+  min-height: 52px; padding: 8px 14px 8px 8px;
+  border-radius: 999px; text-decoration: none; color: #1a140f;
+  background: #fffaf3; box-shadow: 0 14px 30px rgba(0,0,0,.38);
+  font-family: var(--mono); font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase;
+}
+.sticker b { font-weight: 500; }
+.sticker .emoji {
+  width: 40px; height: 40px; display: grid; place-items: center;
+  border-radius: 50%; font-size: 1.35rem; line-height: 1;
+  animation: live-bob 2.2s ease-in-out infinite;
+}
+.sticker.in { border: 2px solid #0a66c2; }
+.sticker.in .emoji { background: #d6e8ff; animation-delay: 0s; }
+.sticker.wa { border: 2px solid #1faa59; }
+.sticker.wa .emoji { background: #d8ffe8; animation-delay: .25s; }
+.sticker.call { border: 2px solid #e07a2f; }
+.sticker.call .emoji { background: #ffe4cc; animation-delay: .5s; }
+.sticker.in b { color: #0a66c2; }
+.sticker.wa b { color: #128c7e; }
+.sticker.call b { color: #c2410c; }
+.sticker:hover { transform: translateY(-3px); }
+@keyframes live-bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
 .chapters {
   position: relative; z-index: 1;
   display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 16px;
@@ -381,4 +413,5 @@ h1, h2 { font-family: var(--serif); font-weight: 560; letter-spacing: -0.03em; m
 }
 @media (prefers-reduced-motion: reduce) {
   .volume-cover { transition: none; }
+  .sticker .emoji { animation: none; }
 }
