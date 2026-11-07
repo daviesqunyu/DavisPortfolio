@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The plates — Davis Kunyu</title>
+  <title>Projects — Davis Kunyu</title>
+  <meta name="description" content="GitHub repositories and live client sites — hotel, traffic, payments, voting, and Nairobi builds by Davis Kunyu." />
   <link rel="icon" href="/favicon.svg?v=4" type="image/svg+xml" />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;1,9..144,500&family=IBM+Plex+Mono:wght@400;500&family=Outfit:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/book.css" />
@@ -31,7 +32,8 @@
 
   <div class="plates">
     <h1>Projects as <em>plates</em>.</h1>
-    <p class="rail-note" id="repo-note">Imported from GitHub. Each plate opens the repository.</p>
+    <p class="deck-intro">Public repositories from GitHub, presented as horizontal plates. Each plate opens the repository; live domains are shown in green. Hover a live plate for a phone-frame site preview.</p>
+    <p class="rail-note" id="repo-note">Loading repositories from GitHub…</p>
     <div class="gallery" id="repo-gallery">
       <a class="plate" href="https://github.com/daviesqunyu/DAVIS-HOTEL"><img src="/images/hotel-lobby-pexels.jpg" alt="A hotel lobby with a marble floor and warm lamps" /><span class="cap"><small>Hospitality</small><strong>Davis Hotel</strong></span></a>
       <a class="plate" href="https://github.com/daviesqunyu/Traffic_app"><img src="/images/night-traffic.jpg" alt="Rain on a city road at night" /><span class="cap"><small>Nairobi</small><strong>Traffic app</strong></span></a>
@@ -49,7 +51,7 @@
     </div>
   </div>
 <footer class="foot">
-  <p>Davis Kunyu · Nairobi</p>
+  <p>Davis Kunyu · Lead Software Developer · Nairobi</p>
   <nav aria-label="Footer">
     <a href="/about/" aria-label="About">About</a>
     <a href="/work/" aria-label="Work">Work</a>
@@ -112,9 +114,7 @@
       return name.replace(/[-_]+/g, " ");
     }
     function siteOf(repo) {
-      var home = (repo.homepage || "").trim();
-      if (home.indexOf("https://") !== 0 && home.indexOf("http://") !== 0) return "";
-      return home;
+      return window.repoLiveUrl ? window.repoLiveUrl(repo) : "";
     }
     function hostOf(url) {
       try { return new URL(url).host.replace(/^www\./, ""); } catch (e) { return url; }
@@ -139,6 +139,7 @@
         var home = siteOf(repo);
         var plate = document.createElement("article");
         plate.className = "plate";
+        if (home) plate.setAttribute("data-preview", home);
         var link = document.createElement("a");
         link.className = "plate-shot";
         link.href = repo.html_url;
@@ -163,7 +164,8 @@
         plate.appendChild(cap);
         gallery.appendChild(plate);
       });
-      if (note) note.textContent = kept.length + " public repositories, imported from GitHub. A live address sits under the picture when the repository has one.";
+      if (note) note.textContent = kept.length + " public repositories, imported from GitHub. Hover a live plate to preview the site; the address sits under the title.";
+      if (window.attachSitePeek) window.attachSitePeek(gallery);
     });
   })();
 </script>

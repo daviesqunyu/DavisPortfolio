@@ -8,8 +8,8 @@ A modern, responsive personal portfolio website showcasing Davis Kunyu's skills,
 
 ## 🛠️ Built With
 
-- **HTML, CSS, and JavaScript** — a field book of separate pages
-- **Opening** — a cloth book on a desk; the cover turns, then the chapters begin
+- **HTML, CSS, and JavaScript** — Tech Words, a multi-page portfolio
+- **Opening** — an interactive Tech Words reel on the home page; chapters follow in About, Work, Projects, and Contact
 - **Chapters** — contents, about, work, projects, craft, marks, and a letter
 - **Photographs** — desk, Nairobi dusk, library, lobby, traffic, studio, and paper
 - **Google Fonts** — Fraunces, Outfit, and IBM Plex Mono

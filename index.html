@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Davis Kunyu — Field Notes</title>
-  <meta name="description" content="Davis Kunyu Wamalwa, lead software developer in Nairobi. A field book of work, projects, and notes." />
+  <title>Davis Kunyu — Tech Words</title>
+  <meta name="description" content="Davis Kunyu Wamalwa, lead software developer in Nairobi. Tech Words — a reel of work, projects, and Nairobi code." />
   <link rel="canonical" href="https://davis.dvtechnologies.xyz/" />
-  <meta property="og:title" content="Davis Kunyu — Field Notes" />
-  <meta property="og:description" content="Open the book. Chapters on software, Nairobi, and the work in between." />
+  <meta property="og:title" content="Davis Kunyu — Tech Words" />
+  <meta property="og:description" content="Open Tech Words. Scenes on software, Nairobi, and the work in between." />
   <meta property="og:url" content="https://davis.dvtechnologies.xyz/" />
   <link rel="icon" href="/favicon.svg?v=4" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -39,14 +39,19 @@
     <img class="stage-bg" src="/images/desk-night.jpg" alt="" />
     <div class="wash" aria-hidden="true"></div>
     <div class="opener">
-      <button class="volume" id="book" type="button" aria-label="Open the book">
+      <div class="volume" id="book" tabindex="0" role="group" aria-label="Tech Words book">
         <span class="volume-pages">
+          <aside class="synopsis" id="book-synopsis" hidden aria-label="Synopsis">
+            <p class="synopsis-kicker">Synopsis</p>
+            <p class="synopsis-body">Tech Words is the opening reel for this portfolio: six scenes on Nairobi software work — D&amp;V Technologies, payments automation, hospitality systems, traffic tooling, client builds (including Ndakaru at ndakaru.co.ke), and the public GitHub record. Read the synopsis, choose a scene number, or press Play.</p>
+            <div class="scene-nav" id="scene-nav" role="tablist" aria-label="Scenes"></div>
+          </aside>
           <span class="film" id="reel">
             <span class="perfs" aria-hidden="true"></span>
             <span class="screen">
               <span class="shot is-on">
                 <img src="/images/nairobi-pexels.jpg" alt="" />
-                <span class="line"><small>Scene 01</small><strong>Davis Kunyu</strong><em>Lead software developer in Nairobi, at D&amp;V Technologies.</em></span>
+                <span class="line"><small>Scene 01</small><strong>Davis Kunyu</strong><em>Lead Software Developer, D&amp;V Technologies · Nairobi.</em></span>
               </span>
               <span class="shot">
                 <img src="/images/phone-pay.jpg" alt="" />
@@ -62,7 +67,7 @@
               </span>
               <span class="shot">
                 <img src="/images/build-site.jpg" alt="" />
-                <span class="line"><small>Scene 05</small><strong>Ndakaru and Bridan</strong><em>Ndakaru Bricks and Construction, and Bridan design and build.</em></span>
+                <span class="line"><small>Scene 05</small><strong>Ndakaru and Bridan</strong><em>Ndakaru Bricks at ndakaru.co.ke, and Bridan design and build.</em></span>
               </span>
               <span class="shot">
                 <img src="/images/code-desk.jpg" alt="" />
@@ -75,15 +80,18 @@
         </span>
         <span class="volume-cover">
           <small>Nairobi · 2026</small>
-          <strong>Field<br />Notes</strong>
+          <strong>Tech<br />Words</strong>
           <em>Davis Kunyu</em>
         </span>
-      </button>
-      <button class="play" id="play" type="button" aria-label="Play the book">
-        <span class="play-mark" aria-hidden="true"></span>
-        <span id="play-label">Play</span>
-      </button>
-      <p class="hint" id="hint">Open the book</p>
+      </div>
+      <div class="book-controls">
+        <button class="play" id="play" type="button" aria-label="Play the reel" disabled>
+          <span class="play-mark" aria-hidden="true"></span>
+          <span id="play-label">Play</span>
+        </button>
+        <button class="book-close" id="book-close" type="button" hidden aria-label="Close Tech Words">Close</button>
+      </div>
+      <p class="hint" id="hint">Open Tech Words</p>
       <nav class="reach" aria-label="LinkedIn, WhatsApp, and phone">
         <a class="sticker in" href="https://www.linkedin.com/in/davis-kunyu" target="_blank" rel="noopener">
           <span class="emoji" aria-hidden="true">💼</span>
@@ -98,11 +106,11 @@
           <b>+254 759 075 816</b>
         </a>
       </nav>
-      <a class="skip-read" href="/contents/">Or open the contents</a>
+      <a class="skip-read" href="/contents/">Contents · four chapters</a>
     </div>
   </main>
   <footer class="foot">
-  <p>Davis Kunyu · Nairobi</p>
+  <p>Davis Kunyu · Lead Software Developer · Nairobi</p>
   <nav aria-label="Footer">
     <a href="/about/" aria-label="About">About</a>
     <a href="/work/" aria-label="Work">Work</a>
