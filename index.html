@@ -14,7 +14,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;1,9..144,500&family=IBM+Plex+Mono:wght@400;500&family=Outfit:wght@400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/book.css?v=6" />
+  <link rel="stylesheet" href="/book.css?v=7" />
 </head>
 <body class="home-techwords">
   <header class="top">
@@ -40,7 +40,25 @@
     <img class="stage-bg" src="/images/desk-night.jpg" alt="" />
     <div class="wash" aria-hidden="true"></div>
     <div class="opener">
-      <div class="volume" id="book" role="group" aria-label="Techwords volume">
+      <div class="code-hero" aria-labelledby="code-hero-heading">
+        <p id="code-hero-heading" class="visually-hidden">Techwords — portfolio in code</p>
+        <div class="code-window">
+          <div class="code-bar" aria-hidden="true">
+            <span class="dot dot-r"></span><span class="dot dot-y"></span><span class="dot dot-g"></span>
+            <span class="code-filename">techwords.ts · Nairobi</span>
+          </div>
+          <pre class="code-block"><code><span class="c-line"><span class="c-kw">/**</span> <span class="c-hl">Techwords</span> — Davis Kunyu portfolio <span class="c-kw">*/</span></span>
+<span class="c-line"><span class="c-kw">export const</span> <span class="c-id">davis</span> = {</span>
+<span class="c-line">  <span class="c-key">name</span>: <span class="c-str">"Davis Kunyu Wamalwa"</span>,</span>
+<span class="c-line">  <span class="c-key">role</span>: <span class="c-str">"Lead Software Developer"</span>,</span>
+<span class="c-line">  <span class="c-key">org</span>: <span class="c-str">"D&amp;V Technologies"</span>,</span>
+<span class="c-line">  <span class="c-key">city</span>: <span class="c-str">"Nairobi"</span>,</span>
+<span class="c-line">  <span class="c-key">idea</span>: <span class="c-str">"Ship software · clients · public GitHub"</span>,</span>
+<span class="c-line">} <span class="c-kw">as const</span>;</span>
+<span class="c-line"><span class="c-kw">await</span> <span class="c-fn">openReel</span>(<span class="c-str">"techwords"</span>);<span class="c-cursor" aria-hidden="true"></span></span></code></pre>
+        </div>
+      </div>
+      <div class="volume volume-terminal" id="book" role="group" aria-label="Techwords volume">
         <span class="volume-pages">
           <span class="film" id="reel">
             <span class="perfs" aria-hidden="true"></span>
@@ -74,10 +92,15 @@
             <span class="filmbar" aria-hidden="true"><i id="film-bar"></i></span>
           </span>
         </span>
-        <button type="button" class="volume-cover" id="cover-open" aria-label="Open Techwords">
-          <small>Nairobi · 2026</small>
-          <strong class="cover-title">Techwords</strong>
-          <em>Davis Kunyu · portfolio reel</em>
+        <button type="button" class="volume-cover terminal-cover" id="cover-open" aria-label="Open Techwords reel">
+          <span class="cover-scan" aria-hidden="true"></span>
+          <span class="cover-code">
+            <span class="c-kw">class</span> <span class="c-hl cover-brand">Techwords</span> {
+            <span class="c-key">author</span>=<span class="c-str">"Davis Kunyu"</span>;
+            <span class="c-key">open</span>=<span class="c-fn">reel</span>();
+            }
+          </span>
+          <em class="cover-cta">Tap to compile &amp; run →</em>
         </button>
       </div>
       <div class="book-controls">
@@ -125,6 +148,6 @@
     <a href="/cv.pdf" download="Davis-Kunyu-CV.pdf" aria-label="CV">CV</a>
   </nav>
 </footer>
-  <script src="/shell.js?v=6"></script>
+  <script src="/shell.js?v=7"></script>
 </body>
 </html>
