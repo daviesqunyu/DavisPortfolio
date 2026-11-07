@@ -165,9 +165,9 @@
   var playBtn = document.getElementById("play");
   var playLabel = document.getElementById("play-label");
   var closeBtn = document.getElementById("book-close");
-  var synopsis = document.getElementById("book-synopsis");
+  var coverBtn = document.getElementById("cover-open");
   var sceneNav = document.getElementById("scene-nav");
-  var reel = document.getElementById("reel");
+  var screen = book.querySelector(".screen");
   var scene = 0;
   var timer = 0;
   var playing = false;
@@ -179,19 +179,7 @@
     return title ? title.textContent : "Scene " + (n + 1);
   }
 
-  function showSynopsis(on) {
-    if (!synopsis) return;
-    if (on) {
-      synopsis.hidden = false;
-      if (reel) reel.classList.add("is-synopsis");
-    } else {
-      synopsis.hidden = true;
-      if (reel) reel.classList.remove("is-synopsis");
-    }
-  }
-
-  function showScene(n, opts) {
-    opts = opts || {};
+  function showScene(n) {
     scene = n;
     for (var i = 0; i < shots.length; i++) shots[i].classList.toggle("is-on", i === n);
     if (bar) bar.style.width = ((n + 1) / shots.length * 100) + "%";
@@ -202,15 +190,16 @@
         tabs[t].setAttribute("aria-selected", t === n ? "true" : "false");
       }
     }
-    if (hint) hint.textContent = (playing ? "Playing · " : "") + sceneTitle(n) + " (" + (n + 1) + "/" + shots.length + ")";
-    if (opts.fromUser && open) showSynopsis(false);
+    if (hint) {
+      hint.textContent = (playing ? "Playing · " : "Scene · ") + sceneTitle(n) + " (" + (n + 1) + "/" + shots.length + ")";
+    }
   }
 
   function setPlaying(on) {
     playing = on;
     if (playBtn) playBtn.classList.toggle("is-on", on);
     if (playLabel) playLabel.textContent = on ? "Pause" : "Play";
-    if (playBtn) playBtn.setAttribute("aria-label", on ? "Pause the reel" : "Play the reel");
+    if (playBtn) playBtn.setAttribute("aria-label", on ? "Pause the Techwords reel" : "Play the Techwords reel");
     showScene(scene);
   }
 
@@ -219,35 +208,45 @@
     timer = 0;
   }
 
+  function setOpenUi(on) {
+    if (playBtn) playBtn.disabled = !on;
+    if (closeBtn) closeBtn.hidden = !on;
+    if (sceneNav) sceneNav.hidden = !on;
+    if (coverBtn) coverBtn.disabled = on;
+  }
+
   function openBook() {
     if (open) return;
     open = true;
     book.classList.add("is-open");
-    showSynopsis(true);
+    setOpenUi(true);
     showScene(0);
-    if (playBtn) playBtn.disabled = false;
-    if (closeBtn) closeBtn.hidden = false;
-    if (hint) hint.textContent = "Synopsis · pick a scene or press Play";
+    if (hint) hint.textContent = "Scene 1 of " + shots.length + " · Play or pick a number";
   }
 
   function closeBook() {
     open = false;
     stopTimer();
-    setPlaying(false);
-    book.classList.remove("is-open");
-    showSynopsis(false);
+    playing = false;
     if (playBtn) {
-      playBtn.disabled = true;
+      playBtn.classList.remove("is-on");
+      if (playLabel) playLabel.textContent = "Play";
     }
-    if (closeBtn) closeBtn.hidden = true;
-    if (hint) hint.textContent = "Open Tech Words";
+    book.classList.remove("is-open");
+    setOpenUi(false);
+    showScene(0);
+    if (hint) hint.textContent = "Tap the cover · Techwords";
+  }
+
+  function nextScene() {
+    if (!open) openBook();
+    stopTimer();
+    setPlaying(false);
+    showScene((scene + 1) % shots.length);
   }
 
   function togglePlay() {
-    if (!open) {
-      openBook();
-    }
-    showSynopsis(false);
+    if (!open) openBook();
     if (playing) {
       stopTimer();
       setPlaying(false);
@@ -259,24 +258,6 @@
     timer = window.setInterval(function () {
       showScene((scene + 1) % shots.length);
     }, dwell);
-  }
-
-  var synopsisList = document.getElementById("synopsis-scenes");
-  if (synopsisList && shots.length) {
-    synopsisList.textContent = "";
-    for (var si = 0; si < shots.length; si++) {
-      var shotEl = shots[si];
-      var li = document.createElement("li");
-      var t = shotEl.getAttribute("data-scene-title") || sceneTitle(si);
-      var blurb = shotEl.getAttribute("data-scene-blurb") || "";
-      var strong = document.createElement("strong");
-      strong.textContent = (si + 1) + ". " + t;
-      li.appendChild(strong);
-      if (blurb) {
-        li.appendChild(document.createTextNode(" — " + blurb));
-      }
-      synopsisList.appendChild(li);
-    }
   }
 
   if (sceneNav && shots.length) {
@@ -293,32 +274,29 @@
           if (!open) openBook();
           stopTimer();
           setPlaying(false);
-          showScene(idx, { fromUser: true });
+          showScene(idx);
         });
         sceneNav.appendChild(btn);
       })(s);
     }
   }
 
-  book.addEventListener("click", function (e) {
-    if (e.target.closest(".scene-nav") || e.target.closest(".synopsis") || e.target.closest("button")) return;
-    if (e.target.closest(".volume-cover") || !open) {
+  if (coverBtn) {
+    coverBtn.addEventListener("click", function (e) {
+      e.stopPropagation();
       if (!open) openBook();
-      return;
-    }
-    if (!playing) {
-      showSynopsis(false);
-      showScene((scene + 1) % shots.length, { fromUser: true });
-    }
-  });
+    });
+  }
 
-  book.addEventListener("keydown", function (e) {
-    if (e.key === "Enter" || e.key === " ") {
-      if (e.target !== book) return;
-      e.preventDefault();
-      if (!open) openBook();
-    }
-  });
+  if (screen) {
+    screen.addEventListener("click", function () {
+      if (!open) {
+        openBook();
+        return;
+      }
+      if (!playing) nextScene();
+    });
+  }
 
   if (playBtn) playBtn.addEventListener("click", function (e) {
     e.stopPropagation();
@@ -331,6 +309,9 @@
   });
 
   document.addEventListener("keydown", function (e) {
+    if (e.key === "o" && !open && !e.ctrlKey && !e.metaKey && e.target.tagName !== "INPUT") {
+      openBook();
+    }
     if (!open) return;
     if (e.key === "Escape") {
       closeBook();
@@ -338,19 +319,15 @@
     }
     if (e.key === "ArrowRight" || e.key === "ArrowDown") {
       e.preventDefault();
-      stopTimer();
-      setPlaying(false);
-      showSynopsis(false);
-      showScene((scene + 1) % shots.length, { fromUser: true });
+      nextScene();
     }
     if (e.key === "ArrowLeft" || e.key === "ArrowUp") {
       e.preventDefault();
       stopTimer();
       setPlaying(false);
-      showSynopsis(false);
-      showScene((scene - 1 + shots.length) % shots.length, { fromUser: true });
+      showScene((scene - 1 + shots.length) % shots.length);
     }
-    if (e.key === " " && e.target === document.body) {
+    if (e.key === " " && (e.target === document.body || e.target === document.documentElement)) {
       e.preventDefault();
       togglePlay();
     }
