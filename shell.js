@@ -199,7 +199,7 @@
     playing = on;
     if (playBtn) playBtn.classList.toggle("is-on", on);
     if (playLabel) playLabel.textContent = on ? "Pause" : "Play";
-    if (playBtn) playBtn.setAttribute("aria-label", on ? "Pause the Techwords reel" : "Play the Techwords reel");
+    if (playBtn) playBtn.setAttribute("aria-label", on ? "Pause the My Career Path reel" : "Play the My Career Path reel");
     showScene(scene);
   }
 
@@ -235,7 +235,7 @@
     book.classList.remove("is-open");
     setOpenUi(false);
     showScene(0);
-    if (hint) hint.textContent = "Tap the cover · Techwords";
+    if (hint) hint.textContent = "Tap the cover · My Career Path";
   }
 
   function nextScene() {
