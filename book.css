@@ -514,7 +514,7 @@ h1, h2 { font-family: var(--serif); font-weight: 560; letter-spacing: -0.03em; m
 .plate-shot { display: block; text-decoration: none; color: inherit; }
 .plate .cap { display: block; padding: 12px 2px 0; }
 .plate img { height: 360px; width: 100%; object-fit: cover; }
-.plate .domain {
+.plate .cap .domain {
   display: inline-block; margin-top: 8px; color: var(--live);
   font-family: var(--mono); font-size: 12px; letter-spacing: 0.03em; text-decoration: none;
   border-bottom: 1px solid rgba(183,240,200,.55);

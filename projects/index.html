@@ -45,7 +45,10 @@
       <a class="plate" href="https://github.com/daviesqunyu/E-vot"><img src="/images/ballot.jpg" alt="A person holding a ballot over a box" /><span class="cap"><small>Civic</small><strong>E-vot</strong></span></a>
       <a class="plate" href="https://github.com/daviesqunyu/crypto-binance-trading-bot"><img src="/images/trading-phone.jpg" alt="A phone showing a trading chart" /><span class="cap"><small>Markets</small><strong>Trading desk</strong></span></a>
       <a class="plate" href="https://github.com/daviesqunyu/bridandesignbuild"><img src="/images/build-site.jpg" alt="Two people on a construction deck" /><span class="cap"><small>Build</small><strong>Bridan</strong></span></a>
-      <a class="plate" href="https://github.com/daviesqunyu/Ndakaru"><img src="/images/phone-app.jpg" alt="A phone on a wooden desk" /><span class="cap"><small>Product</small><strong>Ndakaru</strong></span></a>
+      <article class="plate" data-preview="https://ndakaru.co.ke">
+        <a class="plate-shot" href="https://ndakaru.co.ke"><img src="/images/phone-app.jpg" alt="Ndakaru Bricks and Construction website" /></a>
+        <span class="cap"><em class="live">Live</em><small>Client · live</small><strong>Ndakaru Bricks</strong><a class="domain" href="https://ndakaru.co.ke">ndakaru.co.ke</a></span>
+      </article>
       <a class="plate" href="https://github.com/daviesqunyu/D-V-TECHNOLOGIES.XYZ"><img src="/images/code-desk.jpg" alt="Code open on a laptop" /><span class="cap"><small>Company</small><strong>D&amp;V site</strong></span></a>
       <a class="plate" href="https://dvtechnologies.xyz"><img src="/images/nairobi-skyline.jpg" alt="Nairobi at dusk" /><span class="cap"><small>Live</small><strong>dvtechnologies.xyz</strong></span></a>
     </div>
@@ -113,6 +116,10 @@
     function label(name) {
       return name.replace(/[-_]+/g, " ");
     }
+    function displayName(repo) {
+      if ((repo.name || "").toLowerCase() === "ndakaru") return "Ndakaru Bricks";
+      return label(repo.name);
+    }
     function siteOf(repo) {
       return window.repoLiveUrl ? window.repoLiveUrl(repo) : "";
     }
@@ -142,7 +149,8 @@
         if (home) plate.setAttribute("data-preview", home);
         var link = document.createElement("a");
         link.className = "plate-shot";
-        link.href = repo.html_url;
+        link.href = home || repo.html_url;
+        if (home) link.setAttribute("aria-label", "Open " + displayName(repo) + " live site");
         var img = document.createElement("img");
         img.src = photoFor(repo.name);
         img.alt = "";
@@ -152,14 +160,30 @@
         var small = document.createElement("small");
         small.textContent = repo.language || "GitHub";
         var strong = document.createElement("strong");
-        strong.textContent = label(repo.name);
+        strong.textContent = displayName(repo);
         var mark = document.createElement("em");
         mark.className = home ? "live" : "repo";
         mark.textContent = home ? "Live" : "Repo";
         cap.appendChild(mark);
         cap.appendChild(small);
         cap.appendChild(strong);
-        if (home) cap.appendChild(domainLink(home));
+        if (home) {
+          if ((repo.name || "").toLowerCase() === "ndakaru") {
+            small.textContent = "Client · live";
+          }
+          cap.appendChild(domainLink(home));
+        }
+        if (home && (repo.name || "").toLowerCase() === "ndakaru") {
+          var repoLink = document.createElement("a");
+          repoLink.className = "domain";
+          repoLink.href = repo.html_url;
+          repoLink.target = "_blank";
+          repoLink.rel = "noopener";
+          repoLink.textContent = "GitHub";
+          repoLink.style.marginLeft = "8px";
+          repoLink.style.color = "#e7c27a";
+          cap.appendChild(repoLink);
+        }
         plate.appendChild(link);
         plate.appendChild(cap);
         gallery.appendChild(plate);
