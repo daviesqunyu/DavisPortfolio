@@ -18,7 +18,7 @@ A modern, responsive personal portfolio website showcasing Davis Kunyu's skills,
 
 ```
 DavisPortfolio/
-├── index.html          # Opening book
+├── index.html          # Tech Words home reel + synopsis
 ├── book.css            # Shared chapter styles
 ├── contents/           # Table of contents
 ├── about/              # Nairobi portrait chapter

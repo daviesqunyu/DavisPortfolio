@@ -169,10 +169,43 @@ button { font: inherit; cursor: pointer; }
   margin: 0; font-family: var(--mono); font-size: 10px; letter-spacing: 0.16em;
   text-transform: uppercase; color: #7a2430;
 }
-.synopsis-body {
-  margin: 8px 0 12px; font-size: 0.86rem; line-height: 1.45; color: #2a2118;
+.synopsis-title {
+  margin: 4px 0 8px; font-family: var(--serif); font-size: 1.35rem; line-height: 1.1; color: #1a140f;
 }
-.scene-nav { display: flex; flex-wrap: wrap; gap: 6px; }
+.synopsis-body, .synopsis-note {
+  margin: 8px 0 10px; font-size: 0.84rem; line-height: 1.45; color: #2a2118;
+}
+.synopsis-note { margin-top: 12px; font-family: var(--mono); font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+.synopsis-scenes {
+  margin: 10px 0 0; padding: 0 0 0 1.1rem; font-size: 0.8rem; line-height: 1.4; color: #2a2118;
+}
+.synopsis-scenes li { margin: 0 0 6px; }
+.synopsis-scenes strong { font-family: var(--serif); font-weight: 560; color: var(--oxblood); }
+.scene-nav { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+.stage-synopsis {
+  position: relative; z-index: 1; width: min(720px, calc(100vw - 32px));
+  margin-top: 28px; padding: 22px 20px 24px; text-align: left;
+  background: rgba(20, 14, 10, 0.82); border: 1px solid rgba(198, 161, 91, 0.45);
+  border-radius: 12px; color: #f6efe4; backdrop-filter: blur(6px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+}
+.stage-synopsis .synopsis-kicker { color: var(--gold); }
+.stage-synopsis .synopsis-title { color: #fffaf3; font-size: clamp(1.8rem, 4vw, 2.4rem); }
+.stage-synopsis .synopsis-lead {
+  margin: 0 0 18px; max-width: 56ch; font-size: 0.98rem; line-height: 1.65; color: #e7dcc8;
+}
+.synopsis-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px;
+}
+.synopsis-card {
+  padding: 12px 14px; border-radius: 8px;
+  background: rgba(255, 250, 243, 0.06); border: 1px solid rgba(198, 161, 91, 0.28);
+}
+.synopsis-card h3 { margin: 0 0 6px; font-family: var(--serif); font-size: 1.1rem; }
+.synopsis-card h3 a { color: var(--gold); text-decoration: none; }
+.synopsis-card h3 a:hover { color: #fffaf3; }
+.synopsis-card p { margin: 0; font-size: 0.86rem; line-height: 1.5; color: #d9cbb8; }
+@media (max-width: 560px) { .synopsis-grid { grid-template-columns: 1fr; } }
 .scene-nav button {
   width: 34px; height: 34px; border-radius: 50%; border: 1px solid #c6a15b;
   background: #fffaf3; color: #1a140f; font-family: var(--mono); font-size: 11px;

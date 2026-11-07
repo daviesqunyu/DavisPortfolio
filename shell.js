@@ -261,6 +261,24 @@
     }, dwell);
   }
 
+  var synopsisList = document.getElementById("synopsis-scenes");
+  if (synopsisList && shots.length) {
+    synopsisList.textContent = "";
+    for (var si = 0; si < shots.length; si++) {
+      var shotEl = shots[si];
+      var li = document.createElement("li");
+      var t = shotEl.getAttribute("data-scene-title") || sceneTitle(si);
+      var blurb = shotEl.getAttribute("data-scene-blurb") || "";
+      var strong = document.createElement("strong");
+      strong.textContent = (si + 1) + ". " + t;
+      li.appendChild(strong);
+      if (blurb) {
+        li.appendChild(document.createTextNode(" — " + blurb));
+      }
+      synopsisList.appendChild(li);
+    }
+  }
+
   if (sceneNav && shots.length) {
     sceneNav.textContent = "";
     for (var s = 0; s < shots.length; s++) {
