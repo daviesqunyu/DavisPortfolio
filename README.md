@@ -6,6 +6,8 @@ A modern, responsive personal portfolio website showcasing Davis Kunyu's skills,
 
 **https://davis.dvtechnologies.xyz/
 
+The custom domain is served via **Vercel** (root historically used `book.html`). `index.html` is the canonical home; `vercel.json` rewrites `/` and `/book.html` to it. GitHub Pages also builds from `main` if the DNS CNAME targets GitHub.
+
 ## 🛠️ Built With
 
 - **HTML, CSS, and JavaScript** — My Career Path, a multi-page portfolio
